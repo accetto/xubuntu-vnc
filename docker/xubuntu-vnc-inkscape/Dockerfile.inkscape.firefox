@@ -23,7 +23,7 @@ RUN /dockerstartup/set_user_permissions.sh $HOME
 
 FROM stage-inkscape as stage-final
 
-ENV REFRESHED_AT 2019-06-19
+ENV REFRESHED_AT 2019-06-20
 
 ### Switch to default application user (non-root)
 USER 1001
