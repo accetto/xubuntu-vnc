@@ -1,0 +1,43 @@
+# docker build -f Dockerfile.firefox -t accetto/xubuntu-vnc-firefox .
+# docker build -f Dockerfile.firefox --build-arg BASETAG=dev -t accetto/xubuntu-vnc-firefox:dev .
+# docker build -f Dockerfile.firefox --build-arg BASETAG=lab -t accetto/xubuntu-vnc-firefox:lab .
+# docker build -f Dockerfile.firefox --build-arg BASETAG=dev-lab -t accetto/xubuntu-vnc-firefox:dev-lab .
+
+ARG BASETAG=latest
+
+FROM accetto/xubuntu-vnc:${BASETAG} as stage-firefox
+
+### Switch to root user before install
+USER 0
+
+### 'apt-get clean' runs automatically
+RUN apt-get update && apt-get install -y \
+        firefox \
+    && rm -rf /var/lib/apt/lists/*
+
+### Preconfigure Xfce
+COPY [ "./src/firefox/home/Desktop", "./Desktop/" ]
+COPY [ "./src/firefox/home/config/xfce4/panel", "./.config/xfce4/panel/" ]
+COPY [ "./src/firefox/home/config/xfce4/xfconf/xfce-perchannel-xml", "./.config/xfce4/xfconf/xfce-perchannel-xml/" ]
+
+FROM stage-firefox as stage-plus
+
+RUN mkdir ./firefox.plus
+
+COPY [ "./src/firefox.plus/resources", "./firefox.plus" ]
+COPY [ "./src/firefox.plus/resources/*.svg", "/usr/share/icons/hicolor/scalable/apps/"]
+COPY [ "./src/firefox.plus/home/Desktop", "./Desktop/" ]
+
+RUN \
+    chmod +x ./firefox.plus/*.sh \
+    && gtk-update-icon-cache -f /usr/share/icons/hicolor
+
+### Fix new launchers permissions
+RUN /dockerstartup/set_user_permissions.sh $HOME
+
+FROM stage-plus as stage-final
+
+ENV REFRESHED_AT 2019-06-18
+
+### Switch to default application user (non-root)
+USER 1001

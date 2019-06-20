@@ -1,0 +1,31 @@
+# docker build -f Dockerfile.firefox.default -t accetto/xubuntu-vnc-firefox:default .
+# docker build -f Dockerfile.firefox.default --build-arg BASETAG=dev -t accetto/xubuntu-vnc-firefox:dev-default .
+# docker build -f Dockerfile.firefox.default --build-arg BASETAG=lab -t accetto/xubuntu-vnc-firefox:lab-default .
+# docker build -f Dockerfile.firefox.default --build-arg BASETAG=dev-lab -t accetto/xubuntu-vnc-firefox:dev-lab-default .
+
+ARG BASETAG=latest
+
+FROM accetto/xubuntu-vnc:${BASETAG} as stage-firefox
+
+### Switch to root user before install
+USER 0
+
+### 'apt-get clean' runs automatically
+RUN apt-get update && apt-get install -y \
+        firefox \
+    && rm -rf /var/lib/apt/lists/*
+
+### Preconfigure Xfce
+COPY [ "./src/firefox/home/Desktop", "./Desktop/" ]
+COPY [ "./src/firefox/home/config/xfce4/panel", "./.config/xfce4/panel/" ]
+COPY [ "./src/firefox/home/config/xfce4/xfconf/xfce-perchannel-xml", "./.config/xfce4/xfconf/xfce-perchannel-xml/" ]
+
+### Fix new launchers permissions
+RUN /dockerstartup/set_user_permissions.sh $HOME
+
+FROM stage-firefox as stage-final
+
+ENV REFRESHED_AT 2019-06-19
+
+### Switch to default application user (non-root)
+USER 1001
