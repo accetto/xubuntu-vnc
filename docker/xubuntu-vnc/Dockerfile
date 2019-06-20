@@ -124,11 +124,11 @@ EXPOSE ${VNC_PORT}
 ### Switch to default application user (non-root)
 # USER 1001
 
-ENV REFRESHED_AT 2019-06-18
+ENV REFRESHED_AT 2019-06-20
 
-ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
+# ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'
-# ENTRYPOINT [ "/tini", "-w", "--", "/dockerstartup/vnc_startup.sh" ]
+ENTRYPOINT [ "/tini", "-w", "--", "/dockerstartup/vnc_startup.sh" ]
 ### verbose argument '-v' can be repeated up to three times
 ### level 3 (TRACE) outputs 'No child to reap' every second
 ### level 2 (DEBUG) outputs also SIGCHLD signals
