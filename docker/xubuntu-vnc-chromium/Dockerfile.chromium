@@ -1,0 +1,33 @@
+# docker build -f Dockerfile.chromium -t accetto/xubuntu-vnc-chromium .
+# docker build -f Dockerfile.chromium --build-arg BASETAG=dev -t accetto/xubuntu-vnc-chromium:dev .
+# docker build -f Dockerfile.chromium --build-arg BASETAG=lab -t accetto/xubuntu-vnc-chromium:lab .
+# docker build -f Dockerfile.chromium --build-arg BASETAG=dev-lab -t accetto/xubuntu-vnc-chromium:dev-lab .
+
+ARG BASETAG=latest
+
+FROM accetto/xubuntu-vnc:${BASETAG} as stage-chromium
+
+### Switch to root user before install
+USER 0
+
+### 'apt-get clean' runs automatically
+RUN apt-get update && apt-get install -y \
+        chromium-browser \
+    && rm -rf /var/lib/apt/lists/*
+
+### Chromium browser requires some presets
+### Note that 'no-sandbox' flag is required, but intended for development only
+RUN echo "CHROMIUM_FLAGS='--no-sandbox --disable-gpu --user-data-dir --window-size=${VNC_RESOLUTION%x*},${VNC_RESOLUTION#*x} --window-position=0,0'" > $HOME/.chromium-browser.init
+
+### Preconfigure Xfce desktop
+COPY [ "./src/home/Desktop", "./Desktop/" ]
+
+### Fix new launchers permissions
+RUN /dockerstartup/set_user_permissions.sh $HOME
+
+FROM stage-chromium as stage-final
+
+ENV REFRESHED_AT 2019-06-19
+
+### Switch to default application user (non-root)
+USER 1001
