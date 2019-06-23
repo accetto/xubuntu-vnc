@@ -30,6 +30,12 @@ Several variations are available, including the one supporting easy pre-configur
 
 The images are streamlined and simplified versions of my other images [accetto/ubuntu-vnc-xfce-firefox-plus][accetto-docker-ubuntu-vnc-xfce-firefox-plus] and [accetto/ubuntu-vnc-xfce-firefox-default][accetto-docker-ubuntu-vnc-xfce-firefox-default].
 
+#### [xubuntu-vnc-inkscape][this-github-xubuntu-vnc-inkscape]
+  
+Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape].
+
+Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
+
 #### [utils][this-github-utils]
   
 Contains various utilities that make building the images more convenient.
@@ -74,7 +80,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-github-xubuntu-vnc-firefox]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-firefox/
 [this-docker-xubuntu-vnc-firefox]: https://hub.docker.com/r/accetto/xubuntu-vnc-firefox/
 
-[this-github-xubuntu-vnc-inkscape]: https://github.com/acceaccetto/xubuntu-vnc/tree/mastertto/docker/xubuntu-vnc-inkscape/
+[this-github-xubuntu-vnc-inkscape]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-inkscape/
 [this-docker-xubuntu-vnc-inkscape]: https://hub.docker.com/r/accetto/xubuntu-vnc-inkscape/
 
 [this-github-xubuntu-vnc-chromium]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-chromium/
