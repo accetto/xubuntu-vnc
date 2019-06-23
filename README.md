@@ -22,6 +22,14 @@ Several variations are available, including the one supporting overriding both t
 
 Examples of Dockerfiles for building stand-alone application images from scratch are also included.
 
+#### [xubuntu-vnc-firefox][this-github-xubuntu-vnc-firefox]
+  
+Contains resources for building [accetto/xubuntu-vnc-firefox][this-docker-xubuntu-vnc-firefox] images with the current [Firefox Quantum][firefox] web browser.
+
+Several variations are available, including the one supporting easy pre-configuration and copying of personal Firefox user preferences.
+
+The images are streamlined and simplified versions of my other images [accetto/ubuntu-vnc-xfce-firefox-plus][accetto-docker-ubuntu-vnc-xfce-firefox-plus] and [accetto/ubuntu-vnc-xfce-firefox-default][accetto-docker-ubuntu-vnc-xfce-firefox-default].
+
 #### [utils][this-github-utils]
   
 Contains various utilities that make building the images more convenient.
