@@ -6,11 +6,25 @@
 
 ***
 
-### Release 19.06
+### Release 19.06-firefox
+
+#### accetto/xubuntu-vnc-firefox
+
+Initial version is derived from the version **19.06.02** of [accetto/ubuntu-vnc-xfce-firefox-plus][accetto-ubuntu-vnc-xfce-firefox-plus].
+
+The following **plus** features are implemented:
+
+- Backup folder **firefox.plus** containing
+  - file **user.js** for personal Firefox preferences
+  - helper utility script **copy_firefox_user_preferences.sh**
+- Desktop launcher **Copy FF Preferences** for the utility
+- Desktop launcher **FF Profile Manager**
+
+### Release 19.06-base
 
 #### accetto/xubuntu-vnc
 
-Initial version derived from the version **19.06** of [accetto/ubuntu-vnc-xfce][accetto-ubuntu-vnc-xfce] and redesigned:
+Initial version is derived from the version **19.06** of [accetto/ubuntu-vnc-xfce][accetto-ubuntu-vnc-xfce] and redesigned:
 
 - **tini** as entry-point initial process (PID 1)
 - **noVNC** not included any more
@@ -33,3 +47,4 @@ Initial version derived from the version **19.06** of [accetto/ubuntu-vnc-xfce][
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 
 [accetto-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce/
+[accetto-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus/

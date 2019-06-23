@@ -25,7 +25,7 @@ RUN /dockerstartup/set_user_permissions.sh $HOME
 
 FROM stage-firefox as stage-final
 
-ENV REFRESHED_AT 2019-06-20
+ENV REFRESHED_AT 2019-06-23
 
 ### Switch to default application user (non-root)
 USER 1001
