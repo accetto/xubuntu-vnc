@@ -1,7 +1,5 @@
-# docker build -f Dockerfile.inkscape.firefox -t accetto/xubuntu-vnc-inkscape-firefox .
-# docker build -f Dockerfile.inkscape.firefox --build-arg BASETAG=dev -t accetto/xubuntu-vnc-inkscape-firefox:dev .
-# docker build -f Dockerfile.inkscape.firefox --build-arg BASETAG=lab -t accetto/xubuntu-vnc-inkscape-firefox:lab .
-# docker build -f Dockerfile.inkscape.firefox --build-arg BASETAG=devlab -t accetto/xubuntu-vnc-inkscape-firefox:devlab .
+# docker build -f Dockerfile.inkscape.firefox -t accetto/xubuntu-vnc-inkscape:firefox .
+# docker build -f Dockerfile.inkscape.firefox --build-arg BASETAG=dev -t accetto/xubuntu-vnc-inkscape:dev-firefox .
 
 ARG BASETAG=latest
 
@@ -23,7 +21,7 @@ RUN /dockerstartup/set_user_permissions.sh $HOME
 
 FROM stage-inkscape as stage-final
 
-ENV REFRESHED_AT 2019-06-20
+ENV REFRESHED_AT 2019-06-23
 
 ### Switch to default application user (non-root)
 USER 1001

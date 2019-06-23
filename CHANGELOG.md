@@ -6,6 +6,12 @@
 
 ***
 
+### Release 19.06-inkscape
+
+#### accetto/xubuntu-vnc-inkscape
+
+Initial version is new.
+
 ### Release 19.06-firefox
 
 #### accetto/xubuntu-vnc-firefox
