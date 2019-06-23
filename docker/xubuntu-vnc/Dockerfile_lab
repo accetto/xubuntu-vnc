@@ -1,7 +1,8 @@
-# docker build -f Dockerfile -t accetto/xubuntu-vnc .
-# docker build -f Dockerfile -t accetto/xubuntu-vnc:dev .
-# docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:lab .
-# docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:dev-lab .
+# docker build -f Dockerfile_lab -t accetto/xubuntu-vnc:lab .
+# docker build -f Dockerfile_lab -t accetto/xubuntu-vnc:dev-lab .
+
+### this Dockerfile is only necessary because of missing suport for build arguments on Docker Hub
+ARG ARG_SUPPORT_USER_GROUP_OVERRIDE=yes
 
 ARG BASETAG=latest
 

@@ -9,27 +9,20 @@ echo "
 USAGE:
 docker run <run-options> accetto/<image>:<tag> <option> <optional-command>
 
-IMAGES:
-accetto/xubuntu-vnc
-
-TAGS:
-latest      based on 'latest' Ubuntu
-rolling     based on 'rolling' Ubuntu
-
 OPTIONS:
 -w, --wait      (default) Keeps the UI and the vnc server up until SIGINT or SIGTERM are received.
                 An optional command can be executed after the vnc starts up.
                 example: docker run -d -P accetto/xubuntu-vnc
-                example: docker run -it -P --rm accetto/xubuntu-vnc /bin/bash
+                example: docker run -it -P --rm accetto/xubuntu-vnc bash
 
 -s, --skip      Skips the vnc startup and just executes the provided command.
-                example: docker run -it -P --rm accetto/xubuntu-vnc --skip /bin/bash
+                example: docker run -it -P --rm accetto/xubuntu-vnc --skip echo $BASH_VERSION
 
--d, --debug     Executes the vnc startup and tails the VNC logs.
+-d, --debug     Executes the vnc startup, prints some additional info and tails the VNC logs.
                 Any parameters after '--debug' are ignored. CTRL-C stops the container.
                 example: docker run -it -P --rm accetto/xubuntu-vnc --debug
 
--t, --tail-log  same as '--debug'
+-t, --tail-log  similar to '--debug' but no additional diagnostic info
 
 -h, --help      Prints out this help.
                 example: docker run --rm accetto/xubuntu-vnc

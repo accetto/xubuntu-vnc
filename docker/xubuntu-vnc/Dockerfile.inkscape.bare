@@ -124,7 +124,7 @@ RUN apt-get update && apt-get install -y \
 ### Switch to default application user (non-root)
 USER 1001
 
-ENV REFRESHED_AT 2019-06-20
+ENV REFRESHED_AT 2019-06-23
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'
