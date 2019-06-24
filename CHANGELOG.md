@@ -6,6 +6,12 @@
 
 ***
 
+### Release 19.06-chromium
+
+#### accetto/xubuntu-vnc-chromium
+
+Initial version is new.
+
 ### Release 19.06-inkscape
 
 #### accetto/xubuntu-vnc-inkscape

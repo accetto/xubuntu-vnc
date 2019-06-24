@@ -36,6 +36,10 @@ Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubun
 
 Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
 
+#### [xubuntu-vnc-chromium][this-github-xubuntu-vnc-chromium]
+  
+Contains resources for building [accetto/xubuntu-vnc-chromium][this-docker-xubuntu-vnc-chromium] images with the open-source [Chromium][chromium] web browser.
+
 #### [utils][this-github-utils]
   
 Contains various utilities that make building the images more convenient.
