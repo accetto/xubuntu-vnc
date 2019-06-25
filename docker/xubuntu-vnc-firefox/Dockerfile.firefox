@@ -37,7 +37,7 @@ RUN /dockerstartup/set_user_permissions.sh $HOME
 
 FROM stage-plus as stage-final
 
-ENV REFRESHED_AT 2019-06-23
+ENV REFRESHED_AT 2019-06-25
 
 ### Switch to default application user (non-root)
 USER 1001
