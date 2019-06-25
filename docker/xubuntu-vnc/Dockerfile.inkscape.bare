@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
         lsb-release \
         net-tools \
         vim \
+    && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
 ### next ENTRYPOINT command supports development and should be overriden or disabled
@@ -45,6 +46,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get purge -y \
         pm-utils \
         xscreensaver* \
+    && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
 FROM stage-xfce as stage-vnc
@@ -53,7 +55,8 @@ FROM stage-xfce as stage-vnc
 ### installed into '/usr/share/usr/local/share/vnc'
 RUN apt-get update && apt-get install -y \
         wget \
-    && wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C / \
+        && wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C / \
+    && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
 FROM stage-vnc as stage-tini

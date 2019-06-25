@@ -6,6 +6,10 @@
 
 ***
 
+### Release 19.06.1
+
+`apt-get autoremove` added to all Dockerfiles
+
 ### Release 19.06-chromium
 
 #### accetto/xubuntu-vnc-chromium
