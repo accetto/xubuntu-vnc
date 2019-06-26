@@ -6,6 +6,12 @@
 
 ***
 
+### Release 19.06.1-node
+
+#### accetto/xubuntu-vnc-node
+
+Initial version is new.
+
 ### Release 19.06.1
 
 `apt-get autoremove` added to all Dockerfiles

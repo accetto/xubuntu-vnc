@@ -1,0 +1,26 @@
+# docker build -f Dockerfile.node.firefox -t accetto/xubuntu-vnc-node:firefox .
+# docker build -f Dockerfile.node.firefox --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:firefox-lab .
+
+ARG BASETAG=latest
+
+FROM accetto/xubuntu-vnc-firefox:${BASETAG} as stage-node
+
+USER 0
+
+### 'apt-get clean' runs automatically
+RUN apt-get update && apt-get install -y \
+        curl \
+        nodejs \
+        npm \
+    && apt-get -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
+EXPOSE 8080
+
+FROM stage-node as stage-final
+
+ENV REFRESHED_AT 2019-06-26
+
+WORKDIR /usr/src
+
+USER 1001
