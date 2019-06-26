@@ -44,6 +44,10 @@ Contains resources for building [accetto/xubuntu-vnc-chromium][this-docker-xubun
 
 Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-vnc-node] images withe the [Node.js][nodejs] JavaScript-based development platform.
 
+#### [xubuntu-vnc-javascript][this-github-xubuntu-vnc-javascript]
+
+Contains resources for building [accetto/xubuntu-vnc-javascript][this-docker-xubuntu-vnc-javascript] images with the [Node.js][nodejs] JavaScript-based development platform, [Visual Studio Code][vscode] developer editor, [TypeScript][typescript] programming language and [LoopBack][loopback] API framework.
+
 #### [utils][this-github-utils]
   
 Contains various utilities that make building the images more convenient.
@@ -97,6 +101,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-github-xubuntu-vnc-node]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-node/
 [this-docker-xubuntu-vnc-node]: https://hub.docker.com/r/accetto/xubuntu-vnc-node/
 
+[this-github-xubuntu-vnc-javascript]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-javascript/
+[this-docker-xubuntu-vnc-javascript]: https://hub.docker.com/r/accetto/xubuntu-vnc-javascript/
+
 [accetto-docker-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce
 [accetto-docker-ubuntu-vnc-xfce-firefox-default]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-default
 [accetto-docker-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus
@@ -108,7 +115,10 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [chromium]: https://www.chromium.org/Home
 [inkscape]: https://inkscape.org/
+[loopback]: https://loopback.io/
 [firefox]: https://www.mozilla.org
 [nodejs]: https://nodejs.org/en/
 [tigervnc]: http://tigervnc.org
+[typescript]: https://www.typescriptlang.org/
+[vscode]: https://code.visualstudio.com/
 [xfce]: http://www.xfce.org

@@ -6,6 +6,12 @@
 
 ***
 
+### Release 19.06.1-javascript
+
+#### accetto/xubuntu-vnc-javascript
+
+Initial version is new.
+
 ### Release 19.06.1-node
 
 #### accetto/xubuntu-vnc-node
