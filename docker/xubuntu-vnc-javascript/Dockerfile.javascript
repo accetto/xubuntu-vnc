@@ -18,6 +18,13 @@ RUN apt-get update && apt-get install -y \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+### Preconfigure Xfce desktop
+COPY [ "./src/home/Desktop", "./Desktop/" ]
+
+### Fix new launchers permissions
+RUN gtk-update-icon-cache -f /usr/share/icons/hicolor \
+    && /dockerstartup/set_user_permissions.sh $HOME
+
 FROM stage-vscode as stage-typescript
 
 RUN npm install -g typescript
@@ -30,7 +37,7 @@ EXPOSE 3000
 
 FROM stage-loopback as stage-final
 
-ENV REFRESHED_AT 2019-06-26
+ENV REFRESHED_AT 2019-06-27
 
 WORKDIR /usr/src
 

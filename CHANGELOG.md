@@ -6,6 +6,14 @@
 
 ***
 
+### Release 19.06.2
+
+- **accetto/xubuntu-vnc-node**
+  - README file updated - screenshot added
+- **accetto/xubuntu-vnc-javascript**
+  - README file updated - screenshot added
+  - desktop launcher **Visual Studio Code** added
+
 ### Release 19.06.1-javascript
 
 #### accetto/xubuntu-vnc-javascript
