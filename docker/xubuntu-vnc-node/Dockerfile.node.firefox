@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
         curl \
         nodejs \
         npm \
+    && mkdir ${HOME}/.npm \
+    && chmod g+w ${HOME}/.npm \
+    && chmod g+w /usr/local/lib \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
@@ -19,7 +22,9 @@ EXPOSE 8080
 
 FROM stage-node as stage-final
 
-ENV REFRESHED_AT 2019-06-26
+ENV REFRESHED_AT 2019-07-10
+
+RUN chmod g+w /usr/src
 
 WORKDIR /usr/src
 

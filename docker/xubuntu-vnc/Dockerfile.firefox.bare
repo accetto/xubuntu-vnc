@@ -99,10 +99,10 @@ SHELL ["/bin/bash", "-c"]
 COPY [ "./src/startup", "${STARTUPDIR}/" ]
 
 ### Preconfigure Xfce
-COPY [ "./src/home/Desktop", "./Desktop/" ]
-COPY [ "./src/home/config/xfce4/panel", "./.config/xfce4/panel/" ]
-COPY [ "./src/home/config/xfce4/terminal", "./.config/xfce4/terminal/" ]
-COPY [ "./src/home/config/xfce4/xfconf/xfce-perchannel-xml", "./.config/xfce4/xfconf/xfce-perchannel-xml/" ]
+COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
+COPY [ "./src/home/config/xfce4/panel", "${HOME}/.config/xfce4/panel/" ]
+COPY [ "./src/home/config/xfce4/terminal", "${HOME}/.config/xfce4/terminal/" ]
+COPY [ "./src/home/config/xfce4/xfconf/xfce-perchannel-xml", "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/" ]
 
 ### Create the default application user (non-root, but member of the group zero)
 ### and make '/etc/passwd' and '/etc/group' writable for the group.
@@ -127,7 +127,7 @@ RUN apt-get update && apt-get install -y \
 ### Switch to default application user (non-root)
 USER 1001
 
-ENV REFRESHED_AT 2019-06-25
+ENV REFRESHED_AT 2019-07-10
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'

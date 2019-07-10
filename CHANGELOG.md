@@ -6,6 +6,28 @@
 
 ***
 
+### Release 19.07
+
+- **accetto/xubuntu-vnc** refreshed
+  - Ubuntu version 18.04.2 LTS
+- **accetto/xubuntu-vnc-firefox** refreshed
+  - Firefox version 67.0.4
+- **accetto/xubuntu-vnc-chromium** refreshed
+  - Chromium Browser version 75.0.3770.90
+- **accetto/xubuntu-vnc-inkscape** refreshed
+  - Inkscape version 0.92.3
+- **accetto/xubuntu-vnc-node** modified and refreshed
+  - working folder **/usr/src** permissions fixed
+  - Node.js version 8.10.0
+  - npm version 3.5.2
+- **accetto/xubuntu-vnc-javascript** modified and refreshed
+  - working folder **/usr/src** permissions fixed (inherited from base)
+  - LoopBack removed from default Dockerfiles
+  - Visual Studio Code
+    - **bash** as pre-configured shell type
+    - version 1.36.1
+  - TypeScript version 3.5.3
+
 ### Release 19.06.2
 
 - **accetto/xubuntu-vnc-node**

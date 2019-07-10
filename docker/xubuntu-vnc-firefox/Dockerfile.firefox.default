@@ -17,16 +17,16 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 ### Preconfigure Xfce
-COPY [ "./src/firefox/home/Desktop", "./Desktop/" ]
-COPY [ "./src/firefox/home/config/xfce4/panel", "./.config/xfce4/panel/" ]
-COPY [ "./src/firefox/home/config/xfce4/xfconf/xfce-perchannel-xml", "./.config/xfce4/xfconf/xfce-perchannel-xml/" ]
+COPY [ "./src/firefox/home/Desktop", "${HOME}/Desktop/" ]
+COPY [ "./src/firefox/home/config/xfce4/panel", "${HOME}/.config/xfce4/panel/" ]
+COPY [ "./src/firefox/home/config/xfce4/xfconf/xfce-perchannel-xml", "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/" ]
 
 ### Fix new launchers permissions
-RUN /dockerstartup/set_user_permissions.sh $HOME
+RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-firefox as stage-final
 
-ENV REFRESHED_AT 2019-06-25
+ENV REFRESHED_AT 2019-07-10
 
 ### Switch to default application user (non-root)
 USER 1001

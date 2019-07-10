@@ -18,27 +18,25 @@ RUN apt-get update && apt-get install -y \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+### Preconfigure Visual Studio Code
+COPY [ "./src/home/config/Code/User", "${HOME}/.config/Code/User" ]
+
 ### Preconfigure Xfce desktop
-COPY [ "./src/home/Desktop", "./Desktop/" ]
+COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
 
 ### Fix new launchers permissions
 RUN gtk-update-icon-cache -f /usr/share/icons/hicolor \
-    && /dockerstartup/set_user_permissions.sh $HOME
+    && /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-vscode as stage-typescript
 
-RUN npm install -g typescript
+RUN npm install -g typescript \
+    && chmod -R g+w ${HOME}/.npm \
+    && chmod g+w /usr/local/lib \
+    && chmod -R g+w /usr/local/lib/node_modules
 
-FROM stage-typescript as stage-loopback
+FROM stage-typescript as stage-final
 
-RUN npm install -g @loopback/cli
-
-EXPOSE 3000
-
-FROM stage-loopback as stage-final
-
-ENV REFRESHED_AT 2019-06-27
-
-WORKDIR /usr/src
+ENV REFRESHED_AT 2019-07-10
 
 USER 1001

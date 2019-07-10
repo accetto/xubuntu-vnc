@@ -81,8 +81,8 @@ fi
 ### change vnc password
 echo -e "\n------------------ change VNC password  ------------------"
 ### first entry is control, second is view (if only one is valid for both)
-mkdir -p "$HOME"/.vnc
-PASSWD_PATH="$HOME/.vnc/passwd"
+mkdir -p "${HOME}"/.vnc
+PASSWD_PATH="${HOME}/.vnc/passwd"
 
 if [[ "$VNC_VIEW_ONLY" == "true" ]]; then
     echo "start VNC server in VIEW ONLY mode!"
@@ -112,9 +112,9 @@ echo -e "\n\n------------------ VNC environment started ------------------"
 echo -e "\nVNCSERVER started on DISPLAY= $DISPLAY \n\t=> connect via VNC viewer with $VNC_IP:$VNC_PORT"
 
 if [[ $DEBUG == true ]] || [[ $1 =~ -t|--tail-log ]]; then
-    echo -e "\n------------------ $HOME/.vnc/*$DISPLAY.log ------------------"
+    echo -e "\n------------------ ${HOME}/.vnc/*$DISPLAY.log ------------------"
     ### if option `-t` or `--tail-log` block the execution and tail the VNC log
-    tail -f "$STARTUPDIR"/*.log "$HOME"/.vnc/*$DISPLAY.log
+    tail -f "$STARTUPDIR"/*.log "${HOME}"/.vnc/*$DISPLAY.log
 fi
 
 if [ -z "$1" ] || [[ $1 =~ -w|--wait ]]; then

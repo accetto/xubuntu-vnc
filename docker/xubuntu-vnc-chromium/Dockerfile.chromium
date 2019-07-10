@@ -18,17 +18,17 @@ RUN apt-get update && apt-get install -y \
 
 ### Chromium browser requires some presets
 ### Note that 'no-sandbox' flag is required, but intended for development only
-RUN echo "CHROMIUM_FLAGS='--no-sandbox --disable-gpu --user-data-dir --window-size=${VNC_RESOLUTION%x*},${VNC_RESOLUTION#*x} --window-position=0,0'" > $HOME/.chromium-browser.init
+RUN echo "CHROMIUM_FLAGS='--no-sandbox --disable-gpu --user-data-dir --window-size=${VNC_RESOLUTION%x*},${VNC_RESOLUTION#*x} --window-position=0,0'" > ${HOME}/.chromium-browser.init
 
 ### Preconfigure Xfce desktop
-COPY [ "./src/home/Desktop", "./Desktop/" ]
+COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
 
 ### Fix new launchers permissions
-RUN /dockerstartup/set_user_permissions.sh $HOME
+RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-chromium as stage-final
 
-ENV REFRESHED_AT 2019-06-25
+ENV REFRESHED_AT 2019-07-10
 
 ### Switch to default application user (non-root)
 USER 1001
