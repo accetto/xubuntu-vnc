@@ -109,7 +109,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
-[loopback]: https://loopback.io/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [vscode]: https://code.visualstudio.com/

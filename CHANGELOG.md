@@ -17,12 +17,12 @@
 - **accetto/xubuntu-vnc-inkscape** refreshed
   - Inkscape version 0.92.3
 - **accetto/xubuntu-vnc-node** modified and refreshed
-  - working folder **/usr/src** permissions fixed
+  - folder permissions fixed
   - Node.js version 8.10.0
   - npm version 3.5.2
 - **accetto/xubuntu-vnc-javascript** modified and refreshed
-  - working folder **/usr/src** permissions fixed (inherited from base)
   - LoopBack removed from default Dockerfiles
+  - folder permissions fixed
   - Visual Studio Code
     - **bash** as pre-configured shell type
     - version 1.36.1

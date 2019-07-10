@@ -46,7 +46,7 @@ Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-v
 
 #### [xubuntu-vnc-javascript][this-github-xubuntu-vnc-javascript]
 
-Contains resources for building [accetto/xubuntu-vnc-javascript][this-docker-xubuntu-vnc-javascript] images with the [Node.js][nodejs] JavaScript-based development platform, [Visual Studio Code][vscode] developer editor, [TypeScript][typescript] programming language and [LoopBack][loopback] API framework.
+Contains resources for building [accetto/xubuntu-vnc-javascript][this-docker-xubuntu-vnc-javascript] images with the [Node.js][nodejs] JavaScript-based development platform, [Visual Studio Code][vscode] developer editor and [TypeScript][typescript] programming language. Additional modules can be easily installed by users.
 
 #### [utils][this-github-utils]
   
@@ -115,7 +115,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [chromium]: https://www.chromium.org/Home
 [inkscape]: https://inkscape.org/
-[loopback]: https://loopback.io/
 [firefox]: https://www.mozilla.org
 [nodejs]: https://nodejs.org/en/
 [tigervnc]: http://tigervnc.org
