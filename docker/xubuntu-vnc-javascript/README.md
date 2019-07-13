@@ -15,6 +15,7 @@ This image adds the following components:
 - [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js
 - [curl][curl] utility
+- [Git][git] distributed version control system
 - [Visual Studio Code][vscode] developer editor
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
@@ -54,6 +55,9 @@ The [Git Hub][this-github-xubuntu-vnc-javascript] repository contains several Do
 - `Dockerfile.javascript.chromium`  
   
   This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-node:chromium` tag and therefore includes also [Chromium][chromium] web browser
+
+- sample Dockerfiles with additional features, e.g.
+  - `Dockerfile.js.heroku` adding [heroku-cli][heroku-cli] and [PostgreSQL][postgresql]
 
 ### Ports
 
@@ -109,6 +113,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
+[git]: https://git-scm.com/
+[heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
+[postgresql]: https://www.postgresql.org/
 [vscode]: https://code.visualstudio.com/

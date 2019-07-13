@@ -1,9 +1,16 @@
 # docker build -f Dockerfile.node.chromium -t accetto/xubuntu-vnc-node:chromium .
+# docker build -f Dockerfile.node.chromium --build-arg ARG_EXPOSED_PORT=5000 -t accetto/xubuntu-vnc-node:chromium-5000 .
 # docker build -f Dockerfile.node.chromium --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:chromium-lab .
 
 ARG BASETAG=latest
 
 FROM accetto/xubuntu-vnc-chromium:${BASETAG} as stage-node
+
+### Arguments can be provided during build
+ARG ARG_EXPOSED_PORT
+
+ENV \
+    EXPOSED_PORT=${ARG_EXPOSED_PORT:-8080}
 
 USER 0
 
@@ -14,18 +21,17 @@ RUN apt-get update && apt-get install -y \
         npm \
     && mkdir ${HOME}/.npm \
     && chmod g+w ${HOME}/.npm \
-    && chmod g+w /usr/local/lib \
+        /usr/local/lib \
+        /usr/src \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 8080
+WORKDIR /usr/src
+
+EXPOSE ${EXPOSED_PORT}
 
 FROM stage-node as stage-final
 
-ENV REFRESHED_AT 2019-07-10
-
-RUN chmod g+w /usr/src
-
-WORKDIR /usr/src
+ENV REFRESHED_AT 2019-07-13
 
 USER 1001

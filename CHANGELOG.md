@@ -6,6 +6,18 @@
 
 ***
 
+### Release 19.07.1
+
+- **accetto/xubuntu-vnc-node**
+  - build argument **ARG_EXPOSED_PORT** allows changing the default exposed port (instead of **8080**)
+- **accetto/xubuntu-vnc-firefox**
+  - sample `Dockerfile.firefox.myown` shows how to build images with own Firefox preferences in few seconds
+  - Firefox version kept on **67.0.4** because **68.0** crashes a lot
+- **accetto/xubuntu-vnc-javascript**
+  - **Git** added
+  - sample Dockerfiles added
+    - `Dockerfile.js.heroku` adds **heroku-cli** and **PostgreSQL**
+
 ### Release 19.07
 
 - **accetto/xubuntu-vnc** refreshed

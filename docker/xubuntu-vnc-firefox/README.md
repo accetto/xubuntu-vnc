@@ -46,6 +46,8 @@ The [Git Hub][this-github-xubuntu-vnc-firefox] repository contains several Docke
   
   This Dockerfile is for building the `default` image tag, which is also based on the `accetto/xubuntu-vnc:latest`, but it does not include the **plus** features.
 
+- `Dockerfile.firefox.myown` can be used for building images with own Firefox preferences
+
 ### Ports
 
 The image exposes only the TCP port **5901** and therefore the containers consume only one TCP port (per container) on the host computer.
@@ -76,7 +78,7 @@ To make it even more convenient, there are also desktop launchers for the utilit
 
 Recommended procedure for taking advantage of the **plus** features is:
 
-- Start the **Firefox Profile Manager** using the desktop launcher **FF Profile Manager**. Create a new Firefox profile if there is none or you want one more. Use the button **Create Profile...** for it.  
+- Start the **Firefox Profile Manager** using the desktop launcher **FF Profile Manager**. Create a new Firefox profile if there is none or you want to add one more. Wait until the profile is created and then start Firefox with it. Starting Firefox is required to create the actual profile content.
   
   **Hint**: You can also check the **Work offline** check-box before creating the profile.
 
@@ -90,11 +92,9 @@ Recommended procedure for taking advantage of the **plus** features is:
 
 - Start the helper utility using the desktop launcher **Copy FF Preferences**. The utility will allow you to copy the `user.js` file to any of the existing Firefox profiles.  
   
-  Note that the actual profile content is created only after starting Firefox, but the `user.js` file can be copied also before it.
-
   **Hint**: You preferences will be enforced until you delete the `user.js` file from the Firefox profile folder.
 
-It is also very easy to build customized images with pre-filled `user.js` files.
+It is also very easy to build customized images with pre-filled `user.js` files. The provided `Dockerfile.firefox.myown` show how to do it. The build will take just seconds.
 
 ## Issues
 

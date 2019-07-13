@@ -46,7 +46,9 @@ Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-v
 
 #### [xubuntu-vnc-javascript][this-github-xubuntu-vnc-javascript]
 
-Contains resources for building [accetto/xubuntu-vnc-javascript][this-docker-xubuntu-vnc-javascript] images with the [Node.js][nodejs] JavaScript-based development platform, [Visual Studio Code][vscode] developer editor and [TypeScript][typescript] programming language. Additional modules can be easily installed by users.
+Contains resources for building [accetto/xubuntu-vnc-javascript][this-docker-xubuntu-vnc-javascript] images with JavaScript-based development platform [Node.js][nodejs], [Visual Studio Code][vscode] developer editor, [TypeScript][typescript] programming language and distributed version control system [Git][git]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
+
+This folder contains also additional sample Dockerfiles with more features, like for example [heroku-cli][heroku-cli], [PostgreSQL][postgresql] etc.
 
 #### [utils][this-github-utils]
   
@@ -116,7 +118,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 [chromium]: https://www.chromium.org/Home
 [inkscape]: https://inkscape.org/
 [firefox]: https://www.mozilla.org
+[git]: https://git-scm.com/
+[heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
 [nodejs]: https://nodejs.org/en/
+[npm]: https://www.npmjs.com/
+[postgresql]: https://www.postgresql.org/
 [tigervnc]: http://tigervnc.org
 [typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/
