@@ -6,33 +6,49 @@
 
 ***
 
+### Release 19.07.2
+
+- **xubuntu-vnc-firefox**
+  - alternative explicit Firefox version installation added
+  - Firefox version kept on **67.0.4** because **68.0** crashes a lot
+- **xubuntu-vnc-node**
+  - only VNC port **5901** is exposed by default
+  - build argument **ARG_EXPOSED_PORT** removed
+  - README file updated
+- **xubuntu-vnc-javascript**
+  - only VNC port **5901** is exposed by default (inherited from the base)
+  - resources for **Heroku** and **PostgreSQL** moved out
+  - README file updated
+- **xubuntu-vnc-heroku**
+  - folder added as new
+
 ### Release 19.07.1
 
-- **accetto/xubuntu-vnc-node**
+- **xubuntu-vnc-node**
   - build argument **ARG_EXPOSED_PORT** allows changing the default exposed port (instead of **8080**)
-- **accetto/xubuntu-vnc-firefox**
+- **xubuntu-vnc-firefox**
   - sample `Dockerfile.firefox.myown` shows how to build images with own Firefox preferences in few seconds
   - Firefox version kept on **67.0.4** because **68.0** crashes a lot
-- **accetto/xubuntu-vnc-javascript**
+- **xubuntu-vnc-javascript**
   - **Git** added
   - sample Dockerfiles added
     - `Dockerfile.js.heroku` adds **heroku-cli** and **PostgreSQL**
 
 ### Release 19.07
 
-- **accetto/xubuntu-vnc** refreshed
+- **xubuntu-vnc** refreshed
   - Ubuntu version 18.04.2 LTS
-- **accetto/xubuntu-vnc-firefox** refreshed
+- **xubuntu-vnc-firefox** refreshed
   - Firefox version 67.0.4
-- **accetto/xubuntu-vnc-chromium** refreshed
+- **xubuntu-vnc-chromium** refreshed
   - Chromium Browser version 75.0.3770.90
-- **accetto/xubuntu-vnc-inkscape** refreshed
+- **xubuntu-vnc-inkscape** refreshed
   - Inkscape version 0.92.3
-- **accetto/xubuntu-vnc-node** modified and refreshed
+- **xubuntu-vnc-node** modified and refreshed
   - folder permissions fixed
   - Node.js version 8.10.0
   - npm version 3.5.2
-- **accetto/xubuntu-vnc-javascript** modified and refreshed
+- **xubuntu-vnc-javascript** modified and refreshed
   - LoopBack removed from default Dockerfiles
   - folder permissions fixed
   - Visual Studio Code
@@ -42,9 +58,9 @@
 
 ### Release 19.06.2
 
-- **accetto/xubuntu-vnc-node**
+- **xubuntu-vnc-node**
   - README file updated - screenshot added
-- **accetto/xubuntu-vnc-javascript**
+- **xubuntu-vnc-javascript**
   - README file updated - screenshot added
   - desktop launcher **Visual Studio Code** added
 

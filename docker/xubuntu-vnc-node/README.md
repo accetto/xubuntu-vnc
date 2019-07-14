@@ -6,9 +6,9 @@
 
 ***
 
-This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and [Node.js][nodejs] JavaScript-based development platform.
+This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and JavaScript-based development platform [Node.js][nodejs].
 
-The images are based on the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] and inherit all the components and features. Therefore not the whole description will be repeated here.
+The images are based on the base images [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc], [accetto/xubuntu-vnc-firefox][accetto-docker-xubuntu-vnc-firefox] and [accetto/xubuntu-vnc-chromium][accetto-docker-xubuntu-vnc-chromium] and inherit all their components and features. Therefore not the whole description will be repeated here.
 
 This image adds the following components:
 
@@ -58,11 +58,29 @@ The [Git Hub][this-github-xubuntu-vnc-node] repository contains several Dockerfi
 
 The image exposes only the TCP port **5901** and therefore the containers consume only one TCP port (per container) on the host computer.
 
+Other ports can be easily exposed using the `docker run` arguments. For example, the following container will expose its internal port **5000** and bind it to the next free TCP port on the host computer:
+
+```shell
+docker run -itP --rm -p 5000 accetto/xubuntu-vnc-node
+```
+
 ### Volumes
 
-The containers do not create or use any external volumes by default. However, the following folders make good mounting points: `/home/headless/Documents/`, `/home/headless/Downloads/`, `/home/headless/Pictures/`, `/home/headless/Public/`
+The containers do not create or use any external volumes by default. However, the following folders make good mounting points: `/home/headless/Documents/`, `/home/headless/Downloads/`, `/home/headless/Pictures/`, `/home/headless/Public/`.
 
 Both **named volumes** and **bind mounts** can be used. More about volumes can be found in the [Docker documentation][docker-doc] (e.g. [Manage data in Docker][docker-doc-managing-data]).
+
+The folder `/usr/src` is intended as the working folder for development and it should be mounted to an external volume or folder if you want to keep the projects outside the container.
+
+For example, the following container would use the local folder **my_apps**:
+
+```shell
+docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-node
+
+# or using the newer syntax
+
+docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-node
+```
 
 ### Container user
 
@@ -96,6 +114,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-node/xubuntu-vnc-node.jpg
 
 [accetto-docker-xubuntu-vnc]: https://hub.docker.com/r/accetto/xubuntu-vnc/
+[accetto-docker-xubuntu-vnc-firefox]: https://hub.docker.com/r/accetto/xubuntu-vnc-firefox
+[accetto-docker-xubuntu-vnc-chromium]: https://hub.docker.com/r/accetto/xubuntu-vnc-chromium
 
 [docker-doc]: https://docs.docker.com/
 [docker-doc-managing-data]: https://docs.docker.com/storage/
