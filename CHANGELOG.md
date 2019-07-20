@@ -9,9 +9,10 @@
 ### Release 19.07.3
 
 - **xubuntu-vnc-node**
-  - **git** added
-  - **Node.js** version **10.6.0** (explicitly)
-  - **npm** version **6.9.0**
+  - Dockerfile redesigned
+    - **git** added
+    - explicit **Node.js** version **10.6.0**
+    - **npm** version **6.9.0** (comes with node)
 
 ### Release 19.07.2
 
