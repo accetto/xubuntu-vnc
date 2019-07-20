@@ -6,6 +6,13 @@
 
 ***
 
+### Release 19.07.3
+
+- **xubuntu-vnc-node**
+  - **git** added
+  - **Node.js** version **10.6.0** (explicitly)
+  - **npm** version **6.9.0**
+
 ### Release 19.07.2
 
 - **xubuntu-vnc-firefox**

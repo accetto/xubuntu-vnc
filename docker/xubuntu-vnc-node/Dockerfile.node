@@ -1,28 +1,63 @@
 # docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node .
+# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dev .
 # docker build -f Dockerfile.node --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:lab .
 
 ARG BASETAG=latest
 
-FROM accetto/xubuntu-vnc:${BASETAG} as stage-node
+FROM accetto/xubuntu-vnc:${BASETAG} as stage-utils
 
 USER 0
 
 ### 'apt-get clean' runs automatically
 RUN apt-get update && apt-get install -y \
         curl \
-        nodejs \
-        npm \
-    && mkdir ${HOME}/.npm \
-    && chmod g+w ${HOME}/.npm \
-        /usr/local/lib \
-        /usr/src \
+        git \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /usr/src
+FROM stage-utils as stage-node
+
+### 'apt-get clean' runs automatically
+# RUN \
+#     chmod g+w /usr/local/lib \
+#     && apt-get update && apt-get install -y \
+#         nodejs \
+#         npm \
+#     && apt-get -y autoremove \
+#     && rm -rf /var/lib/apt/lists/*
+
+### alternatively install an explicit node version
+ENV \
+    NODE_VERSION=v10.16.0 \
+    NODE_DISTRO=linux-x64 \
+    NODE_PATH=/usr/local/lib/nodejs \
+    NPM_CONFIG_PREFIX=${HOME}/.npm-global
+ENV \
+    PATH=${NPM_CONFIG_PREFIX}/bin:/usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin:${PATH}
+    
+RUN \
+    mkdir -p \
+        ${NPM_CONFIG_PREFIX} \
+        ${NODE_PATH} \
+    && chmod g+w \
+        ${NPM_CONFIG_PREFIX} \
+        /usr/local/lib \
+    && wget -qO- https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-${NODE_DISTRO}.tar.xz \
+        | tar -xJv -C /usr/local/lib/nodejs \
+    && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin/node /usr/bin/node \
+    && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}O/bin/npm /usr/bin/npm \
+    && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin/npx /usr/bin/npx \
+    && npm config set prefix ${NPM_CONFIG_PREFIX}
+
+### Fix permissions
+RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-node as stage-final
 
-ENV REFRESHED_AT 2019-07-14
+RUN chmod g+w /usr/src
+
+WORKDIR /usr/src
+
+ENV REFRESHED_AT 2019-07-20
 
 USER 1001
