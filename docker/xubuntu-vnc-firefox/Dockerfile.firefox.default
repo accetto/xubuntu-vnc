@@ -16,11 +16,16 @@ USER 0
 #     && apt-get -y autoremove \
 #     && rm -rf /var/lib/apt/lists/*
 
-### ALternatively install an explicit Firefox version
-RUN mkdir -p /usr/lib/firefox \
-    && wget -qO- http://releases.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2 \
+### Alternatively install an explicit Firefox version
+### http://releases.mozilla.org/pub/firefox/releases/67.0.4/linux-x86_64/en-US/firefox-67.0.4.tar.bz2
+ENV \
+    FIREFOX_VERSION=67.0.4 \
+    FIREFOX_DISTRO=linux-x86_64 \
+    FIREFOX_PATH=/usr/lib/firefox
+RUN mkdir -p ${FIREFOX_PATH} \
+    && wget -qO- http://releases.mozilla.org/pub/firefox/releases/${FIREFOX_VERSION}/${FIREFOX_DISTRO}/en-US/firefox-${FIREFOX_VERSION}.tar.bz2 \
         | tar xvj -C /usr/lib/ \
-    && ln -s /usr/lib/firefox/firefox /usr/bin/firefox
+    && ln -s ${FIREFOX_PATH}/firefox /usr/bin/firefox
 
 ### Preconfigure Xfce
 COPY [ "./src/firefox/home/Desktop", "${HOME}/Desktop/" ]
@@ -32,7 +37,7 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-firefox as stage-final
 
-ENV REFRESHED_AT 2019-07-17
+ENV REFRESHED_AT 2019-07-20
 
 ### Switch to default application user (non-root)
 USER 1001
