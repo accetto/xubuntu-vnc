@@ -1,5 +1,5 @@
 # docker build -f Dockerfile.node.chromium -t accetto/xubuntu-vnc-node:chromium .
-# docker build -f Dockerfile.node.chromium -t accetto/xubuntu-vnc-node:dev-chromium .
+# docker build -f Dockerfile.node.chromium -t accetto/xubuntu-vnc-node:dfw-chromium .
 # docker build -f Dockerfile.node.chromium --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:chromium-lab .
 
 ARG BASETAG=latest

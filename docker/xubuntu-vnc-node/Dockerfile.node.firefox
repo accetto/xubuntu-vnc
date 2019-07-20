@@ -1,5 +1,5 @@
 # docker build -f Dockerfile.node.firefox -t accetto/xubuntu-vnc-node:firefox .
-# docker build -f Dockerfile.node.firefox -t accetto/xubuntu-vnc-node:dev-firefox .
+# docker build -f Dockerfile.node.firefox -t accetto/xubuntu-vnc-node:dfw-firefox .
 # docker build -f Dockerfile.node.firefox --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:firefox-lab .
 
 ARG BASETAG=latest

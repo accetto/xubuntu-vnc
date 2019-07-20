@@ -1,5 +1,5 @@
 # docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node .
-# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dev .
+# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dfw .
 # docker build -f Dockerfile.node --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:lab .
 
 ARG BASETAG=latest

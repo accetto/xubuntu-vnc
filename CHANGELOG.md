@@ -13,6 +13,8 @@
     - **git** added
     - explicit **Node.js** version **10.6.0**
     - **npm** version **6.9.0** (comes with node)
+- **xubuntu-vnc-firefox**
+  - still kept on version **67.0.4** because also **68.0.1** crashes a lot (Gah. Your tab just crashed.)
 
 ### Release 19.07.2
 
