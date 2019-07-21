@@ -135,5 +135,5 @@ Credit goes to all the countless people and companies, who contribute to open so
 [git]: https://git-scm.com/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
-[vscode]: https://code.visualstudio.com/
 [typescript]: https://www.typescriptlang.org/
+[vscode]: https://code.visualstudio.com/
