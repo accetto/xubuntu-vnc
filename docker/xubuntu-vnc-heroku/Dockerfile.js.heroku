@@ -1,11 +1,12 @@
-# docker build -f Dockerfile.js.heroku -t accetto/xubuntu-vnc-javascript-heroku .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/xubuntu-vnc-javascript-heroku:firefox .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/xubuntu-vnc-javascript-heroku:chromium .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/xubuntu-vnc-javascript-heroku:lab .
+# docker build -f Dockerfile.js.heroku -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql .
+# docker build -f Dockerfile.js.heroku -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:dfw .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:firefox .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:chromium .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:lab .
 
 ARG BASETAG=latest
 
-FROM accetto/xubuntu-vnc-javascript:${BASETAG} as stage-heroku
+FROM accetto/xubuntu-vnc-typescript:${BASETAG} as stage-heroku
 
 USER 0
 
@@ -25,13 +26,16 @@ RUN apt-get update && apt-get install -y \
 # RUN \
 #     wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O- | apt-key add - \
 #         && echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/postgresql.list \
-#         && apt-get update \
-#         && apt-get install -y postgresql-10 \
+#         && apt-get update && apt-get install -y \
+#             postgresql-10 \
 #     && apt-get -y autoremove \
 #     && rm -rf /var/lib/apt/lists/
 
+### Fix permissions
+RUN /dockerstartup/set_user_permissions.sh ${HOME}
+
 FROM stage-postgresql as stage-final
 
-ENV REFRESHED_AT 2019-07-13
+ENV REFRESHED_AT 2019-07-21
 
 USER 1001

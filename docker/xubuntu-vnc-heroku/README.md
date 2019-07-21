@@ -8,7 +8,7 @@
 
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use, JavaScript development platform, [Heroku-CLI][heroku-cli] toolkit and [PostgreSQL][postgresql] database.
 
-The images are based on the base image [accetto/xubuntu-vnc-javascript][accetto-docker-xubuntu-vnc-javascript] and inherit all the components and features. Therefore not the whole description will be repeated here. The base image tags `*:firefox` and `*:chromium` are also reflected.
+The images are based on the base image [accetto/xubuntu-vnc-typescript][accetto-docker-xubuntu-vnc-typescript] and inherit all the components and features. Therefore not the whole description will be repeated here. The base image tags `*:firefox` and `*:chromium` are also reflected.
 
 This image inherits the components
 
@@ -17,6 +17,7 @@ This image inherits the components
 - [curl][curl] utility
 - [Git][git] distributed version control system
 - [Visual Studio Code][vscode] developer editor
+- [TypeScript][typescript] programming language
 
 and adds the following ones:
 
@@ -33,15 +34,15 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc-javascript:latest`  
+- `latest` is based on `accetto/xubuntu-vnc-typescript:latest`  
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-js-heroku-postgresql:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-js-heroku-postgresql:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:latest "Get your own image badge on microbadger.com")
 
-- `firefox` is based on `accetto/xubuntu-vnc-javascript:firefox` and includes also [Firefox][firefox] web browser  
+- `firefox` is based on `accetto/xubuntu-vnc-typescript:firefox` and includes also [Firefox][firefox] web browser  
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-js-heroku-postgresql:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-js-heroku-postgresql:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:firefox "Get your own image badge on microbadger.com")
 
-- `chromium` is based on `accetto/xubuntu-vnc-javascript:chromium` and includes also [Chromium][chromium] web browser  
+- `chromium` is based on `accetto/xubuntu-vnc-typescript:chromium` and includes also [Chromium][chromium] web browser  
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-js-heroku-postgresql:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:chromium "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-js-heroku-postgresql:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:chromium "Get your own image badge on microbadger.com")
 
@@ -51,17 +52,17 @@ The [Git Hub][this-github-xubuntu-vnc-heroku] repository contains several Docker
 
 - `Dockerfile.js.heroku`  
   
-  This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-javascript:latest` tag by default.
+  This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-typescript:latest` tag by default.
 
-  However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-javascript:lab`.
+  However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-typescript:lab`.
 
 - `Dockerfile.js.heroku.firefox`  
   
-  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-javascript:firefox` tag and therefore includes also [Firefox][firefox] web browser and the **plus** features
+  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-typescript:firefox` tag and therefore includes also [Firefox][firefox] web browser and the **plus** features
 
 - `Dockerfile.js.heroku.chromium`  
   
-  This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-javascript:chromium` tag and therefore includes also [Chromium][chromium] web browser
+  This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-typescript:chromium` tag and therefore includes also [Chromium][chromium] web browser
 
 ### Ports
 
@@ -122,7 +123,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-heroku/xubuntu-vnc-heroku.jpg
 
-[accetto-docker-xubuntu-vnc-javascript]: https://hub.docker.com/r/accetto/xubuntu-vnc-javascript
+[accetto-docker-xubuntu-vnc-typescript]: https://hub.docker.com/r/accetto/xubuntu-vnc-typescript
 
 [docker-doc]: https://docs.docker.com/
 [docker-doc-managing-data]: https://docs.docker.com/storage/
@@ -141,4 +142,5 @@ Credit goes to all the countless people and companies, who contribute to open so
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [postgresql]: https://www.postgresql.org/
+[typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/

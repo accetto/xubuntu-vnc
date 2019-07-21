@@ -1,12 +1,12 @@
-# Headless Ubuntu/Xfce container with VNC for JavaScript development
+# Headless Ubuntu/Xfce container with VNC for TypeScript development
 
-## accetto/xubuntu-vnc-javascript
+## accetto/xubuntu-vnc-typescript
 
 [Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
 
 ***
 
-This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and JavaScript development platform.
+This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and with JavaScript development platform for [TypeScript][typescript] development.
 
 The images are based on the base image [accetto/xubuntu-vnc-node][accetto-docker-xubuntu-vnc-node] and inherit all the components and features. Therefore not the whole description will be repeated here. The base image tags `*:firefox` and `*:chromium` are also reflected.
 
@@ -15,11 +15,12 @@ This image inherits the components
 - [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js
 - [curl][curl] utility
+- [Git][git] distributed version control system
 
 and adds the following ones:
 
-- [Git][git] distributed version control system
 - [Visual Studio Code][vscode] developer editor
+- [TypeScript][typescript] programming language
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -31,31 +32,31 @@ The following image tags are regularly maintained and rebuilt:
 
 - `latest` is based on `accetto/xubuntu-vnc-node:latest`  
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-javascript:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-javascript:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-javascript:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-javascript:latest "Get your own image badge on microbadger.com")
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-typescript:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-typescript:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-typescript:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-typescript:latest "Get your own image badge on microbadger.com")
 
 - `firefox` is based on `accetto/xubuntu-vnc-node:firefox` and includes also [Firefox][firefox] web browser  
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-javascript:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-javascript:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-javascript:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-javascript:firefox "Get your own image badge on microbadger.com")
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-typescript:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-typescript:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-typescript:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-typescript:firefox "Get your own image badge on microbadger.com")
 
 - `chromium` is based on `accetto/xubuntu-vnc-node:chromium` and includes also [Chromium][chromium] web browser  
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-javascript:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-javascript:chromium "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-javascript:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-javascript:chromium "Get your own image badge on microbadger.com")
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-typescript:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-typescript:chromium "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-typescript:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-typescript:chromium "Get your own image badge on microbadger.com")
 
 ### Dockerfiles
 
-The [Git Hub][this-github-xubuntu-vnc-javascript] repository contains several Dockerfiles that can be used to build the images.
+The [Git Hub][this-github-xubuntu-vnc-typescript] repository contains several Dockerfiles that can be used to build the images.
 
-- `Dockerfile.javascript`  
+- `Dockerfile.typescript`  
   
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-node:latest` tag by default.
 
   However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-node:lab`.
 
-- `Dockerfile.javascript.firefox`  
+- `Dockerfile.typescript.firefox`  
   
   This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-node:firefox` tag and therefore includes also [Firefox][firefox] web browser and the **plus** features
 
-- `Dockerfile.javascript.chromium`  
+- `Dockerfile.typescript.chromium`  
   
   This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-node:chromium` tag and therefore includes also [Chromium][chromium] web browser
 
@@ -107,8 +108,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 ***
 
-[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-javascript
-[this-github-xubuntu-vnc-javascript]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-javascript
+[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-typescript
+[this-github-xubuntu-vnc-typescript]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-typescript
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
@@ -116,7 +117,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
-[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-javascript/xubuntu-vnc-javascript.jpg
+[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-typescript/xubuntu-vnc-typescript.jpg
 
 [accetto-docker-xubuntu-vnc-node]: https://hub.docker.com/r/accetto/xubuntu-vnc-node
 
@@ -134,4 +135,5 @@ Credit goes to all the countless people and companies, who contribute to open so
 [git]: https://git-scm.com/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
+[typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/

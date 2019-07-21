@@ -15,6 +15,7 @@ This image adds the following components:
 - [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js
 - [curl][curl] utility
+- [Git][git] distributed version control system
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -128,6 +129,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
+[git]: https://git-scm.com/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [vscode]: https://code.visualstudio.com/

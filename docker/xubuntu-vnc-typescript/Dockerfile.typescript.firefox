@@ -1,0 +1,43 @@
+# docker build -f Dockerfile.typescript.firefox -t accetto/xubuntu-vnc-typescript:firefox .
+# docker build -f Dockerfile.typescript.firefox -t accetto/xubuntu-vnc-typescript:dev-firefox .
+# docker build -f Dockerfile.typescript.firefox --build-arg BASETAG=lab -t accetto/xubuntu-vnc-typescript:firefox-lab .
+
+ARG BASETAG=firefox
+
+FROM accetto/xubuntu-vnc-node:${BASETAG} as stage-vscode
+
+USER 0
+
+### 'apt-get clean' runs automatically
+RUN \
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
+    && install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ \
+    && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list' \
+    && apt-get update && apt-get install -y \
+        apt-transport-https \
+        code \
+    && apt-get -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
+### Preconfigure Visual Studio Code
+COPY [ "./src/home/config/Code/User", "${HOME}/.config/Code/User" ]
+
+### Preconfigure Xfce desktop
+COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
+
+### Fix new launchers permissions
+RUN gtk-update-icon-cache -f /usr/share/icons/hicolor \
+    && /dockerstartup/set_user_permissions.sh ${HOME}
+
+FROM stage-vscode as stage-typescript
+
+RUN npm install -g typescript
+
+### Fix permissions
+RUN /dockerstartup/set_user_permissions.sh ${HOME}
+
+FROM stage-typescript as stage-final
+
+ENV REFRESHED_AT 2019-07-21
+
+USER 1001
