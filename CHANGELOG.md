@@ -20,6 +20,9 @@
   - Dockerfile redesigned
     - **curl** and **git** removed (they are inherited from the base now)
     - newer **Node.js** and **npm** (inherited from the base)
+- **xubuntu-vnc-javascript-heroku**
+  - based on the renamed **xubuntu-vnc-typescript** now
+  - newer **Node.js** and **npm** (inherited from the base)
 
 ### Release 19.07.2
 
