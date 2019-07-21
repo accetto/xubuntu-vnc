@@ -1,0 +1,21 @@
+# docker build -f Dockerfile.angular -t accetto/xubuntu-vnc-angular .
+# docker build -f Dockerfile.angular -t accetto/xubuntu-vnc-angular:dfw .
+
+ARG BASETAG=latest
+
+FROM accetto/xubuntu-vnc-typescript:${BASETAG} as stage-angular
+
+USER 0
+
+ENV NG_CLI_ANALYTICS=false
+
+RUN npm install -g @angular/cli
+
+### Fix permissions
+RUN /dockerstartup/set_user_permissions.sh ${HOME}
+
+FROM stage-angular as stage-final
+
+ENV REFRESHED_AT 2019-07-21
+
+USER 1001
