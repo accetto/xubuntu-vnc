@@ -44,13 +44,13 @@ Contains resources for building [accetto/xubuntu-vnc-chromium][this-docker-xubun
 
 Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-vnc-node] images with JavaScript-based development platform. It adds [Node.js][nodejs] platform, [npm][npm] package manager and distributed version control system [Git][git]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
-#### [xubuntu-vnc-javascript][this-github-xubuntu-vnc-javascript]
+#### [xubuntu-vnc-typescript][this-github-xubuntu-vnc-typescript]
 
-Contains resources for building [accetto/xubuntu-vnc-javascript][this-docker-xubuntu-vnc-javascript] images with JavaScript-based development platform. It adds [Visual Studio Code][vscode] developer editor and [TypeScript][typescript] programming language.
+Contains resources for building [accetto/xubuntu-vnc-typescript][this-docker-xubuntu-vnc-typescript] images with JavaScript-based development platform. It adds [Visual Studio Code][vscode] developer editor and [TypeScript][typescript] programming language. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
 #### [xubuntu-vnc-heroku][this-github-xubuntu-vnc-heroku]
 
-Contains resources for building [accetto/xubuntu-vnc-js-heroku-postgresql][this-docker-xubuntu-vnc-js-heroku-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql].
+Contains resources for building [accetto/xubuntu-vnc-js-heroku-postgresql][this-docker-xubuntu-vnc-js-heroku-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql] for JavaScript-based development with [Node.js][nodejs], [npm][npm], [Git][git], [Visual Studio Code][vscode] and [TypeScript][typescript]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
 #### [utils][this-github-utils]
   
@@ -105,8 +105,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-github-xubuntu-vnc-node]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-node/
 [this-docker-xubuntu-vnc-node]: https://hub.docker.com/r/accetto/xubuntu-vnc-node/
 
-[this-github-xubuntu-vnc-javascript]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-javascript/
-[this-docker-xubuntu-vnc-javascript]: https://hub.docker.com/r/accetto/xubuntu-vnc-javascript/
+[this-github-xubuntu-vnc-typescript]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-typescript/
+[this-docker-xubuntu-vnc-typescript]: https://hub.docker.com/r/accetto/xubuntu-vnc-typescript/
 
 [this-github-xubuntu-vnc-heroku]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-heroku/
 [this-docker-xubuntu-vnc-js-heroku-postgresql]: https://hub.docker.com/r/accetto/xubuntu-vnc-js-heroku-postgresql
