@@ -6,6 +6,27 @@
 
 ***
 
+### Release 19.07.4
+
+- **xubuntu-vnc**
+  - **zip** and **unzip** utilities added
+  - terminal emulator set explicitly to **xfce4-terminal**
+- **xubuntu-vnc-firefox**
+  - **zip** and **unzip** utilities added (inherited from the base)
+  - [Issue #1](https://github.com/accetto/xubuntu-vnc/issues/1): fixed by setting the default web browser explicitly
+  - [Issue #3](https://github.com/accetto/xubuntu-vnc/issues/3): mitigated by keeping the previous version **67.0.4** which does not crash
+  - [Issue #4](https://github.com/accetto/xubuntu-vnc/issues/4): Wiki page [Firefox version compatibility
+](https://github.com/accetto/xubuntu-vnc/wiki/Firefox-version-compatibility) explains the fix
+- **xubuntu-vnc-chromium**
+  - **zip** and **unzip** utilities added (inherited from the base)
+  - [Issue #1](https://github.com/accetto/xubuntu-vnc/issues/1): fixed by setting the default web browser explicitly
+- **xubuntu-vnc-node**, **xubuntu-vnc-typescript**, **xubuntu-vnc-javascript-heroku**, **xubuntu-vnc-inkscape**
+  - **zip** and **unzip** utilities added (inherited from the base)
+  - [Issue #1](https://github.com/accetto/xubuntu-vnc/issues/1) (tags with web browsers only): fixed by setting the default web browser explicitly (inherited from the base)
+  - [Issue #3](https://github.com/accetto/xubuntu-vnc/issues/3) (**firefox** tags only): mitigated by keeping the previous version **67.0.4** which does not crash (inherited from the base)
+  - [Issue #4](https://github.com/accetto/xubuntu-vnc/issues/4) (**firefox** tags only): Wiki page [Firefox version compatibility
+](https://github.com/accetto/xubuntu-vnc/wiki/Firefox-version-compatibility) explains the fix (inherited from the base)
+
 ### Release 19.07.3
 
 - **xubuntu-vnc-node**

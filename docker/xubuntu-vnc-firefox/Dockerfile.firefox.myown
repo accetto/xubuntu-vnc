@@ -6,7 +6,7 @@ FROM accetto/xubuntu-vnc-firefox:${BASETAG}
 
 USER 0
 
-COPY [ "./src/firefox.plus/user.js", "${HOME}/firefox.plus/user.js" ]
+COPY [ "./src/firefox.plus/resources/user.js", "${HOME}/firefox.plus/user.js" ]
 
 RUN ${STARTUPDIR}/set_user_permissions.sh "${HOME}/firefox.plus"
 

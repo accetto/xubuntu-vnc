@@ -22,13 +22,14 @@ RUN echo "CHROMIUM_FLAGS='--no-sandbox --disable-gpu --user-data-dir --window-si
 
 ### Preconfigure Xfce desktop
 COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
+COPY [ "./src/home/config/xfce4", "${HOME}/.config/xfce4/" ]
 
 ### Fix new launchers permissions
 RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-chromium as stage-final
 
-ENV REFRESHED_AT 2019-07-10
+ENV REFRESHED_AT 2019-07-26
 
 ### Switch to default application user (non-root)
 USER 1001
