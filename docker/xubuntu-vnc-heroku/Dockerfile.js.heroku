@@ -1,8 +1,9 @@
-# docker build -f Dockerfile.js.heroku -t accetto/xubuntu-vnc-javascript-heroku .
-# docker build -f Dockerfile.js.heroku -t accetto/xubuntu-vnc-javascript-heroku:dev .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/xubuntu-vnc-javascript-heroku:firefox .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/xubuntu-vnc-javascript-heroku:chromium .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/xubuntu-vnc-javascript-heroku:lab .
+# docker build -f Dockerfile.js.heroku -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql .
+# docker build -f Dockerfile.js.heroku -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:dfw .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:firefox .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:chromium .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:lab .
+
 
 ARG BASETAG=latest
 

@@ -16,7 +16,7 @@ The main features and components of the images are:
 - high-performance [TigerVNC][tigervnc] server and client
 - popular text editor [vim][vim]
 - lite but advanced graphical editor [mousepad][mousepad]
-- **ping** utility
+- **ping**, **zip** and **unzip** utilities
 - [tini][tini] as the entry-point initial process (PID 1)
 - support for overriding both the container user account and its group
 

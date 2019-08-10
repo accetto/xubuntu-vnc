@@ -1,4 +1,4 @@
-# docker build -f Dockerfile.js.heroku.chromium -t accetto/xubuntu-vnc-javascript-heroku:chromium .
+# docker build -f Dockerfile.js.heroku.chromium -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:chromium .
 
 ARG BASETAG=chromium
 

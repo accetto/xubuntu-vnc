@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y \
         inetutils-ping \
         lsb-release \
         net-tools \
+        unzip \
         vim \
+        zip \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
@@ -101,9 +103,7 @@ COPY [ "./src/startup", "${STARTUPDIR}/" ]
 
 ### Preconfigure Xfce
 COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
-COPY [ "./src/home/config/xfce4/panel", "${HOME}/.config/xfce4/panel/" ]
-COPY [ "./src/home/config/xfce4/terminal", "${HOME}/.config/xfce4/terminal/" ]
-COPY [ "./src/home/config/xfce4/xfconf/xfce-perchannel-xml", "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/" ]
+COPY [ "./src/home/config/xfce4", "${HOME}/.config/xfce4/" ]
 
 ### Create the default application user (non-root, but member of the group zero)
 ### and make '/etc/passwd' and '/etc/group' writable for the group.
@@ -128,7 +128,7 @@ EXPOSE ${VNC_PORT}
 ### Switch to default application user (non-root)
 # USER 1001
 
-ENV REFRESHED_AT 2019-07-10
+ENV REFRESHED_AT 2019-07-26
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'

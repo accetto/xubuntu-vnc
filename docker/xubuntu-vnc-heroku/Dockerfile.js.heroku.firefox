@@ -1,4 +1,4 @@
-# docker build -f Dockerfile.js.heroku.firefox -t accetto/xubuntu-vnc-javascript-heroku:firefox .
+# docker build -f Dockerfile.js.heroku.firefox -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:firefox .
 
 ARG BASETAG=firefox
 

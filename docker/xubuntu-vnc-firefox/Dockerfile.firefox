@@ -29,8 +29,7 @@ RUN mkdir -p ${FIREFOX_PATH} \
 
 ### Preconfigure Xfce
 COPY [ "./src/firefox/home/Desktop", "${HOME}/Desktop/" ]
-COPY [ "./src/firefox/home/config/xfce4/panel", "${HOME}/.config/xfce4/panel/" ]
-COPY [ "./src/firefox/home/config/xfce4/xfconf/xfce-perchannel-xml", "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/" ]
+COPY [ "./src/firefox/home/config/xfce4", "${HOME}/.config/xfce4/" ]
 
 FROM stage-firefox as stage-plus
 
@@ -49,7 +48,7 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-plus as stage-final
 
-ENV REFRESHED_AT 2019-07-20
+ENV REFRESHED_AT 2019-07-26
 
 ### Switch to default application user (non-root)
 USER 1001
