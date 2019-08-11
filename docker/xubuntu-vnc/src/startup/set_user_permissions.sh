@@ -12,7 +12,7 @@ echo "Current user: $USER_ID"
 for i in "$@" ; do
     echo "Fixing permissions for: $i"
 
-    ### folder and its current content belong to the group zero for increased portability (recursively)
+    ### folder and its current content belong to the group zero for better portability (recursively)
     chgrp -R 0 "$i"
 
     ### group members allowed to execute current '*.sh' scripts in the folder (recursively)

@@ -19,6 +19,7 @@ The main features and components of the images are:
 - **ping**, **zip** and **unzip** utilities
 - [tini][tini] as the entry-point initial process (PID 1)
 - support for overriding both the container user account and its group
+- **sudo** command
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -82,34 +83,40 @@ The default VNC password is **headless**.
 
 ## Container user accounts
 
-Even the containers created from this base image run under the **root** user by default, it's only for the sake of convenience. The image is intended to be used as the base for other images that will add some applications and switch to the default non-root application user afterwards.
+Containers created from this image run under the **default application user** (headless, 1001:0). The password is set from the environment variable **VNC_PW** (**headless** by default) and it can be changed by the user inside the container using the following command:
 
-Technically, also the base containers can run under a non-root user. It can be accomplished two ways:
-
-- By building new images running under a non-root user
-- By overriding the container's user account and optionally also its group while creating the container
-
-The **first scenario** is simplified by the fact, that this base image already implements the default non-root application user account. It is called **headless** and its full identification is **1001:0**. Note that the account's group membership (group zero) does not give it automatically the privileges of the root user. Technical details are described in [Wiki][this-wiki].
-
-Switching to the default non-root application user is really easy - it's enough to add the following line into the Dockerfile. 
-
-```Dockerfile
-USER 1001
+```shell
+passwd
 ```
 
-In fact, the included Dockerfiles already contain the line, but it's disabled.
+The **sudo** command allows user elevation, so the default application user can, for example, install new applications.
 
-The **second scenario** is also easy, because the image already supports overriding the container user, optionally including the group. However, for group overriding, the image must be built with the argument `ARG_SUPPORT_USER_GROUP_OVERRIDE`. Otherwise the second of the following command lines would fail:
+The following example shows how to install **git**:
+
+```shell
+sudo apt-get update
+sudo apt-get install -y git
+```
+
+Note that the default application account's **group membership** (group zero) does not give it automatically the privileges of the **root** user. Technical details will be described in [Wiki][this-wiki].
+
+The container user ID (1001 by default) can be changed by creating the container using the `--user` parameter, for example:
 
 ```shell
 docker run -itP --rm --user 2019 accetto/xubuntu-vnc
+```
 
+The image supports also overriding the container user's group ID (0 by default). However, the image must be built with the argument `ARG_SUPPORT_USER_GROUP_OVERRIDE`. Otherwise the following command line would fail:
+
+```shell
 ### This will fail until built with ARG_SUPPORT_USER_GROUP_OVERRIDE:
 ### [FATAL tini (6)] exec /dockerstartup/vnc_startup.sh failed: Permission denied
 docker run -itP --rm --user 2019:2000 accetto/xubuntu-vnc
 ```
 
-Note that only numerical ID and GID are supported. Technical details are described in [Wiki][this-wiki].
+The image tag `lab` is build just that way.
+
+Note that only numerical ID and GID are supported. Technical details will be described in [Wiki][this-wiki].
 
 ## Running containers in background (detached)
 

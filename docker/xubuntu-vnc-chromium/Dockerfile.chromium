@@ -29,7 +29,7 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-chromium as stage-final
 
-ENV REFRESHED_AT 2019-07-26
+ENV REFRESHED_AT 2019-08-11
 
 ### Switch to default application user (non-root)
 USER 1001

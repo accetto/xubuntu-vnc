@@ -90,7 +90,7 @@ docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-node
 
 ### Container user
 
-Containers created from these images run under the default non-root application user **headless** (ID 1001), unless overridden. For more description check the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] or [Wiki][this-wiki].
+Containers created from these images run under the non-root **default application user** (headless, 1001:0). However, the **sudo** command allows user elevation. For more description check the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] or [Wiki][this-wiki].
 
 ### Using headless containers
 

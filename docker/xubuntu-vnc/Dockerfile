@@ -1,5 +1,6 @@
 # docker build -f Dockerfile -t accetto/xubuntu-vnc .
 # docker build -f Dockerfile -t accetto/xubuntu-vnc:dev .
+# docker build -f Dockerfile -t accetto/xubuntu-vnc:dfw .
 # docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:lab .
 # docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:dev-lab .
 
@@ -16,6 +17,7 @@ RUN apt-get update && apt-get install -y \
         inetutils-ping \
         lsb-release \
         net-tools \
+        sudo \
         unzip \
         vim \
         zip \
@@ -113,6 +115,8 @@ RUN \
     && ${ARG_SUPPORT_USER_GROUP_OVERRIDE/*/chmod a+w /etc/passwd /etc/group} \
     && echo "headless:x:1001:0:Default:${HOME}:/bin/bash" >> /etc/passwd \
     && chmod +x "${STARTUPDIR}/set_user_permissions.sh" "${STARTUPDIR}/generate_container_user.sh" \
+    && adduser headless sudo \
+    && echo "headless:$VNC_PW" | chpasswd \
     && "${STARTUPDIR}/set_user_permissions.sh" "${STARTUPDIR}" "${HOME}" \
     && gtk-update-icon-cache -f /usr/share/icons/hicolor
 
@@ -125,9 +129,9 @@ EXPOSE ${VNC_PORT}
 #     && rm -rf /var/lib/apt/lists/*
 
 ### Switch to default application user (non-root)
-# USER 1001
+USER 1001
 
-ENV REFRESHED_AT 2019-07-26
+ENV REFRESHED_AT 2019-08-11
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'
