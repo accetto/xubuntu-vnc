@@ -37,6 +37,6 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-postgresql as stage-final
 
-ENV REFRESHED_AT 2019-07-21
+ENV REFRESHED_AT 2019-08-11
 
 USER 1001

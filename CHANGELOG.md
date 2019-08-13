@@ -6,6 +6,32 @@
 
 ***
 
+### Release 19.08
+
+- **xubuntu-vnc**
+  - **sudo** added
+    - **default application user** (headless) is added to **sudoers** (allowing for `sudo apt-get install`, for example)
+    - default application user's password comes from **$VNC_PW** (**headless** by default)
+    - container user changed from **root** (0:0) to the **default application user** (headless, 1001:0)
+- **xubuntu-vnc-firefox**
+  - **sudo** added (inherited from the base)
+  - **Firefox** still kept on version **67.0.4** because **68.*** crashes a lot
+- **xubuntu-vnc-chromium**
+  - **sudo** added (inherited from the base)
+  - **Chromium Browser** updated to version **76.0.3809.87**
+- **xubuntu-vnc-inkscape**
+  - **sudo** added (inherited from the base)
+- **xubuntu-vnc-node**
+  - **sudo** added (inherited from the base)
+  - **Node.js** updated to version **10.16.2** (includes **npm** version **6.9.0**)
+- **xubuntu-vnc-typescript**
+  - **sudo** added (inherited from the base)
+  - **Visual Studio Code** updated to version **1.37.0**
+- **xubuntu-vnc-heroku**
+  - **sudo** added (inherited from the base)
+  - **Heroku CLI** updated to version **7.27.1**
+  - **PostgreSQL** updated to version **10.10**
+
 ### Release 19.07.4
 
 - **xubuntu-vnc**
