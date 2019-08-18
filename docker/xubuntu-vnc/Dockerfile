@@ -1,8 +1,8 @@
 # docker build -f Dockerfile -t accetto/xubuntu-vnc .
-# docker build -f Dockerfile -t accetto/xubuntu-vnc:dev .
-# docker build -f Dockerfile -t accetto/xubuntu-vnc:dfw .
 # docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:lab .
-# docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:dev-lab .
+# docker build -f Dockerfile -t accetto/xubuntu-vnc:dev .
+# docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:lab-dev .
+# docker build -f Dockerfile -t accetto/xubuntu-vnc:dfw .
 
 ARG BASETAG=latest
 
@@ -94,7 +94,8 @@ ENV \
     VNC_PORT="5901" \
     VNC_PW=${ARG_VNC_PW:-headless} \
     VNC_RESOLUTION=${ARG_VNC_RESOLUTION:-1024x768} \
-    VNC_VIEW_ONLY=false
+    VNC_VIEW_ONLY=false \
+    SUPPORT_USER_GROUP_OVERRIDE=${ARG_SUPPORT_USER_GROUP_OVERRIDE}
 
 ### Creates home folder
 WORKDIR ${HOME}
@@ -111,27 +112,26 @@ COPY [ "./src/home/config/xfce4", "${HOME}/.config/xfce4/" ]
 ### Providing the build argument ARG_SUPPORT_USER_GROUP_OVERRIDE (set to anything) makes both files
 ### writable for all users, adding support for user group override (like 'run --user x:y').
 RUN \
-    chmod 0664 /etc/passwd /etc/group \
-    && ${ARG_SUPPORT_USER_GROUP_OVERRIDE/*/chmod a+w /etc/passwd /etc/group} \
+    chmod 664 /etc/passwd /etc/group \
     && echo "headless:x:1001:0:Default:${HOME}:/bin/bash" >> /etc/passwd \
-    && chmod +x "${STARTUPDIR}/set_user_permissions.sh" "${STARTUPDIR}/generate_container_user.sh" \
     && adduser headless sudo \
     && echo "headless:$VNC_PW" | chpasswd \
-    && "${STARTUPDIR}/set_user_permissions.sh" "${STARTUPDIR}" "${HOME}" \
+    && chmod +x \
+        "${STARTUPDIR}/set_user_permissions.sh" \
+        "${STARTUPDIR}/generate_container_user.sh" \
+        "${STARTUPDIR}/vnc_startup.sh" \
+    && ${ARG_SUPPORT_USER_GROUP_OVERRIDE/*/chmod a+w /etc/passwd /etc/group} \
     && gtk-update-icon-cache -f /usr/share/icons/hicolor
 
-EXPOSE ${VNC_PORT}
+### Fix permissions
+RUN "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
-### Add your applications here
-### 'apt-get clean' runs automatically
-# RUN apt-get update && apt-get install -y \
-#         firefox \
-#     && rm -rf /var/lib/apt/lists/*
+EXPOSE ${VNC_PORT}
 
 ### Switch to default application user (non-root)
 USER 1001
 
-ENV REFRESHED_AT 2019-08-11
+ENV REFRESHED_AT 2019-08-18
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'

@@ -37,6 +37,10 @@ The following image tags are regularly maintained and rebuilt:
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc:lab.svg)](https://microbadger.com/images/accetto/xubuntu-vnc:lab "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc:lab.svg)](https://microbadger.com/images/accetto/xubuntu-vnc:lab "Get your own image badge on microbadger.com")
 
+There are also archive images that are tagged like `ubuntu18.04.2` and similar. Those are previous production images and they can be useful for testing.
+
+Sometimes you can also spot tags like `dev`, `lab-dev` and similar. Those are temporary images under development and they should not be used.
+
 ### Dockerfiles
 
 The [Git Hub][this-github-xubuntu-vnc] repository contains several Dockerfiles that can be used to build the images.
@@ -56,14 +60,6 @@ The [Git Hub][this-github-xubuntu-vnc] repository contains several Dockerfiles t
   ```shell
   docker build --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=yes -t accetto/xubuntu-vnc:lab
   ```
-
-- `Dockerfile_lab`  
-  
-  This is a copy of the main *Dockerfile* which sets the `ARG_SUPPORT_USER_GROUP_OVERRIDE` build argument explicitly. The file is needed only because the Docker Hub's auto-builds do not support build arguments.
-
-- `Dockerfile.firefox.bare` and similar  
-  
-  These Dockerfiles just illustrate how to build stand-alone application images from scratch. However, it is much easier and faster to use the `accetto/xubuntu-vnc` image as the base and only to add new application layers. The examples of such Dockerfiles can be found in the same [Git Hub][this-github] repository (subfolders `xubuntu-vnc-firefox` and similar).
 
 ### Ports
 
@@ -109,9 +105,11 @@ docker run -itP --rm --user 2019 accetto/xubuntu-vnc
 The image supports also overriding the container user's group ID (0 by default). However, the image must be built with the argument `ARG_SUPPORT_USER_GROUP_OVERRIDE`. Otherwise the following command line would fail:
 
 ```shell
-### This will fail until built with ARG_SUPPORT_USER_GROUP_OVERRIDE:
-### [FATAL tini (6)] exec /dockerstartup/vnc_startup.sh failed: Permission denied
-docker run -itP --rm --user 2019:2000 accetto/xubuntu-vnc
+### This will fail (Permission denied)
+docker run -itP --rm --user 2019:2000 accetto/xubuntu-vnc:latest
+
+### This will work (image built with ARG_SUPPORT_USER_GROUP_OVERRIDE)
+docker run -itP --rm --user 2019:2000 accetto/xubuntu-vnc:lab
 ```
 
 The image tag `lab` is build just that way.

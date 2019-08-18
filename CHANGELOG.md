@@ -6,6 +6,17 @@
 
 ***
 
+### Release 19.08.1
+
+- **xubuntu-vnc**
+  - newer base image (**Ubuntu 18.04.3 LTS**)
+  - [Issue #5](https://github.com/accetto/xubuntu-vnc/issues/5) fixed
+  - `lab` tag: environment variable **SUPPORT_USER_GROUP_OVERRIDE** added so it's easier to check how the image was built (it has no other function)
+  - build hooks introduced and therefore
+    - **Dockerfile_lab** removed
+  - **Dockerfile.inkscape.bare** and **Dockerfile.firefox.bare** also removed
+  - **README** file updated
+
 ### Release 19.08
 
 - **xubuntu-vnc**

@@ -1,0 +1,8 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+docker build \
+    -f $DOCKERFILE_PATH \
+        ${IS_LAB_BUILD:+--build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=yes} \
+    -t $DOCKER_REPO:$DOCKER_TAG .
