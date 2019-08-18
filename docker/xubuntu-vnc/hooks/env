@@ -1,5 +1,5 @@
 ### hooks/env
 
-ARCHIVE_TAG="ubuntu18.04.2"
+ARCHIVE_TAG="ubuntu18.04.3"
 
 if [[ "${DOCKER_TAG}" =~ ^lab ]] ; then IS_LAB_BUILD=true ; fi
