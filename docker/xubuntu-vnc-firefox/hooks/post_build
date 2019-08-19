@@ -1,0 +1,18 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+case "${DOCKER_TAG}" in
+    latest)
+        docker tag $IMAGE_NAME $DOCKER_REPO:$ARCHIVE_TAG
+        docker push $DOCKER_REPO:$ARCHIVE_TAG
+        ;;
+    default)
+        docker tag $IMAGE_NAME $DOCKER_REPO:default-$ARCHIVE_TAG
+        docker push $DOCKER_REPO:default-$ARCHIVE_TAG
+        ;;
+    multiprocess)
+        docker tag $IMAGE_NAME $DOCKER_REPO:multiprocess-$ARCHIVE_TAG
+        docker push $DOCKER_REPO:multiprocess-$ARCHIVE_TAG
+        ;;
+esac

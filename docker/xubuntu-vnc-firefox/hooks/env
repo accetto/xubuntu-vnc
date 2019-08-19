@@ -1,0 +1,7 @@
+### hooks/env
+
+ARCHIVE_TAG="ubuntu18.04.3-firefox_68.0.2+build1-0ubuntu0.18.04.1"
+
+if [[ "${DOCKER_TAG}" =~ ^dev-devbase ]] ; then IS_DEVBASE_BUILD=true ; fi
+
+if [[ ! "${DOCKER_TAG}" =~ ^multiprocess$|-multiprocess[0-9-]* ]] ; then IS_SINGLEPROCESS_BUILD=true ; fi

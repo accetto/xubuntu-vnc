@@ -1,0 +1,9 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+docker build \
+    -f $DOCKERFILE_PATH \
+        ${IS_DEVBASE_BUILD:+--build-arg BASETAG=dev} \
+        ${IS_SINGLEPROCESS_BUILD:+--build-arg ARG_MOZ_FORCE_DISABLE_E10S=yes} \
+    -t $DOCKER_REPO:$DOCKER_TAG .
