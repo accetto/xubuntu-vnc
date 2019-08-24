@@ -1,5 +1,6 @@
 # docker build -f Dockerfile.chromium -t accetto/xubuntu-vnc-chromium .
 # docker build -f Dockerfile.chromium --build-arg BASETAG=dev -t accetto/xubuntu-vnc-chromium:dev .
+# docker build -f Dockerfile.chromium -t accetto/xubuntu-vnc-chromium:dfw .
 # docker build -f Dockerfile.chromium --build-arg BASETAG=lab -t accetto/xubuntu-vnc-chromium:lab .
 # docker build -f Dockerfile.chromium --build-arg BASETAG=dev-lab -t accetto/xubuntu-vnc-chromium:dev-lab .
 
@@ -29,7 +30,7 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-chromium as stage-final
 
-ENV REFRESHED_AT 2019-08-11
+ENV REFRESHED_AT 2019-08-24
 
 ### Switch to default application user (non-root)
 USER 1001
