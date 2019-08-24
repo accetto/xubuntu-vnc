@@ -1,0 +1,7 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+docker build \
+    -f $DOCKERFILE_PATH \
+    -t $DOCKER_REPO:$DOCKER_TAG .

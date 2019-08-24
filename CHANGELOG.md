@@ -6,11 +6,17 @@
 
 ***
 
+### Release 19.08.3
+
+- **xubuntu-vnc-chromium**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - **Chromium Browser** updated to version **76.0.3809.100**
+
 ### Release 19.08.2
 
 - **xubuntu-vnc-firefox**
   - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
-  - Firefox updated to version **68.0.2**
+  - **Firefox** updated to version **68.0.2**
   - [Issue #2](https://github.com/accetto/xubuntu-vnc/issues/2) fixed by updating to the latest Firefox version
   - [Issue #3](https://github.com/accetto/xubuntu-vnc/issues/3) fixed by disabling the Firefox multi-process feature
   - environment variable **MOZ_FORCE_DISABLE_E10S** and build argument **ARG_MOZ_FORCE_DISABLE_E10S** introduced
