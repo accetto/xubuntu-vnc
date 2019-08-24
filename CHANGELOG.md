@@ -6,6 +6,28 @@
 
 ***
 
+### Release 19.08.3
+
+- **xubuntu-vnc-chromium**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - **Chromium Browser** updated to version **76.0.3809.100**
+- **xubuntu-vnc-inkscape**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **BASEIMAGE** introduced and **Dockerfile.inkscape.firefox** removed
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+- **xubuntu-vnc-node**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **BASEIMAGE** introduced and **Dockerfile.node.firefox** and **Dockerfile.node.chromium** removed
+  - environment variable **NODE_PORT** and build argument **ARG_NODE_PORT** have been added
+    - port **3000** by default
+    - port is not exposed by default (disabled in Dockerfile)
+  - a simple **test-node-app** added
+    - start it as `node app.js` (from `/usr/src/node-test-app`)
+    - connect to the container's **NODE_PORT**
+    - don't forget to create the container as, for example, `docker run -p 3000 ...`
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+  - only `chromium` tag: newer **Chromium Browser** version (**76.0.3809.100**, inherited from the base image)
+
 ### Release 19.08.2
 
 - **xubuntu-vnc-firefox**
