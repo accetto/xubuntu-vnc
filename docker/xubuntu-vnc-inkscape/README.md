@@ -24,7 +24,7 @@ The following image tags are regularly maintained and rebuilt:
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-inkscape:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-inkscape:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:latest "Get your own image badge on microbadger.com")
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser  
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser and the **plus** features  
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-inkscape:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-inkscape:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:firefox "Get your own image badge on microbadger.com")
 
@@ -37,10 +37,8 @@ The [Git Hub][this-github-xubuntu-vnc-inkscape] repository contains several Dock
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc:latest` tag by default.
 
   However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc:lab`.
-
-- `Dockerfile.inkscape.firefox`  
   
-  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-firefox:latest` tag and therefore includes also [Firefox][firefox] browser and the **plus** features
+  By providing the `BASEIMAGE` build argument it is possible to build images based on other base  images, for example `accetto/xubuntu-vnc-firefox`. The `firefox` tag is built that way.
 
 ### Ports
 

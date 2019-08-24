@@ -1,12 +1,14 @@
 # docker build -f Dockerfile.inkscape -t accetto/xubuntu-vnc-inkscape .
-# docker build -f Dockerfile.inkscape -t accetto/xubuntu-vnc-inkscape:dev .
+# docker build -f Dockerfile.inkscape -t accetto/xubuntu-vnc-inkscape:dfw .
+# docker build -f Dockerfile.inkscape --build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox -t accetto/xubuntu-vnc-inkscape:dfw-firefox .
 # docker build -f Dockerfile.inkscape --build-arg BASETAG=dev -t accetto/xubuntu-vnc-inkscape:dev .
 # docker build -f Dockerfile.inkscape --build-arg BASETAG=lab -t accetto/xubuntu-vnc-inkscape:lab .
 # docker build -f Dockerfile.inkscape --build-arg BASETAG=devlab -t accetto/xubuntu-vnc-inkscape:devlab .
 
+ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
 
-FROM accetto/xubuntu-vnc:${BASETAG} as stage-inkscape
+FROM ${BASEIMAGE}:${BASETAG} as stage-inkscape
 
 ### Switch to root user before install
 USER 0
@@ -25,7 +27,7 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-inkscape as stage-final
 
-ENV REFRESHED_AT 2019-08-11
+ENV REFRESHED_AT 2019-08-24
 
 ### Switch to default application user (non-root)
 USER 1001

@@ -11,6 +11,10 @@
 - **xubuntu-vnc-chromium**
   - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
   - **Chromium Browser** updated to version **76.0.3809.100**
+- **xubuntu-vnc-inkscape**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **BASEIMAGE** introduced and **Dockerfile.inkscape.firefox** removed
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
 
 ### Release 19.08.2
 
