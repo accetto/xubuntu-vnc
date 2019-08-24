@@ -1,0 +1,5 @@
+### hooks/env
+
+ARCHIVE_TAG="ubuntu18.04.3-chromium76.0.3809.100"
+
+if [[ "${DOCKER_TAG}" =~ ^dev-devbase ]] ; then IS_DEVBASE_BUILD=true ; fi

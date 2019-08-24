@@ -1,0 +1,10 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+case "${DOCKER_TAG}" in
+    latest)
+        docker tag $IMAGE_NAME $DOCKER_REPO:$ARCHIVE_TAG
+        docker push $DOCKER_REPO:$ARCHIVE_TAG
+        ;;
+esac
