@@ -1,0 +1,10 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+docker build \
+    -f $DOCKERFILE_PATH \
+        ${IS_DEVBASE_BUILD:+--build-arg BASETAG=dev} \
+        ${IS_FIREFOXTAG_BUILD:+--build-arg BASETAG=firefox} \
+        ${IS_CHROMIUMTAG_BUILD:+--build-arg BASETAG=chromium} \
+    -t $DOCKER_REPO:$DOCKER_TAG .

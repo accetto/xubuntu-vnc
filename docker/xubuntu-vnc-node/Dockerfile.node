@@ -1,10 +1,17 @@
 # docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node .
-# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dfw .
+# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox -t accetto/xubuntu-vnc-node:firefox .
+# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-chromium -t accetto/xubuntu-vnc-node:chromium .
+# docker build -f Dockerfile.node --build-arg ARG_NODE_PORT=5000 -t accetto/xubuntu-vnc-node:5000 .
 # docker build -f Dockerfile.node --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:lab .
+# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dfw .
+# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox -t accetto/xubuntu-vnc-node:dfw-firefox .
+# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-chromium -t accetto/xubuntu-vnc-node:dfw-chromium .
+# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dfw-distro .
 
+ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
 
-FROM accetto/xubuntu-vnc:${BASETAG} as stage-utils
+FROM ${BASEIMAGE}:${BASETAG} as stage-utils
 
 USER 0
 
@@ -17,6 +24,7 @@ RUN apt-get update && apt-get install -y \
 
 FROM stage-utils as stage-node
 
+### This would currently install 'node v8.10.0' with 'npm v3.5.2'
 ### 'apt-get clean' runs automatically
 # RUN \
 #     chmod g+w /usr/local/lib \
@@ -26,15 +34,14 @@ FROM stage-utils as stage-node
 #     && apt-get -y autoremove \
 #     && rm -rf /var/lib/apt/lists/*
 
-### alternatively install an explicit node version
+### Alternatively install a newer version explicitly
 ENV \
-    NODE_VERSION=v10.16.2 \
+    NODE_VERSION=v10.16.3 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global
 ENV \
     PATH=${NPM_CONFIG_PREFIX}/bin:/usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin:${PATH}
-    
 RUN \
     mkdir -p \
         ${NPM_CONFIG_PREFIX} \
@@ -55,10 +62,22 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-node as stage-final
 
-RUN chmod g+w /usr/src
+ARG ARG_NODE_PORT
+
+ENV NODE_PORT=${ARG_NODE_PORT:-3000}
 
 WORKDIR /usr/src
 
-ENV REFRESHED_AT 2019-08-11
+### add a simple app for testing node
+### start it by 'node app.js' and connect to the container's port ${NODE_PORT}
+### dont'f forget to create the container as for example 'docker run -p 3000 ...'
+COPY [ "./src/node-test-app", "./node-test-app/" ]
+
+RUN chmod -R g+w /usr/src
+
+### optionally expose the node port
+# EXPOSE ${NODE_PORT}
+
+ENV REFRESHED_AT 2019-08-24
 
 USER 1001

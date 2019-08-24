@@ -1,0 +1,11 @@
+### hooks/env
+
+ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.5.3"
+ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.5.3-firefox68.0.2"
+ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.5.3-chromium76.0.3809.100"
+
+if [[ "${DOCKER_TAG}" =~ ^dev-devbase ]] ; then IS_DEVBASE_BUILD=true ; fi
+
+if [[ "${DOCKER_TAG}" =~ firefox$ ]] ; then IS_FIREFOXTAG_BUILD=true ; fi
+
+if [[ "${DOCKER_TAG}" =~ chromium$ ]] ; then IS_CHROMIUMTAG_BUILD=true ; fi

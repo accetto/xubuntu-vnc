@@ -1,0 +1,10 @@
+#!/bin/bash -xe
+
+. ./hooks/env
+
+docker build \
+    -f $DOCKERFILE_PATH \
+        ${IS_DEVBASE_BUILD:+--build-arg BASETAG=dev} \
+        ${IS_FIREFOXBASE_BUILD:+--build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox} \
+        ${IS_CHROMIUMBASE_BUILD:+--build-arg BASEIMAGE=accetto/xubuntu-vnc-chromium} \
+    -t $DOCKER_REPO:$DOCKER_TAG .

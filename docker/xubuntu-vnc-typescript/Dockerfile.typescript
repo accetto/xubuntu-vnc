@@ -1,8 +1,10 @@
 # docker build -f Dockerfile.typescript -t accetto/xubuntu-vnc-typescript .
-# docker build -f Dockerfile.typescript -t accetto/xubuntu-vnc-typescript:dev .
 # docker build -f Dockerfile.typescript --build-arg BASETAG=firefox -t accetto/xubuntu-vnc-typescript:firefox .
 # docker build -f Dockerfile.typescript --build-arg BASETAG=chromium -t accetto/xubuntu-vnc-typescript:chromium .
 # docker build -f Dockerfile.typescript --build-arg BASETAG=lab -t accetto/xubuntu-vnc-typescript:lab .
+# docker build -f Dockerfile.typescript --build-arg BASETAG=dev -t accetto/xubuntu-vnc-typescript:dfw .
+# docker build -f Dockerfile.typescript --build-arg BASETAG=dev-firefox -t accetto/xubuntu-vnc-typescript:dfw-firefox .
+# docker build -f Dockerfile.typescript --build-arg BASETAG=dev-chromium -t accetto/xubuntu-vnc-typescript:dfw-chromium .
 
 ARG BASETAG=latest
 
@@ -33,13 +35,13 @@ RUN gtk-update-icon-cache -f /usr/share/icons/hicolor \
 
 FROM stage-vscode as stage-typescript
 
-RUN npm install -g typescript
+USER 1001
 
-### Fix permissions
-RUN /dockerstartup/set_user_permissions.sh ${HOME}
+### Install TypeScript as a non-root default application user
+RUN npm install -g \
+        typescript \
+    && rm -r /home/headless/.npm/_cacache/
 
 FROM stage-typescript as stage-final
 
-ENV REFRESHED_AT 2019-08-11
-
-USER 1001
+ENV REFRESHED_AT 2019-08-24
