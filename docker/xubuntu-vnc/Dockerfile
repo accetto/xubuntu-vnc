@@ -131,7 +131,9 @@ EXPOSE ${VNC_PORT}
 ### Switch to default application user (non-root)
 USER 1001
 
-ENV REFRESHED_AT 2019-08-18
+ARG ARG_REFRESHED_AT
+
+ENV REFRESHED_AT=${ARG_REFRESHED_AT}
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'

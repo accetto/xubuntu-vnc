@@ -2,9 +2,14 @@
 
 . ./hooks/env
 
-docker build \
-    -f $DOCKERFILE_PATH \
-        ${IS_DEVBASE_BUILD:+--build-arg BASETAG=dev} \
-        ${IS_FIREFOXBASE_BUILD:+--build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox} \
-        ${IS_CHROMIUMBASE_BUILD:+--build-arg BASEIMAGE=accetto/xubuntu-vnc-chromium} \
-    -t $DOCKER_REPO:$DOCKER_TAG .
+if [[ -n "$BASETAG" ]] ; then
+
+    docker build \
+        -f $DOCKERFILE_PATH \
+            --build-arg BASEIMAGE="$BASEIMAGE" \
+            --build-arg BASETAG="$BASETAG" \
+            --build-arg ARG_REFRESHED_AT="$TODAY" \
+        -t $DOCKER_REPO:$DOCKER_TAG .
+else
+    echo "Build request not recognized: $SOURCE_BRANCH"
+fi

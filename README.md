@@ -54,11 +54,7 @@ Contains resources for building [accetto/xubuntu-vnc-js-heroku-postgresql][this-
 
 #### [utils][this-github-utils]
   
-Contains various utilities that make building the images more convenient.
-
-- `util-update-refreshed-at.sh`  
-  
-  Updates the **REFRESHED_AT** environment variable to the current date in all Dockerfiles it finds underneath the given folder.
+Contains utilities that make building the images more convenient.
 
 - `util-hdx.sh`  
   

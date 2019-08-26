@@ -1,5 +1,20 @@
 ### hooks/env
 
 ARCHIVE_TAG="ubuntu18.04.3-chromium76.0.3809.100"
+TODAY=$(date +%Y-%m-%d)
+BASETAG=""
 
-if [[ "${DOCKER_TAG}" =~ ^dev-devbase ]] ; then IS_DEVBASE_BUILD=true ; fi
+case "$DOCKER_TAG" in
+
+    latest)
+        BASETAG="latest"
+        ;;
+
+    dev)
+        BASETAG="dev"
+        ;;
+
+    *)
+        BASETAG=""
+        ;;
+esac
