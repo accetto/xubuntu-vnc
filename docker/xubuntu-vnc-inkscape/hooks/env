@@ -15,7 +15,7 @@ case "$DOCKER_TAG" in
 
     firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="firefox"
+        BASETAG="latest"
         ;;
 
     dev)

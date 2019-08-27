@@ -16,12 +16,12 @@ case "$DOCKER_TAG" in
 
     chromium)
         BASEIMAGE="accetto/xubuntu-vnc-chromium"
-        BASETAG="chromium"
+        BASETAG="latest"
         ;;
 
     firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="firefox"
+        BASETAG="latest"
         ;;
 
     dev)

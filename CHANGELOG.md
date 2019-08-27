@@ -48,6 +48,14 @@
   - **Dockerfile.typescript.firefox** and **Dockerfile.typescript.chromium** removed
   - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
   - only `chromium` tag: newer **Chromium Browser** version (**76.0.3809.100**, inherited from the base image)
+- **xubuntu-vnc-heroku**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+  - **TypeScript** installed by the non-root default application user (1001:0) (inherited from the base image)
+  - **Dockerfile.js.heroku.firefox** and **Dockerfile.js.heroku.chromium** removed
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+  - only `chromium` tag: newer **Chromium Browser** version (**76.0.3809.100**, inherited from the base image)
 
 ### Release 19.08.2
 
