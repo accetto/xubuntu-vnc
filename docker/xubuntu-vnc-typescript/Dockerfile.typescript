@@ -44,4 +44,7 @@ RUN npm install -g \
 
 FROM stage-typescript as stage-final
 
-ENV REFRESHED_AT 2019-08-24
+ARG ARG_REFRESHED_AT
+
+ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+

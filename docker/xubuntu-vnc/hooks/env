@@ -1,5 +1,22 @@
 ### hooks/env
 
 ARCHIVE_TAG="ubuntu18.04.3"
+TODAY=$(date +%Y-%m-%d)
+BASETAG=""
 
-if [[ "${DOCKER_TAG}" =~ ^lab$|-lab[0-9-]* ]] ; then IS_LAB_BUILD=true ; fi
+case "$DOCKER_TAG" in
+
+    latest | dev)
+        BASETAG="latest"
+        SUPPORT_USER_GROUP_OVERRIDE=
+        ;;
+
+    lab | dev-lab)
+        BASETAG="latest"
+        SUPPORT_USER_GROUP_OVERRIDE="yes"
+        ;;
+
+    *)
+        BASETAG=""
+        ;;
+esac

@@ -3,9 +3,43 @@
 ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0"
 ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox68.0.2"
 ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium76.0.3809.100"
+TODAY=$(date +%Y-%m-%d)
+BASEIMAGE=""
+BASETAG=""
 
-if [[ "${DOCKER_TAG}" =~ ^dev-devbase ]] ; then IS_DEVBASE_BUILD=true ; fi
+case "$DOCKER_TAG" in
 
-if [[ "${DOCKER_TAG}" =~ firefox$ ]] ; then IS_FIREFOXBASE_BUILD=true ; fi
+    latest)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="latest"
+        ;;
 
-if [[ "${DOCKER_TAG}" =~ chromium$ ]] ; then IS_CHROMIUMBASE_BUILD=true ; fi
+    chromium)
+        BASEIMAGE="accetto/xubuntu-vnc-chromium"
+        BASETAG="chromium"
+        ;;
+
+    firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="firefox"
+        ;;
+
+    dev)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="dev"
+        ;;
+
+    dev-chromium)
+        BASEIMAGE="accetto/xubuntu-vnc-chromium"
+        BASETAG="dev"
+        ;;
+
+    dev-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="dev"
+        ;;
+
+    *)
+        BASETAG=""
+        ;;
+esac
