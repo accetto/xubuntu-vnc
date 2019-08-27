@@ -28,6 +28,8 @@ The included features allow, for example, to complete the whole tutorial [Gettin
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
+The project's complete [image hierarchy][this-wiki-image-hierarchy] is illustrated in Wiki.
+
 ![container-screenshot][this-screenshot-container]
 
 ### Image tags
@@ -54,15 +56,7 @@ The [Git Hub][this-github-xubuntu-vnc-heroku] repository contains several Docker
   
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-typescript:latest` tag by default.
 
-  However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-typescript:lab`.
-
-- `Dockerfile.js.heroku.firefox`  
-  
-  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-typescript:firefox` tag and therefore includes also [Firefox][firefox] web browser and the **plus** features
-
-- `Dockerfile.js.heroku.chromium`  
-  
-  This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-typescript:chromium` tag and therefore includes also [Chromium][chromium] web browser
+  However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-typescript:firefox`. The `firefox` and `chromium` tags are built that way.
 
 ### Ports
 
@@ -117,7 +111,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 

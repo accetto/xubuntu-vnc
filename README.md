@@ -10,6 +10,8 @@ This project repository contains resources for building various Docker images ba
 
 The resources for the individual images and their variations are stored in the subfolders of the [Git Hub][this-github] repository and the image features are described in the individual README files. Additional descriptions can be found in the common project [Wiki][this-wiki].
 
+The Wiki illustrates also the project's complete [image hierarchy][this-wiki-image-hierarchy].
+
 ### Git Hub subfolders / Docker image sets
 
 #### [xubuntu-vnc][this-github-xubuntu-vnc]
@@ -80,7 +82,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 

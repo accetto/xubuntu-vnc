@@ -16,6 +16,8 @@ This image adds the current version of [Firefox Quantum][firefox] web browser an
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
+The project's complete [image hierarchy][this-wiki-image-hierarchy] is illustrated in Wiki.
+
 ![container-screenshot][this-screenshot-container]
 
 ### Image tags
@@ -145,7 +147,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
