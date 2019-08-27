@@ -2,9 +2,26 @@
 
 . ./hooks/env
 
-docker build \
-    -f $DOCKERFILE_PATH \
-        ${IS_DEVBASE_BUILD:+--build-arg BASETAG=dev} \
-        ${IS_FIREFOXTAG_BUILD:+--build-arg BASETAG=firefox} \
-        ${IS_CHROMIUMTAG_BUILD:+--build-arg BASETAG=chromium} \
-    -t $DOCKER_REPO:$DOCKER_TAG .
+if [[ ! ${IS_DEVBASE_BUILD} ]] ; then
+
+    docker build \
+        -f $DOCKERFILE_PATH \
+            ${IS_FIREFOXTAG_BUILD:+--build-arg BASETAG=firefox} \
+            ${IS_CHROMIUMTAG_BUILD:+--build-arg BASETAG=chromium} \
+        -t $DOCKER_REPO:$DOCKER_TAG .
+else
+    if [[ ${IS_FIREFOXTAG_BUILD} || ${IS_CHROMIUMTAG_BUILD} ]] ; then
+
+        docker build \
+            -f $DOCKERFILE_PATH \
+                ${IS_FIREFOXTAG_BUILD:+--build-arg BASETAG=firefox} \
+                ${IS_CHROMIUMTAG_BUILD:+--build-arg BASETAG=chromium} \
+            -t $DOCKER_REPO:$DOCKER_TAG .
+
+    else
+        docker build \
+            -f $DOCKERFILE_PATH \
+                ${IS_DEVBASE_BUILD:+--build-arg BASETAG=dev} \
+            -t $DOCKER_REPO:$DOCKER_TAG .
+    fi
+fi
