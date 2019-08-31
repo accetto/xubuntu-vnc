@@ -1,8 +1,8 @@
 ### hooks/env
 
-ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.5.3"
-ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.5.3-firefox68.0.2"
-ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.5.3-chromium76.0.3809.100"
+ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.6.2"
+ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.6.2-firefox68.0.2"
+ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.6.2-chromium76.0.3809.100"
 TODAY=$(date +%Y-%m-%d)
 BASETAG=""
 

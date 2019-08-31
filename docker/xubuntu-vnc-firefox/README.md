@@ -74,17 +74,17 @@ The containers are intended to be used through a **VNC Viewer** (e.g. [TigerVNC]
 
 ## Firefox multi-process
 
-Firefox multi-process (also known as **Electrolysis** or just **E10S**) causes in Docker container heavy crashing **Gah. Your tab just crashed.** and therefore it should be disabled.
+Firefox multi-process (also known as **Electrolysis** or just **E10S**) causes in Docker container heavy crashing (**Gah. Your tab just crashed.**) and therefore it needs to be disabled.
 
-In Firefox versions till **67.0.4** it could be done by setting the preferences **browser.tabs.remote.autostart** and **browser.tabs.remote.autostart.2** to **false**. However, Mozilla had removed this possibility since the Firefox version **68.0**.
+In Firefox versions till **67.0.4** it could be done by setting the preferences **browser.tabs.remote.autostart** and **browser.tabs.remote.autostart.2** to **false**. However, Mozilla has removed this possibility since the Firefox version **68.0**.
 
-Since then it can be done only by setting the following environment variable:
+Since than it can be done only by setting the following environment variable:
 
 ```bash
 MOZ_FORCE_DISABLE_E10S
 ```
 
-Therefore the images tagged `latest` and `default` already set this variable to **1** by using the build argument **ARG_MOZ_FORCE_DISABLE_E10S**.
+Therefore the images tagged `latest` and `default` set this variable to **1** by using the build argument **ARG_MOZ_FORCE_DISABLE_E10S**.
 
 Note that any value will actually disable the multi-process feature, so the both following settings would have the same effect:
 
@@ -95,7 +95,7 @@ MOZ_FORCE_DISABLE_E10S=0
 
 Building an image without the build argument **ARG_MOZ_FORCE_DISABLE_E10S** enables the Firefox multi-process feature. The image tagged `multiprocess` is built that way.
 
-To check if the Firefox multi-process is enabled, navigate the web browser to the following URL:
+To check whether the Firefox multi-process is enabled or disabled, navigate the web browser to the following URL:
 
 ```bash
 about:support
