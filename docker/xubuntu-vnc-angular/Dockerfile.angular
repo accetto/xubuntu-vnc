@@ -1,5 +1,8 @@
 # docker build -f Dockerfile.angular -t accetto/xubuntu-vnc-angular .
 # docker build -f Dockerfile.angular -t accetto/xubuntu-vnc-angular:dfw .
+# hooks/build dev
+# hooks/build dev-chromium
+# hooks/build dev-firefox
 
 ARG BASETAG=latest
 
@@ -16,6 +19,8 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-angular as stage-final
 
-ENV REFRESHED_AT 2019-07-21
+ARG ARG_REFRESHED_AT
+
+ENV REFRESHED_AT=${ARG_REFRESHED_AT}
 
 USER 1001

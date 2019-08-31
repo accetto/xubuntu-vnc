@@ -2,9 +2,88 @@
 
 ## Project `accetto/xubuntu-vnc`
 
-[Git Hub][this-github] - [Wiki][this-wiki]
+[Git Hub][this-github] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
+
+### Release 19.09
+
+- images with **Angular** introduced (**xubuntu-vnc-angular**)
+- all **README** files updated
+
+### Release 19.08.3
+
+- **xubuntu-vnc**
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+    - utility **util-update-refreshed-at** removed
+- **xubuntu-vnc-firefox**
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+- **xubuntu-vnc-chromium**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - **Chromium Browser** updated to version **76.0.3809.100**
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+- **xubuntu-vnc-inkscape**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+  - build argument **BASEIMAGE** introduced and **Dockerfile.inkscape.firefox** removed
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+- **xubuntu-vnc-node**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+  - build argument **BASEIMAGE** introduced and **Dockerfile.node.firefox** and **Dockerfile.node.chromium** removed
+  - environment variable **NODE_PORT** and build argument **ARG_NODE_PORT** have been added
+    - port **3000** by default
+    - port is not exposed by default (disabled in Dockerfile)
+  - a simple **test-node-app** added
+    - start it as `node app.js` (from `/usr/src/node-test-app`)
+    - connect to the container's **NODE_PORT**
+    - don't forget to create the container as, for example, `docker run -p 3000 ...`
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+  - only `chromium` tag: newer **Chromium Browser** version (**76.0.3809.100**, inherited from the base image)
+- **xubuntu-vnc-typescript**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+  - **TypeScript** installed by the non-root default application user (1001:0)
+  - **Dockerfile.typescript.firefox** and **Dockerfile.typescript.chromium** removed
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+  - only `chromium` tag: newer **Chromium Browser** version (**76.0.3809.100**, inherited from the base image)
+- **xubuntu-vnc-heroku**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - build argument **ARG_REFRESHED_AT** introduced
+    - environment variable **REFRESHED_AT** set to the actual build date
+  - **TypeScript** installed by the non-root default application user (1001:0) (inherited from the base image)
+  - **Dockerfile.js.heroku.firefox** and **Dockerfile.js.heroku.chromium** removed
+  - only `firefox` tag: newer **Firefox** version (**68.0.2**, inherited from the base image)
+  - only `chromium` tag: newer **Chromium Browser** version (**76.0.3809.100**, inherited from the base image)
+
+### Release 19.08.2
+
+- **xubuntu-vnc-firefox**
+  - newer base image (**Ubuntu 18.04.3 LTS**) (inherited from the base image)
+  - **Firefox** updated to version **68.0.2**
+  - [Issue #2](https://github.com/accetto/xubuntu-vnc/issues/2) fixed by updating to the latest Firefox version
+  - [Issue #3](https://github.com/accetto/xubuntu-vnc/issues/3) fixed by disabling the Firefox multi-process feature
+  - environment variable **MOZ_FORCE_DISABLE_E10S** and build argument **ARG_MOZ_FORCE_DISABLE_E10S** introduced
+  - image tag `multiprocess` introduced
+    - same as `latest` but the multi-process is **enabled** (note that it will probably crash a lot)
+  - **README** has been updated
+
+### Release 19.08.1
+
+- **xubuntu-vnc**
+  - newer base image (**Ubuntu 18.04.3 LTS**)
+  - [Issue #5](https://github.com/accetto/xubuntu-vnc/issues/5) fixed
+  - `lab` tag: environment variable **SUPPORT_USER_GROUP_OVERRIDE** added so it's easier to check how the image was built (it has no other function)
+  - build hooks introduced and therefore
+    - **Dockerfile_lab** removed
+  - **Dockerfile.inkscape.bare** and **Dockerfile.firefox.bare** also removed
+  - **README** file updated
 
 ### Release 19.08
 
@@ -196,6 +275,7 @@ Initial version is derived from the version **19.06** of [accetto/ubuntu-vnc-xfc
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [accetto-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce/
 [accetto-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus/

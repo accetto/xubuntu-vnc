@@ -2,22 +2,22 @@
 
 ## accetto/xubuntu-vnc-typescript
 
-[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and with JavaScript development platform for [TypeScript][typescript] development.
 
-The images are based on the base image [accetto/xubuntu-vnc-node][accetto-docker-xubuntu-vnc-node] and inherit all the components and features. Therefore not the whole description will be repeated here. The base image tags `*:firefox` and `*:chromium` are also reflected.
+The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc-node][accetto-docker-xubuntu-vnc-node]. They inherit all the features and therefore not the whole description will be repeated here.
 
-This image inherits the components
+The `latest` image inherits among others
 
+- utilities **ping**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git]
+- [tini][tini] as the entry-point initial process (PID 1)
 - [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js
-- [curl][curl] utility
-- [Git][git] distributed version control system
 
-and adds the following ones:
+and adds
 
 - [Visual Studio Code][vscode] developer editor
 - [TypeScript][typescript] programming language
@@ -50,15 +50,7 @@ The [Git Hub][this-github-xubuntu-vnc-typescript] repository contains several Do
   
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-node:latest` tag by default.
 
-  However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-node:lab`.
-
-- `Dockerfile.typescript.firefox`  
-  
-  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-node:firefox` tag and therefore includes also [Firefox][firefox] web browser and the **plus** features
-
-- `Dockerfile.typescript.chromium`  
-  
-  This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-node:chromium` tag and therefore includes also [Chromium][chromium] web browser
+  However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc-node:firefox`. The `firefox` and `chromium` tags are built that way.
 
 ### Ports
 
@@ -67,7 +59,7 @@ The image exposes only the TCP port **5901** and therefore the containers consum
 Other ports can be easily exposed using the `docker run` arguments. For example, the following container will expose its internal port **5000** and bind it to the next free TCP port on the host computer:
 
 ```shell
-docker run -itP --rm -p 5000 accetto/xubuntu-vnc-node
+docker run -itP --rm -p 5000 accetto/xubuntu-vnc-typescript
 ```
 
 ### Volumes
@@ -81,11 +73,11 @@ The folder `/usr/src` is intended as the working folder for development and it s
 For example, the following container would use the local folder **my_apps**:
 
 ```shell
-docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-node
+docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-typescript
 
 # or using the newer syntax
 
-docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-node
+docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-typescript
 ```
 
 ### Container user
@@ -113,7 +105,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -127,6 +121,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
 [xfce]: http://www.xfce.org
 
 [chromium]: https://www.chromium.org/Home

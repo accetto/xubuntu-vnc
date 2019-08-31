@@ -2,7 +2,7 @@
 
 ## accetto/xubuntu-vnc-firefox
 
-[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
@@ -10,9 +10,18 @@ This repository contains resources for building Docker images based on [Ubuntu][
 
 The main image is a streamlined and simplified version of my other image [accetto/ubuntu-vnc-xfce-firefox-plus][accetto-docker-ubuntu-vnc-xfce-firefox-plus]. The applicable **plus** features have been re-implemented because **Firefox v67** handles user profiles differently.
 
-All the components and features of the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] are inherited and therefore not the whole description will be repeated here.
+The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
 
-This image adds the current version of [Firefox Quantum][firefox] web browser and some additional **plus** features described below.
+The `latest` image inherits among others
+
+- utilities **ping**, **zip**, **unzip**, **sudo**
+- popular text editor [vim][vim]
+- lite but advanced graphical editor [mousepad][mousepad]
+- [tini][tini] as the entry-point initial process (PID 1)
+
+and adds
+
+- [Firefox Quantum][firefox] web browser and some additional **plus** features described below
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -22,13 +31,17 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc:latest` and it includes the **plus** features  
+- `latest` is based on `accetto/xubuntu-vnc:latest`, it includes the **plus** features and it is built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **disabled** (see below)
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-firefox:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-firefox:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:latest "Get your own image badge on microbadger.com")
 
-- `default` is also based on `accetto/xubuntu-vnc:latest`, but it doesn't include the **plus** features  
+- `default` is similar to `latest`, but it doesn't include the **plus** features  
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-firefox:default.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:default "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-firefox:default.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:default "Get your own image badge on microbadger.com")
+
+- `multiprocess` is also similar to `latest`, but it is not built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **enabled**  
+
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-firefox:multiprocess.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:multiprocess "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-firefox:multiprocess.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:multiprocess "Get your own image badge on microbadger.com")
 
 ### Dockerfiles
 
@@ -65,6 +78,35 @@ Containers created from these images run under the non-root **default applicatio
 ### Using headless containers
 
 The containers are intended to be used through a **VNC Viewer** (e.g. [TigerVNC][tigervnc] or [TightVNC][tightvnc]). The viewer should connect to the host running the container, pointing to its TCP port mapped to the container's port **5901**.
+
+## Firefox multi-process
+
+Firefox multi-process (also known as **Electrolysis** or just **E10S**) causes in Docker container heavy crashing (**Gah. Your tab just crashed.**) and therefore it needs to be disabled.
+
+In Firefox versions till **67.0.4** it could be done by setting the preferences **browser.tabs.remote.autostart** and **browser.tabs.remote.autostart.2** to **false**. However, Mozilla has removed this possibility since the Firefox version **68.0**.
+
+Since than it can be done only by setting the following environment variable:
+
+```bash
+MOZ_FORCE_DISABLE_E10S
+```
+
+Therefore the images tagged `latest` and `default` set this variable to **1** by using the build argument **ARG_MOZ_FORCE_DISABLE_E10S**.
+
+Note that any value will actually disable the multi-process feature, so the both following settings would have the same effect:
+
+```bash
+MOZ_FORCE_DISABLE_E10S=1
+MOZ_FORCE_DISABLE_E10S=0
+```
+
+Building an image without the build argument **ARG_MOZ_FORCE_DISABLE_E10S** enables the Firefox multi-process feature. The image tagged `multiprocess` is built that way.
+
+To check whether the Firefox multi-process is enabled or disabled, navigate the web browser to the following URL:
+
+```bash
+about:support
+```
 
 ## Firefox preferences and the plus features
 
@@ -112,7 +154,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -130,7 +174,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [firefox-doc-preferences]: https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 
-[firefox]: https://www.mozilla.org
+[mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
+[vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
+
+[firefox]: https://www.mozilla.org

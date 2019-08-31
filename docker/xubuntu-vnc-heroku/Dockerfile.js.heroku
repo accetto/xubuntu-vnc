@@ -1,8 +1,8 @@
-# docker build -f Dockerfile.js.heroku -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql .
-# docker build -f Dockerfile.js.heroku -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:dfw .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:firefox .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:chromium .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/accetto/xubuntu-vnc-js-heroku-postgresql:lab .
+# docker build -f Dockerfile.js.heroku -t accetto/xubuntu-vnc-js-heroku-postgresql .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=dev -t accetto/xubuntu-vnc-js-heroku-postgresql:dfw .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/xubuntu-vnc-js-heroku-postgresql:firefox .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/xubuntu-vnc-js-heroku-postgresql:chromium .
+# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/xubuntu-vnc-js-heroku-postgresql:lab .
 
 
 ARG BASETAG=latest
@@ -37,6 +37,8 @@ RUN /dockerstartup/set_user_permissions.sh ${HOME}
 
 FROM stage-postgresql as stage-final
 
-ENV REFRESHED_AT 2019-08-11
+ARG ARG_REFRESHED_AT
+
+ENV REFRESHED_AT=${ARG_REFRESHED_AT}
 
 USER 1001

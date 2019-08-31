@@ -1,0 +1,25 @@
+### hooks/env
+
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
+SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+
+ARCHIVE_TAG="ubuntu18.04.3-chromium76.0.3809.100"
+TODAY=$(date +%Y-%m-%d)
+BASETAG=""
+
+case "$DOCKER_TAG" in
+
+    latest)
+        BASETAG="latest"
+        ;;
+
+    dev)
+        BASETAG="dev"
+        ;;
+
+    *)
+        BASETAG=""
+        ;;
+esac

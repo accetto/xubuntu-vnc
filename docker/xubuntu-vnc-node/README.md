@@ -2,15 +2,22 @@
 
 ## accetto/xubuntu-vnc-node
 
-[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and JavaScript-based development platform [Node.js][nodejs].
 
-The images are based on the base images [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc], [accetto/xubuntu-vnc-firefox][accetto-docker-xubuntu-vnc-firefox] and [accetto/xubuntu-vnc-chromium][accetto-docker-xubuntu-vnc-chromium] and inherit all their components and features. Therefore not the whole description will be repeated here.
+The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc], [accetto/xubuntu-vnc-firefox][accetto-docker-xubuntu-vnc-firefox] and [accetto/xubuntu-vnc-chromium][accetto-docker-xubuntu-vnc-chromium] images. They inherit all the features and therefore not the whole description will be repeated here.
 
-This image adds the following components:
+The `latest` image inherits among others
+
+- utilities **ping**, **zip**, **unzip**, **sudo**
+- popular text editor [vim][vim]
+- lite but advanced graphical editor [mousepad][mousepad]
+- [tini][tini] as the entry-point initial process (PID 1)
+
+and adds
 
 - [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js
@@ -47,22 +54,54 @@ The [Git Hub][this-github-xubuntu-vnc-node] repository contains several Dockerfi
 
   However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc:lab`.
 
-- `Dockerfile.node.firefox`  
-  
-  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-firefox:latest` tag and therefore includes also [Firefox][firefox] web browser and the **plus** features
-
-- `Dockerfile.node.chromium`  
-  
-  This Dockerfile is for building the `chromium` image tag, which is based on the `accetto/xubuntu-vnc-chromium:latest` tag and therefore includes also [Chromium][chromium] web browser
+  By providing the `BASEIMAGE` build argument it is possible to build images based on other base  images, for example `accetto/xubuntu-vnc-firefox`. The `firefox` and `chromium` tags are built that way.
 
 ### Ports
 
-The image exposes only the TCP port **5901** and therefore the containers consume only one TCP port (per container) on the host computer.
+The image exposes by default only the TCP port **5901** and therefore the containers consume only one TCP port (per container) on the host computer.
 
 Other ports can be easily exposed using the `docker run` arguments. For example, the following container will expose its internal port **5000** and bind it to the next free TCP port on the host computer:
 
 ```shell
 docker run -itP --rm -p 5000 accetto/xubuntu-vnc-node
+```
+
+### Node.js
+
+The image contains [Node.js][nodejs] and it can be useful to be able to control the port used by it. Therefore the environment variable **NODE_PORT** and the build argument **ARG_NODE_PORT** have been added.
+
+The environment variable's default value is **3000**, but it can be change by using the build argument during the image build.
+
+For example the following command would build an image with the **NODE_PORT** set to **5000**.
+
+```shell
+docker build -f Dockerfile.node --build-arg ARG_NODE_PORT=5000 -t accetto/xubuntu-vnc-node:5000 .
+```
+
+To be able to test the [Node.js][nodejs] installation and its default port, a very simple application has been included (`/usr/src/node-test-app/app.js`).
+
+It can be started from the `/usr/src/node-test-app` folder (inside the container) with the following command:
+
+```shell
+node app.js
+```
+
+Do not forget to expose the correct port (**NODE_PORT**) by creating the container, for example:
+
+```shell
+docker run -itP --rm -p 25000:3000 accetto/xubuntu-vnc-node
+```
+
+After starting the application, point the host's web browser to the container's **NODE_PORT** port:
+
+```shell
+http://localhost:25000
+```
+
+The web page text should read:
+
+```shell
+Hello from Node.js in Docker container
 ```
 
 ### Volumes
@@ -108,7 +147,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -122,8 +163,12 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-doc-managing-data]: https://docs.docker.com/storage/
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
+
+[mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
+[vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
 
 [chromium]: https://www.chromium.org/Home

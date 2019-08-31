@@ -1,0 +1,50 @@
+### hooks/env
+
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
+SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+
+ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0"
+ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox68.0.2"
+ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium76.0.3809.100"
+TODAY=$(date +%Y-%m-%d)
+BASEIMAGE=""
+BASETAG=""
+
+case "$DOCKER_TAG" in
+
+    latest)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="latest"
+        ;;
+
+    chromium)
+        BASEIMAGE="accetto/xubuntu-vnc-chromium"
+        BASETAG="latest"
+        ;;
+
+    firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="latest"
+        ;;
+
+    dev)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="dev"
+        ;;
+
+    dev-chromium)
+        BASEIMAGE="accetto/xubuntu-vnc-chromium"
+        BASETAG="dev"
+        ;;
+
+    dev-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="dev"
+        ;;
+
+    *)
+        BASETAG=""
+        ;;
+esac

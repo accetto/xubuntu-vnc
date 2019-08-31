@@ -2,15 +2,24 @@
 
 ## accetto/xubuntu-vnc-chromium
 
-[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the current [Chromium][chromium] web browser.
 
-The images are based on the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] and inherit all the components and features. Therefore not the whole description will be repeated here.
+The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
 
-This image adds the current version of the open-source [Chromium][chromium] web browser.
+The `latest` image inherits among others
+
+- utilities **ping**, **zip**, **unzip**, **sudo**
+- popular text editor [vim][vim]
+- lite but advanced graphical editor [mousepad][mousepad]
+- [tini][tini] as the entry-point initial process (PID 1)
+
+and adds
+
+- [Chromium][chromium] open-source web browser
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -68,7 +77,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -83,7 +94,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-doc]: https://docs.docker.com/
 [docker-doc-managing-data]: https://docs.docker.com/storage/
 
-[chromium]: https://www.chromium.org/Home
+[mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
+[vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
+
+[chromium]: https://www.chromium.org/Home

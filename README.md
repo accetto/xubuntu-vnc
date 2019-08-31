@@ -2,13 +2,15 @@
 
 ## Project `accetto/xubuntu-vnc`
 
-[Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
+[Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
 This project repository contains resources for building various Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment and [VNC][tigervnc] server for headless use.
 
 The resources for the individual images and their variations are stored in the subfolders of the [Git Hub][this-github] repository and the image features are described in the individual README files. Additional descriptions can be found in the common project [Wiki][this-wiki].
+
+All images are part of the growing [image hierarchy][this-wiki-image-hierarchy].
 
 ### Git Hub subfolders / Docker image sets
 
@@ -20,7 +22,7 @@ The images are streamlined and simplified versions of my other images [accetto/u
 
 Several variations are available, including the one supporting overriding both the container user and the user group.
 
-Examples of Dockerfiles for building stand-alone application images from scratch are also included.
+Additional components and applications can be easily added by the user because **sudo** is supported.
 
 #### [xubuntu-vnc-firefox][this-github-xubuntu-vnc-firefox]
   
@@ -48,17 +50,17 @@ Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-v
 
 Contains resources for building [accetto/xubuntu-vnc-typescript][this-docker-xubuntu-vnc-typescript] images with JavaScript-based development platform. It adds [Visual Studio Code][vscode] developer editor and [TypeScript][typescript] programming language. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
+#### [xubuntu-vnc-angular][this-github-xubuntu-vnc-angular]
+
+Contains resources for building [accetto/xubuntu-vnc-angular][this-docker-xubuntu-vnc-angular] images with JavaScript development platform for [Angular][angular] development. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
+
 #### [xubuntu-vnc-heroku][this-github-xubuntu-vnc-heroku]
 
 Contains resources for building [accetto/xubuntu-vnc-js-heroku-postgresql][this-docker-xubuntu-vnc-js-heroku-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql] for JavaScript-based development with [Node.js][nodejs], [npm][npm], [Git][git], [Visual Studio Code][vscode] and [TypeScript][typescript]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
 #### [utils][this-github-utils]
   
-Contains various utilities that make building the images more convenient.
-
-- `util-update-refreshed-at.sh`  
-  
-  Updates the **REFRESHED_AT** environment variable to the current date in all Dockerfiles it finds underneath the given folder.
+Contains utilities that make building the images more convenient.
 
 - `util-hdx.sh`  
   
@@ -84,7 +86,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -111,6 +115,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-github-xubuntu-vnc-heroku]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-heroku/
 [this-docker-xubuntu-vnc-js-heroku-postgresql]: https://hub.docker.com/r/accetto/xubuntu-vnc-js-heroku-postgresql
 
+[this-github-xubuntu-vnc-angular]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-angular/
+[this-docker-xubuntu-vnc-angular]: https://hub.docker.com/r/accetto/xubuntu-vnc-angular/
+
 [accetto-docker-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce
 [accetto-docker-ubuntu-vnc-xfce-firefox-default]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-default
 [accetto-docker-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus
@@ -120,6 +127,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
+[angular]: https://angular.io/
 [chromium]: https://www.chromium.org/Home
 [inkscape]: https://inkscape.org/
 [firefox]: https://www.mozilla.org

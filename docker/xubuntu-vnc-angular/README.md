@@ -1,12 +1,12 @@
-# Headless Ubuntu/Xfce container with VNC for JavaScript development with Heroku-CLI and PostgreSQL
+# Headless Ubuntu/Xfce container with VNC for Angular development
 
-## accetto/xubuntu-vnc-js-heroku-postgresql
+## accetto/xubuntu-vnc-angular
 
 [Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
-This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use, JavaScript development platform, [Heroku-CLI][heroku-cli] toolkit and [PostgreSQL][postgresql] database.
+This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and with JavaScript development platform for [Angular][angular] development.
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc-typescript][accetto-docker-xubuntu-vnc-typescript]. They inherit all the features and therefore not the whole description will be repeated here.
 
@@ -21,10 +21,7 @@ The `latest` image inherits among others
 
 and adds
 
-- [Heroku-CLI][heroku-cli] toolkit
-- [PostgreSQL][postgresql] database
-
-The included features allow, for example, to complete the whole tutorial [Getting Started on Heroku with Node.js][heroku-getting-started-tutorial] inside the container, including the steps requiring a database.
+- [Angular][angular] CLI
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -36,21 +33,21 @@ The following image tags are regularly maintained and rebuilt:
 
 - `latest` is based on `accetto/xubuntu-vnc-typescript:latest`  
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-js-heroku-postgresql:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-js-heroku-postgresql:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:latest "Get your own image badge on microbadger.com")
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-angular:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-angular:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-angular:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-angular:latest "Get your own image badge on microbadger.com")
 
 - `firefox` is based on `accetto/xubuntu-vnc-typescript:firefox` and includes also [Firefox][firefox] web browser  
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-js-heroku-postgresql:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-js-heroku-postgresql:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:firefox "Get your own image badge on microbadger.com")
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-angular:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-angular:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-angular:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-angular:firefox "Get your own image badge on microbadger.com")
 
 - `chromium` is based on `accetto/xubuntu-vnc-typescript:chromium` and includes also [Chromium][chromium] web browser  
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-js-heroku-postgresql:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:chromium "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-js-heroku-postgresql:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-js-heroku-postgresql:chromium "Get your own image badge on microbadger.com")
+    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-angular:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-angular:chromium "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-angular:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-angular:chromium "Get your own image badge on microbadger.com")
 
 ### Dockerfiles
 
-The [Git Hub][this-github-xubuntu-vnc-heroku] repository contains several Dockerfiles that can be used to build the images.
+The [Git Hub][this-github-xubuntu-vnc-angular] repository contains several Dockerfiles that can be used to build the images.
 
-- `Dockerfile.js.heroku`  
+- `Dockerfile.angular`  
   
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-typescript:latest` tag by default.
 
@@ -60,10 +57,53 @@ The [Git Hub][this-github-xubuntu-vnc-heroku] repository contains several Docker
 
 The image exposes only the TCP port **5901** and therefore the containers consume only one TCP port (per container) on the host computer.
 
-Other ports can be easily exposed using the `docker run` arguments. For example, the following container will expose its internal port **5000** and bind it to the next free TCP port on the host computer:
+Other ports can be easily exposed using the `docker run` arguments. For example, the following container will expose its internal port **4200** and bind it to the next free TCP port on the host computer:
 
 ```shell
-docker run -itP --rm -p 5000 accetto/xubuntu-vnc-js-heroku-postgresql
+docker run -itP --rm -p 4200 accetto/xubuntu-vnc-angular
+```
+
+### Angular
+
+Angular applications listen by default on the TCP port **4200** on the **localhost** only. That is no problem, if you develop **inside** the container using the image's `firefox` or `chromium` tags. In that case you would create and start your Angular application using, for example, the following commands
+
+```shell
+ng new my-app
+
+# and after Angular finishes creating the application
+
+cd my-app
+ng serve --open
+```
+
+Angular will display among other messages
+
+```shell
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+```
+
+and you can reach you application from **inside** the container with
+
+```shell
+http://localhost:4200
+```
+
+However, if you use the image's `latest` tag or you want to reach your Angular application from **outside** the container, you have to force it to listen on an interface, which is reachable from outside the container. The simplest way is to make it to listen on all interfaces:
+
+```shell
+ng serve --host 0.0.0.0
+```
+
+Make sure that you expose the port **4200** by starting the container. For example
+
+```shell
+docker run -itP --rm -p 25000:4200 accetto/xubuntu-vnc-angular
+```
+
+Now you can reach the application from your host like
+
+```shell
+http://localhost:25000
 ```
 
 ### Volumes
@@ -77,11 +117,11 @@ The folder `/usr/src` is intended as the working folder for development and it s
 For example, the following container would use the local folder **my_apps**:
 
 ```shell
-docker run -dP -v /my_apps:/usr/src accetto/js-heroku-postgresql
+docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-angular
 
 # or using the newer syntax
 
-docker run -dP --mount source=/my_apps,target=/usr/src accetto/js-heroku-postgresql
+docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-angular
 ```
 
 ### Container user
@@ -104,8 +144,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 ***
 
-[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-js-heroku-postgresql
-[this-github-xubuntu-vnc-heroku]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-heroku
+[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-angular
+[this-github-xubuntu-vnc-angular]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-angular
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
@@ -113,9 +153,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 [this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
-[this-issues]: https://github.com/accetto/xubuntu-vnc/issues
-
-[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-heroku/xubuntu-vnc-heroku.jpg
+[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-angular/xubuntu-vnc-angular.jpg
 
 [accetto-docker-xubuntu-vnc]: https://hub.docker.com/r/accetto/xubuntu-vnc/
 [accetto-docker-xubuntu-vnc-typescript]: https://hub.docker.com/r/accetto/xubuntu-vnc-typescript
@@ -133,10 +171,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
-[heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
-[heroku-getting-started-tutorial]: https://devcenter.heroku.com/articles/getting-started-with-nodejs
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
-[postgresql]: https://www.postgresql.org/
 [typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/
+
+[angular]: https://angular.io/

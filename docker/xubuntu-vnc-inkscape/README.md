@@ -2,15 +2,26 @@
 
 ## accetto/xubuntu-vnc-inkscape
 
-[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
 
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free professional vector graphics editor [Inkscape][inkscape].
 
-The images are based on the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] and inherit all the components and features. Therefore not the whole description will be repeated here.
+The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
 
-This image adds the current version of the free professional vector graphics editor [Inkscape][inkscape]. It can be used for many things, including the conversion of bitmap images into the **SVG** format.
+The `latest` image inherits among others
+
+- utilities **ping**, **zip**, **unzip**, **sudo**
+- popular text editor [vim][vim]
+- lite but advanced graphical editor [mousepad][mousepad]
+- [tini][tini] as the entry-point initial process (PID 1)
+
+and adds
+
+- [Inkscape][inkscape] free professional vector graphics editor
+
+[Inkscape][inkscape] can be used for many things, including the conversion of bitmap images into the **SVG** format.
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -24,7 +35,7 @@ The following image tags are regularly maintained and rebuilt:
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-inkscape:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-inkscape:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:latest "Get your own image badge on microbadger.com")
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser  
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser and the **plus** features  
 
     [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-inkscape:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-inkscape:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:firefox "Get your own image badge on microbadger.com")
 
@@ -37,10 +48,8 @@ The [Git Hub][this-github-xubuntu-vnc-inkscape] repository contains several Dock
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc:latest` tag by default.
 
   However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc:lab`.
-
-- `Dockerfile.inkscape.firefox`  
   
-  This Dockerfile is for building the `firefox` image tag, which is based on the `accetto/xubuntu-vnc-firefox:latest` tag and therefore includes also [Firefox][firefox] browser and the **plus** features
+  By providing the `BASEIMAGE` build argument it is possible to build images based on other base  images, for example `accetto/xubuntu-vnc-firefox`. The `firefox` tag is built that way.
 
 ### Ports
 
@@ -76,7 +85,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
+
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
+[this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -91,8 +102,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
-[firefox]: https://www.mozilla.org
-[inkscape]: https://inkscape.org/
+[mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
+[vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
+
+[inkscape]: https://inkscape.org/
