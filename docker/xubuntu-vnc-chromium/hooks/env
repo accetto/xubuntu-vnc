@@ -1,13 +1,13 @@
 ### hooks/env
 
-DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
-DOCKER_TAG=${DOCKER_TAG:-$1}
-DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
 SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.chromium}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-chromium}
 
-ARCHIVE_TAG="ubuntu18.04.3-chromium76.0.3809.100"
 TODAY=$(date +%Y-%m-%d)
 BASETAG=""
+VERSION_STICKER="ubuntu18.04.3-chromium76.0.3809.100"
 
 case "$DOCKER_TAG" in
 
@@ -17,6 +17,10 @@ case "$DOCKER_TAG" in
 
     dev)
         BASETAG="dev"
+        ;;
+
+    dfw)
+        BASETAG="dfw"
         ;;
 
     *)

@@ -1,13 +1,13 @@
 ### hooks/env
 
-DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
-DOCKER_TAG=${DOCKER_TAG:-$1}
-DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
 SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.firefox}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-firefox}
 
-ARCHIVE_TAG="ubuntu18.04.3-firefox_68.0.2-build1-0ubuntu0.18.04.1"
 TODAY=$(date +%Y-%m-%d)
 BASETAG=""
+VERSION_STICKER="ubuntu18.04.3-firefox69.0"
 
 case "$DOCKER_TAG" in
 

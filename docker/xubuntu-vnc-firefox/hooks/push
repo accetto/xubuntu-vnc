@@ -8,16 +8,16 @@ if [[ -n "$BASETAG" ]] ; then
 
     case "$DOCKER_TAG" in
         latest)
-            docker tag $IMAGE_NAME $DOCKER_REPO:$ARCHIVE_TAG
-            docker push $DOCKER_REPO:$ARCHIVE_TAG
+            docker tag $IMAGE_NAME $DOCKER_REPO:$VERSION_STICKER
+            docker push $DOCKER_REPO:$VERSION_STICKER
             ;;
         default)
-            docker tag $IMAGE_NAME $DOCKER_REPO:default-$ARCHIVE_TAG
-            docker push $DOCKER_REPO:default-$ARCHIVE_TAG
+            docker tag $IMAGE_NAME $DOCKER_REPO:default-$VERSION_STICKER
+            docker push $DOCKER_REPO:default-$VERSION_STICKER
             ;;
         multiprocess)
-            docker tag $IMAGE_NAME $DOCKER_REPO:multiprocess-$ARCHIVE_TAG
-            docker push $DOCKER_REPO:multiprocess-$ARCHIVE_TAG
+            docker tag $IMAGE_NAME $DOCKER_REPO:multiprocess-$VERSION_STICKER
+            docker push $DOCKER_REPO:multiprocess-$VERSION_STICKER
             ;;
     esac
 else

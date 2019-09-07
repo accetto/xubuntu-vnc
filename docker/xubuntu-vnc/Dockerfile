@@ -1,8 +1,5 @@
-# docker build -f Dockerfile -t accetto/xubuntu-vnc .
-# docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:lab .
-# docker build -f Dockerfile -t accetto/xubuntu-vnc:dev .
-# docker build -f Dockerfile --build-arg ARG_SUPPORT_USER_GROUP_OVERRIDE=anything_means_yes -t accetto/xubuntu-vnc:lab-dev .
-# docker build -f Dockerfile -t accetto/xubuntu-vnc:dfw .
+# ./hooks/build dev
+# ./hooks/build dfw
 
 ARG BASETAG=latest
 
@@ -120,6 +117,8 @@ RUN \
         "${STARTUPDIR}/set_user_permissions.sh" \
         "${STARTUPDIR}/generate_container_user.sh" \
         "${STARTUPDIR}/vnc_startup.sh" \
+        "${STARTUPDIR}/version_of.sh" \
+        "${STARTUPDIR}/version_sticker.sh" \
     && ${ARG_SUPPORT_USER_GROUP_OVERRIDE/*/chmod a+w /etc/passwd /etc/group} \
     && gtk-update-icon-cache -f /usr/share/icons/hicolor
 
@@ -132,8 +131,11 @@ EXPOSE ${VNC_PORT}
 USER 1001
 
 ARG ARG_REFRESHED_AT
+ARG ARG_VERSION_STICKER
 
-ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+ENV \
+    REFRESHED_AT=${ARG_REFRESHED_AT} \
+    VERSION_STICKER=${ARG_VERSION_STICKER}
 
 ENTRYPOINT [ "/tini", "--", "/dockerstartup/vnc_startup.sh" ]
 ### tini argument '-w' means 'print a warning when processes are getting reaped'

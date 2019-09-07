@@ -3,6 +3,7 @@
 # docker build -f Dockerfile.firefox.default --build-arg BASETAG=lab -t accetto/xubuntu-vnc-firefox:dfw-default .
 # docker build -f Dockerfile.firefox.default --build-arg ARG_MOZ_FORCE_DISABLE_E10S=anything_means_yes -t accetto/xubuntu-vnc-firefox:dfw-default .
 # docker build -f Dockerfile.firefox.default -t accetto/xubuntu-vnc-firefox:dfw-default-multiprocess .
+# ./hooks/build dev
 
 ARG BASETAG=latest
 
@@ -34,18 +35,23 @@ RUN apt-get update && apt-get install -y \
 COPY [ "./src/firefox/home/Desktop", "${HOME}/Desktop/" ]
 COPY [ "./src/firefox/home/config/xfce4", "${HOME}/.config/xfce4/" ]
 
+COPY [ "./src/startup", "${STARTUPDIR}/" ]
+
 ### Firefox multi-process causes a lot of "Gah. Your tab just crashed."
 ### The only way to disable it since Firefox v68.0 is through this environment variable.
 ENV MOZ_FORCE_DISABLE_E10S=${ARG_MOZ_FORCE_DISABLE_E10S:+1}
 
 ### Fix new launchers permissions
-RUN /dockerstartup/set_user_permissions.sh ${HOME}
+RUN /dockerstartup/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-firefox as stage-final
 
 ARG ARG_REFRESHED_AT
+ARG ARG_VERSION_STICKER
 
-ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+ENV \
+    REFRESHED_AT=${ARG_REFRESHED_AT} \
+    VERSION_STICKER=${ARG_VERSION_STICKER}
 
 ### Switch to default application user (non-root)
 USER 1001

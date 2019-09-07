@@ -1,8 +1,5 @@
-# docker build -f Dockerfile.chromium -t accetto/xubuntu-vnc-chromium .
-# docker build -f Dockerfile.chromium --build-arg BASETAG=dev -t accetto/xubuntu-vnc-chromium:dev .
-# docker build -f Dockerfile.chromium -t accetto/xubuntu-vnc-chromium:dfw .
-# docker build -f Dockerfile.chromium --build-arg BASETAG=lab -t accetto/xubuntu-vnc-chromium:lab .
-# docker build -f Dockerfile.chromium --build-arg BASETAG=dev-lab -t accetto/xubuntu-vnc-chromium:dev-lab .
+# ./hooks/build dev
+# ./hooks/build dfw
 
 ARG BASETAG=latest
 
@@ -24,15 +21,19 @@ RUN echo "CHROMIUM_FLAGS='--no-sandbox --disable-gpu --user-data-dir --window-si
 ### Preconfigure Xfce desktop
 COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
 COPY [ "./src/home/config/xfce4", "${HOME}/.config/xfce4/" ]
+COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
-### Fix new launchers permissions
-RUN /dockerstartup/set_user_permissions.sh ${HOME}
+### Fix permissions
+RUN "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-chromium as stage-final
 
 ARG ARG_REFRESHED_AT
+ARG ARG_VERSION_STICKER
 
-ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+ENV \
+    REFRESHED_AT=${ARG_REFRESHED_AT} \
+    VERSION_STICKER=${ARG_VERSION_STICKER}
 
 ### Switch to default application user (non-root)
 USER 1001
