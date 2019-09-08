@@ -34,15 +34,14 @@ RUN apt-get update && apt-get install -y \
 ### Preconfigure Xfce
 COPY [ "./src/firefox/home/Desktop", "${HOME}/Desktop/" ]
 COPY [ "./src/firefox/home/config/xfce4", "${HOME}/.config/xfce4/" ]
-
-COPY [ "./src/startup", "${STARTUPDIR}/" ]
+COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
 ### Firefox multi-process causes a lot of "Gah. Your tab just crashed."
 ### The only way to disable it since Firefox v68.0 is through this environment variable.
 ENV MOZ_FORCE_DISABLE_E10S=${ARG_MOZ_FORCE_DISABLE_E10S:+1}
 
 ### Fix new launchers permissions
-RUN /dockerstartup/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
+RUN "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-firefox as stage-final
 

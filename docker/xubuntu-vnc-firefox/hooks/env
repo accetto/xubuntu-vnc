@@ -29,6 +29,15 @@ case "$DOCKER_TAG" in
         BASETAG="dev"
         ;;
 
+    dfw | dfw-default)
+        BASETAG="dfw"
+        IS_SINGLEPROCESS_BUILD=yes
+        ;;
+
+    dfw-multiprocess)
+        BASETAG="dfw"
+        ;;
+
     *)
         BASETAG=""
         ;;

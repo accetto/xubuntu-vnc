@@ -1,9 +1,5 @@
-# docker build -f Dockerfile.firefox -t accetto/xubuntu-vnc-firefox .
-# docker build -f Dockerfile.firefox --build-arg BASETAG=dev -t accetto/xubuntu-vnc-firefox:dev .
-# docker build -f Dockerfile.firefox --build-arg BASETAG=lab -t accetto/xubuntu-vnc-firefox:dfw .
-# docker build -f Dockerfile.firefox --build-arg ARG_MOZ_FORCE_DISABLE_E10S=anything_means_yes -t accetto/xubuntu-vnc-firefox:dfw .
-# docker build -f Dockerfile.firefox -t accetto/xubuntu-vnc-firefox:dfw-multiprocess .
 # ./hooks/build dev
+# ./hooks/build dfw
 
 ARG BASETAG=latest
 
@@ -32,8 +28,7 @@ RUN apt-get update && apt-get install -y \
 ### Preconfigure Xfce
 COPY [ "./src/firefox/home/Desktop", "${HOME}/Desktop/" ]
 COPY [ "./src/firefox/home/config/xfce4", "${HOME}/.config/xfce4/" ]
-
-COPY [ "./src/startup", "${STARTUPDIR}/" ]
+COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
 FROM stage-firefox as stage-plus
 
@@ -54,7 +49,7 @@ RUN \
     && gtk-update-icon-cache -f /usr/share/icons/hicolor
 
 ### Fix permissions
-RUN /dockerstartup/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
+RUN "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-plus as stage-final
 
