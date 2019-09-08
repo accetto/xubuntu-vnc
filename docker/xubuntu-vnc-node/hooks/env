@@ -1,16 +1,17 @@
 ### hooks/env
 
-DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
-DOCKER_TAG=${DOCKER_TAG:-$1}
-DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
 SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-node}
 
-ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0"
-ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox68.0.2"
-ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium76.0.3809.100"
 TODAY=$(date +%Y-%m-%d)
 BASEIMAGE=""
 BASETAG=""
+
+VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium76.0.3809.100"
 
 case "$DOCKER_TAG" in
 
@@ -22,11 +23,13 @@ case "$DOCKER_TAG" in
     chromium)
         BASEIMAGE="accetto/xubuntu-vnc-chromium"
         BASETAG="latest"
+        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="latest"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dev)
@@ -37,11 +40,30 @@ case "$DOCKER_TAG" in
     dev-chromium)
         BASEIMAGE="accetto/xubuntu-vnc-chromium"
         BASETAG="dev"
+        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     dev-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dev"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
+        ;;
+
+    dfw)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="dfw"
+        ;;
+
+    dfw-chromium)
+        BASEIMAGE="accetto/xubuntu-vnc-chromium"
+        BASETAG="dfw"
+        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
+        ;;
+
+    dfw-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="dfw"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     *)

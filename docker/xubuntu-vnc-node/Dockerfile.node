@@ -1,12 +1,5 @@
-# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node .
-# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox -t accetto/xubuntu-vnc-node:firefox .
-# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-chromium -t accetto/xubuntu-vnc-node:chromium .
-# docker build -f Dockerfile.node --build-arg ARG_NODE_PORT=5000 -t accetto/xubuntu-vnc-node:5000 .
-# docker build -f Dockerfile.node --build-arg BASETAG=lab -t accetto/xubuntu-vnc-node:lab .
-# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dfw .
-# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox -t accetto/xubuntu-vnc-node:dfw-firefox .
-# docker build -f Dockerfile.node --build-arg BASEIMAGE=accetto/xubuntu-vnc-chromium -t accetto/xubuntu-vnc-node:dfw-chromium .
-# docker build -f Dockerfile.node -t accetto/xubuntu-vnc-node:dfw-distro .
+# ./hooks/build dev
+# ./hooks/build dfw
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -57,13 +50,18 @@ RUN \
     && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin/npx /usr/bin/npx \
     && npm config set prefix ${NPM_CONFIG_PREFIX}
 
+COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
+
 ### Fix permissions
-RUN /dockerstartup/set_user_permissions.sh ${HOME}
+RUN \
+    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-node as stage-final
 
 ARG ARG_REFRESHED_AT
 ARG ARG_NODE_PORT
+ARG ARG_VERSION_STICKER
 
 ENV NODE_PORT=${ARG_NODE_PORT:-3000}
 
@@ -79,6 +77,8 @@ RUN chmod -R g+w /usr/src
 ### optionally expose the node port
 # EXPOSE ${NODE_PORT}
 
-ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+ENV \
+    REFRESHED_AT=${ARG_REFRESHED_AT} \
+    VERSION_STICKER=${ARG_VERSION_STICKER}
 
 USER 1001

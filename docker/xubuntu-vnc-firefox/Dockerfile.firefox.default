@@ -40,8 +40,10 @@ COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 ### The only way to disable it since Firefox v68.0 is through this environment variable.
 ENV MOZ_FORCE_DISABLE_E10S=${ARG_MOZ_FORCE_DISABLE_E10S:+1}
 
-### Fix new launchers permissions
-RUN "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
+### Fix permissions
+RUN \
+    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-firefox as stage-final
 

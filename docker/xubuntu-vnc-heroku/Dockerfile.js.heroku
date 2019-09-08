@@ -1,9 +1,5 @@
-# docker build -f Dockerfile.js.heroku -t accetto/xubuntu-vnc-js-heroku-postgresql .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=dev -t accetto/xubuntu-vnc-js-heroku-postgresql:dfw .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=firefox -t accetto/xubuntu-vnc-js-heroku-postgresql:firefox .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=chromium -t accetto/xubuntu-vnc-js-heroku-postgresql:chromium .
-# docker build -f Dockerfile.js.heroku --build-arg BASETAG=lab -t accetto/xubuntu-vnc-js-heroku-postgresql:lab .
-
+# ./hooks/build dev
+# ./hooks/build dfw
 
 ARG BASETAG=latest
 
@@ -12,7 +8,7 @@ FROM accetto/xubuntu-vnc-typescript:${BASETAG} as stage-heroku
 USER 0
 
 RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | bash \
-    && chmod -R g+w ${HOME}/.cache
+    && chmod -R g+w "${HOME}"/.cache
 
 FROM stage-heroku as stage-postgresql
 
@@ -32,13 +28,20 @@ RUN apt-get update && apt-get install -y \
 #     && apt-get -y autoremove \
 #     && rm -rf /var/lib/apt/lists/
 
+COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
+
 ### Fix permissions
-RUN /dockerstartup/set_user_permissions.sh ${HOME}
+RUN \
+    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-postgresql as stage-final
 
 ARG ARG_REFRESHED_AT
+ARG ARG_VERSION_STICKER
 
-ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+ENV \
+    REFRESHED_AT=${ARG_REFRESHED_AT} \
+    VERSION_STICKER=${ARG_VERSION_STICKER}
 
 USER 1001

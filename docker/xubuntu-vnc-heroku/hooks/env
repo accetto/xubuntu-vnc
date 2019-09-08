@@ -1,15 +1,16 @@
 ### hooks/env
 
-DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
-DOCKER_TAG=${DOCKER_TAG:-$1}
-DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
 SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.js.heroku}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-js-heroku-postgresql}
 
-ARCHIVE_TAG="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.6.2-heroku7.29.0-psql10.10"
-ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.6.2-heroku7.29.0-psql10.10-firefox68.0.2"
-ARCHIVE_TAG_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.37.1-tsc3.6.2-heroku7.29.0-psql10.10-chromium76.0.3809.100"
 TODAY=$(date +%Y-%m-%d)
 BASETAG=""
+
+VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.0-tsc3.6.2-heroku7.29.0-psql10.10"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.0-tsc3.6.2-heroku7.29.0-psql10.10-firefox69.0"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.0-tsc3.6.2-heroku7.29.0-psql10.10-chromium76.0.3809.100"
 
 case "$DOCKER_TAG" in
 
@@ -19,10 +20,12 @@ case "$DOCKER_TAG" in
 
     chromium)
         BASETAG="chromium"
+        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     firefox)
         BASETAG="firefox"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dev)
@@ -31,10 +34,26 @@ case "$DOCKER_TAG" in
 
     dev-chromium)
         BASETAG="dev-chromium"
+        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     dev-firefox)
         BASETAG="dev-firefox"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
+        ;;
+
+    dfw)
+        BASETAG="dfw"
+        ;;
+
+    dfw-chromium)
+        BASETAG="dfw-chromium"
+        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
+        ;;
+
+    dfw-firefox)
+        BASETAG="dfw-firefox"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     *)

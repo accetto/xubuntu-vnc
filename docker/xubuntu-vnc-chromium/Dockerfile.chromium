@@ -24,7 +24,9 @@ COPY [ "./src/home/config/xfce4", "${HOME}/.config/xfce4/" ]
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
 ### Fix permissions
-RUN "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
+RUN \
+    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-chromium as stage-final
 
