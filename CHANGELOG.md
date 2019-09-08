@@ -6,6 +6,16 @@
 
 ***
 
+### Release 19.09.1
+
+- All images
+  - environment variable **VERSION_STICKER** and build argument **ARG_VERSION_STICKER** introduced
+  - scripts **version_sticker.sh** and **version_of.sh** introduced
+- Updated versions
+  - Firefox **69.0**
+  - VSCode **1.38.0**
+  - Angular **8.3.3**
+
 ### Release 19.09
 
 - images with **Angular** introduced (**xubuntu-vnc-angular**)
