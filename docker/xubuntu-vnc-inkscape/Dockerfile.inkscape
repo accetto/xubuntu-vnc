@@ -1,9 +1,5 @@
-# docker build -f Dockerfile.inkscape -t accetto/xubuntu-vnc-inkscape .
-# docker build -f Dockerfile.inkscape -t accetto/xubuntu-vnc-inkscape:dfw .
-# docker build -f Dockerfile.inkscape --build-arg BASEIMAGE=accetto/xubuntu-vnc-firefox -t accetto/xubuntu-vnc-inkscape:dfw-firefox .
-# docker build -f Dockerfile.inkscape --build-arg BASETAG=dev -t accetto/xubuntu-vnc-inkscape:dev .
-# docker build -f Dockerfile.inkscape --build-arg BASETAG=lab -t accetto/xubuntu-vnc-inkscape:lab .
-# docker build -f Dockerfile.inkscape --build-arg BASETAG=devlab -t accetto/xubuntu-vnc-inkscape:devlab .
+# ./hooks/build dev
+# ./hooks/build dfw
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -21,15 +17,21 @@ RUN apt-get update && apt-get install -y \
 
 ### Preconfigure Xfce desktop
 COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
+COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
-### Fix new launchers permissions
-RUN /dockerstartup/set_user_permissions.sh ${HOME}
+### Fix permissions
+RUN \
+    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-inkscape as stage-final
 
 ARG ARG_REFRESHED_AT
+ARG ARG_VERSION_STICKER
 
-ENV REFRESHED_AT=${ARG_REFRESHED_AT}
+ENV \
+    REFRESHED_AT=${ARG_REFRESHED_AT} \
+    VERSION_STICKER=${ARG_VERSION_STICKER}
 
 ### Switch to default application user (non-root)
 USER 1001

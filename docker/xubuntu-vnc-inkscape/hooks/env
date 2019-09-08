@@ -1,15 +1,16 @@
 ### hooks/env
 
-DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.angular}
-DOCKER_TAG=${DOCKER_TAG:-$1}
-DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
 SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.inkscape}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-inkscape}
 
-ARCHIVE_TAG="ubuntu18.04.3-inkscape0.92.3"
-ARCHIVE_TAG_FIREFOX="ubuntu18.04.3-inkscape0.92.3-firefox68.0.2"
 TODAY=$(date +%Y-%m-%d)
 BASEIMAGE=""
 BASETAG=""
+
+VERSION_STICKER="ubuntu18.04.3-inkscape0.92.3"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-inkscape0.92.3-firefox69.0"
 
 case "$DOCKER_TAG" in
 
@@ -21,6 +22,7 @@ case "$DOCKER_TAG" in
     firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="latest"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dev)
@@ -31,6 +33,18 @@ case "$DOCKER_TAG" in
     dev-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dev"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
+        ;;
+
+    dfw)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="dfw"
+        ;;
+
+    dfw-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="dfw"
+        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     *)
