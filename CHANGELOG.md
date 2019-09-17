@@ -6,6 +6,16 @@
 
 ***
 
+### Release 19.09.2
+
+- All images:
+  - scripts **version_sticker.sh** and **version_of.sh** updated
+- Updated versions
+  - VSCode **1.38.1**
+  - TypeScript **3.6.3**
+  - Angular **8.3.5**
+  - Heroku **7.30.0**
+
 ### Release 19.09.1
 
 - All images

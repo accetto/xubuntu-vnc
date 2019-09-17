@@ -18,11 +18,13 @@ case "$1" in
     -V)
         mousepad=$("${STARTUPDIR}/version_of.sh" mousepad)
         vim=$("${STARTUPDIR}/version_of.sh" vim)
+        tigervnc=$("${STARTUPDIR}/version_of.sh" tigervnc)
         curl=$("${STARTUPDIR}/version_of.sh" curl)
         git=$("${STARTUPDIR}/version_of.sh" git)
         echo "Ubuntu $ubuntu"
         echo "Mousepad $mousepad"
         echo "VIM $vim"
+        echo "TigerVNC $tigervnc"
         echo "curl $curl"
         echo "Git $git"
         echo "Node $node"

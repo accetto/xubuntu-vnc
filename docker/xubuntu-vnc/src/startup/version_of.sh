@@ -44,6 +44,10 @@ case "$1" in
         ### source example: v10.16.3
         echo $(node --version 2>/dev/null | grep -Po '[0-9.]+$')
         ;;
+    novnc | no-vnc)
+        ### source example: 1.1.0
+        echo $(cat "${NO_VNC_HOME}"/VERSION 2>/dev/null | grep -Po '^[0-9.]+$')
+        ;;
     npm)
         ### source example: 6.9.0
         echo $(npm --version 2>/dev/null)
@@ -51,6 +55,10 @@ case "$1" in
     psql | postgresql | postgre-sql | postgre)
         ### source example: psql (PostgreSQL) 10.10 (Ubuntu 10.10-0ubuntu0.18.04.1)
         echo $(psql --version 2>/dev/null | grep -Po '(?<=psql \(PostgreSQL\)\s)[0-9.]+')
+        ;;
+    tigervnc | tiger-vnc | vncserver | vnc-server | vnc)
+        ### source example: Xvnc TigerVNC 1.9.0 - built Jul 16 2018 14:18:04
+        echo $(vncserver -version 2>/dev/null | grep -Po '(?<=Xvnc TigerVNC\s)[0-9.]+')
         ;;
     tsc | typescript | type-script)
         ### source example: Version 3.6.2
@@ -63,5 +71,9 @@ case "$1" in
     vim)
         ### source example: VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jun 06 2019 17:31:41)
         echo $(vim --version 2>/dev/null | grep -Po '(?<=VIM - Vi IMproved\s)[0-9.]+')
+        ;;
+    websockify)
+        ### source example: 0.8.0
+        echo $(cat "${NO_VNC_HOME}"/utils/websockify/CHANGES.txt 2>/dev/null | grep -Po -m1 '^[0-9.]+')
         ;;
 esac

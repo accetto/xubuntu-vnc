@@ -10,9 +10,11 @@ case "$1" in
     -V)
         mousepad=$("${STARTUPDIR}/version_of.sh" mousepad)
         vim=$("${STARTUPDIR}/version_of.sh" vim)
+        tigervnc=$("${STARTUPDIR}/version_of.sh" tigervnc)
         echo "Ubuntu $ubuntu"
         echo "Mousepad $mousepad"
         echo "VIM $vim"
+        echo "TigerVNC $tigervnc"
         ;;
     *)
         ### example: ubuntu18.04.3
