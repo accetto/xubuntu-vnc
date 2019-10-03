@@ -2,9 +2,24 @@
 
 ## Project `accetto/xubuntu-vnc`
 
-[Git Hub][this-github] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
 ***
+
+### Version 19.10.1
+
+- README updated
+- Updated versions
+  - Angular **8.3.8**
+  - Heroku **7.33.1**
+
+### Release 19.10
+
+- Updated versions
+  - Firefox **69.0.1**
+  - Chromium Browser **77.0.3865.90**
+  - Angular **8.3.7**
+  - Heroku **7.33.0**
 
 ### Release 19.09.2
 
@@ -292,6 +307,8 @@ Initial version is derived from the version **19.06** of [accetto/ubuntu-vnc-xfc
   - automatic background color change for each tab
 
 ***
+
+[this-docker]: https://hub.docker.com/u/accetto/
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki

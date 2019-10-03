@@ -10,8 +10,8 @@ BASEIMAGE=""
 BASETAG=""
 
 VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium76.0.3809.100"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0.1"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium77.0.3865.90"
 
 case "$DOCKER_TAG" in
 

@@ -2,7 +2,11 @@
 
 ## Project `accetto/xubuntu-vnc`
 
-[Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
+[Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
+
+***
+
+**TIP** If you need also [noVNC][novnc], then you can use my other images from the project [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc] ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
 
@@ -10,7 +14,7 @@ This project repository contains resources for building various Docker images ba
 
 The resources for the individual images and their variations are stored in the subfolders of the [Git Hub][this-github] repository and the image features are described in the individual README files. Additional descriptions can be found in the common project [Wiki][this-wiki].
 
-All images are part of the growing [image hierarchy][this-wiki-image-hierarchy].
+All images are part of a growing [image hierarchy][this-wiki-image-hierarchy].
 
 ### Git Hub subfolders / Docker image sets
 
@@ -84,6 +88,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 ***
 
+[this-docker]: https://hub.docker.com/u/accetto/
+
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
 
@@ -122,6 +128,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [accetto-docker-ubuntu-vnc-xfce-firefox-default]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-default
 [accetto-docker-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus
 
+[accetto-github-xubuntu-vnc-novnc]: https://github.com/accetto/xubuntu-vnc-novnc/
+[accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc-novnc/wiki/Image-hierarchy
+
 [accetto-docker-argbash-docker]: https://hub.docker.com/r/accetto/argbash-docker
 [accetto-github-argbash-docker-utils]: https://github.com/accetto/argbash-docker/tree/master/utils
 
@@ -134,6 +143,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [git]: https://git-scm.com/
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
 [nodejs]: https://nodejs.org/en/
+[novnc]: https://github.com/kanaka/noVNC
 [npm]: https://www.npmjs.com/
 [postgresql]: https://www.postgresql.org/
 [tigervnc]: http://tigervnc.org

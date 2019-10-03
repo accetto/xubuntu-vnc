@@ -8,9 +8,9 @@ DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-angular}
 TODAY=$(date +%Y-%m-%d)
 BASETAG=""
 
-VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-angular8.3.5"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-angular8.3.5-firefox69.0"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-angular8.3.5-chromium76.0.3809.100"
+VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-angular8.3.8"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-angular8.3.8-firefox69.0.1"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-angular8.3.8-chromium77.0.3865.90"
 
 case "$DOCKER_TAG" in
 
