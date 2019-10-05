@@ -6,20 +6,14 @@
 
 ***
 
-### Version 19.10.1
+### Release 19.10
 
 - README updated
 - Updated versions
-  - Angular **8.3.8**
-  - Heroku **7.33.1**
-
-### Release 19.10
-
-- Updated versions
   - Firefox **69.0.1**
   - Chromium Browser **77.0.3865.90**
-  - Angular **8.3.7**
-  - Heroku **7.33.0**
+  - Angular **8.3.8**
+  - Heroku **7.33.1**
 
 ### Release 19.09.2
 
