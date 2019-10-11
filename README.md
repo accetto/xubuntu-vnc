@@ -6,6 +6,16 @@
 
 ***
 
+![badge-github-release][badge-github-release]
+![badge-github-release-date][badge-github-release-date]
+![badge-github-stars][badge-github-stars]
+![badge-github-forks][badge-github-forks]
+![badge-github-open-issues][badge-github-open-issues]
+![badge-github-closed-issues][badge-github-closed-issues]
+![badge-github-releases][badge-github-releases]
+![badge-github-commits][badge-github-commits]
+![badge-github-last-commit][badge-github-last-commit]
+
 **TIP** If you need also [noVNC][novnc], then you can use my other images from the project [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc] ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
@@ -150,3 +160,23 @@ Credit goes to all the countless people and companies, who contribute to open so
 [typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/
 [xfce]: http://www.xfce.org
+
+<!-- github badges -->
+
+[badge-github-release]: https://badgen.net/github/release/accetto/xubuntu-vnc?icon=github&label=release
+
+[badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
+
+[badge-github-stars]: https://badgen.net/github/stars/accetto/xubuntu-vnc?icon=github&label=stars
+
+[badge-github-forks]: https://badgen.net/github/forks/accetto/xubuntu-vnc?icon=github&label=forks
+
+[badge-github-releases]: https://badgen.net/github/releases/accetto/xubuntu-vnc?icon=github&label=releases
+
+[badge-github-commits]: https://badgen.net/github/commits/accetto/xubuntu-vnc?icon=github&label=commits
+
+[badge-github-last-commit]: https://badgen.net/github/last-commit/accetto/xubuntu-vnc?icon=github&label=last%20commit
+
+[badge-github-closed-issues]: https://badgen.net/github/closed-issues/accetto/xubuntu-vnc?icon=github&label=closed%20issues
+
+[badge-github-open-issues]: https://badgen.net/github/open-issues/accetto/xubuntu-vnc?icon=github&label=open%20issues

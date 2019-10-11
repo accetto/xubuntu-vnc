@@ -5,55 +5,38 @@ DOCKER_TAG=${DOCKER_TAG:-$1}
 DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.js.heroku}
 DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-js-heroku-postgresql}
 
-TODAY=$(date +%Y-%m-%d)
 BASETAG=""
+TODAY=$(date +%Y-%m-%d)
+VERSION_STICKER=""
 
-VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-heroku7.33.1-psql10.10"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-heroku7.33.1-psql10.10-firefox69.0.1"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.38.1-tsc3.6.3-heroku7.33.1-psql10.10-chromium77.0.3865.90"
+### Warning! The values must be explicit strings (used by utils).
+VERSION_STICKER_LATEST="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.1-tsc3.6.4-heroku7.33.3-psql10.10"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.1-tsc3.6.4-heroku7.33.3-psql10.10-chromium77.0.3865.90"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.1-tsc3.6.4-heroku7.33.3-psql10.10-firefox69.0.2"
 
-case "$DOCKER_TAG" in
+case "${DOCKER_TAG}" in
 
-    latest)
-        BASETAG="latest"
+    latest | dev | dfw | nux)
+        VERSION_STICKER="${VERSION_STICKER_LATEST}"
         ;;
 
-    chromium)
-        BASETAG="chromium"
-        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
+    chromium | dev-chromium | dfw-chromium | nux-chromium)
+        VERSION_STICKER="${VERSION_STICKER_CHROMIUM}"
         ;;
 
-    firefox)
-        BASETAG="firefox"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
-        ;;
+    firefox | dev-firefox | dfw-firefox | nux-firefox)
+        VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
+        ;; 
+esac
 
-    dev)
-        BASETAG="dev"
-        ;;
+case "${DOCKER_TAG}" in
 
-    dev-chromium)
-        BASETAG="dev-chromium"
-        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
-        ;;
-
-    dev-firefox)
-        BASETAG="dev-firefox"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
-        ;;
-
-    dfw)
-        BASETAG="dfw"
-        ;;
-
-    dfw-chromium)
-        BASETAG="dfw-chromium"
-        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
-        ;;
-
-    dfw-firefox)
-        BASETAG="dfw-firefox"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
+    latest | chromium | firefox \
+    | dev | dev-chromium | dev-firefox \
+    | dfw | dfw-chromium | dfw-firefox \
+    | nux | nux-chromium | nux-firefox \
+    )
+        BASETAG="${DOCKER_TAG}"
         ;;
 
     *)

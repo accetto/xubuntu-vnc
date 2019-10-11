@@ -6,6 +6,11 @@
 
 ***
 
+![badge-docker-pulls][badge-docker-pulls]
+![badge-docker-stars][badge-docker-stars]
+![badge-github-release][badge-github-release]
+![badge-github-release-date][badge-github-release-date]
+
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and JavaScript-based development platform [Node.js][nodejs].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc], [accetto/xubuntu-vnc-firefox][accetto-docker-xubuntu-vnc-firefox] and [accetto/xubuntu-vnc-chromium][accetto-docker-xubuntu-vnc-chromium] images. They inherit all the features and therefore not the whole description will be repeated here.
@@ -32,17 +37,20 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc:latest`  
+- `latest` is based on `accetto/xubuntu-vnc:latest`
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-node:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-node:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-node:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-node:latest "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
+    ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser  
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-node:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-node:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-node:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-node:firefox "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
+    ![badge-github-commit-firefox][badge-github-commit-firefox]
 
-- `chromium` is based on `accetto/xubuntu-vnc-chromium:latest` and includes also [Chromium][chromium] web browser  
+- `chromium` is based on `accetto/xubuntu-vnc-chromium:latest` and includes also [Chromium][chromium] web browser
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-node:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-node:chromium "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-node:chromium.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-node:chromium "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_CHROMIUM][badge-VERSION_STICKER_CHROMIUM]
+    ![badge-github-commit-chromium][badge-github-commit-chromium]
 
 ### Dockerfiles
 
@@ -178,3 +186,33 @@ Credit goes to all the countless people and companies, who contribute to open so
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [vscode]: https://code.visualstudio.com/
+
+<!-- docker badges -->
+
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-node?icon=docker&label=pulls
+
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-node?icon=docker&label=stars
+
+<!-- github badges -->
+
+[badge-github-release]: https://badgen.net/github/release/accetto/xubuntu-vnc?icon=github&label=release
+
+[badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
+
+<!-- latest tag badges -->
+
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0/blue
+
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node.svg
+
+<!-- chromium tag badges -->
+
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-chromium77.0.3865.90/blue
+
+[badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:chromium.svg
+
+<!-- firefox tag badges -->
+
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0.2/blue
+
+[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:firefox.svg

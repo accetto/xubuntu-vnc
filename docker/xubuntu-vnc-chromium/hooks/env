@@ -7,30 +7,16 @@ DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-chromium}
 
 BASETAG=""
 TODAY=$(date +%Y-%m-%d)
-VERSION_STICKER=""
 
+### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.3-chromium77.0.3865.90"
+
+VERSION_STICKER="${VERSION_STICKER_LATEST}"
 
 case "${DOCKER_TAG}" in
 
-    latest)
-        BASETAG="latest"
-        VERSION_STICKER="${VERSION_STICKER_LATEST}"
-        ;;
-
-    dev)
-        BASETAG="dev"
-        VERSION_STICKER="${VERSION_STICKER_LATEST}"
-        ;;
-
-    dfw)
-        BASETAG="dfw"
-        VERSION_STICKER="${VERSION_STICKER_LATEST}"
-        ;;
-
-    nux)
-        BASETAG="nux"
-        VERSION_STICKER="${VERSION_STICKER_LATEST}"
+    latest | dev | dfw | nux)
+        BASETAG="${DOCKER_TAG}"
         ;;
 
     *)

@@ -5,14 +5,27 @@ DOCKER_TAG=${DOCKER_TAG:-$1}
 DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.inkscape}
 DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-inkscape}
 
-TODAY=$(date +%Y-%m-%d)
 BASEIMAGE=""
 BASETAG=""
+TODAY=$(date +%Y-%m-%d)
+VERSION_STICKER=""
 
-VERSION_STICKER="ubuntu18.04.3-inkscape0.92.3"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-inkscape0.92.3-firefox69.0.1"
+### Warning! The values must be explicit strings (used by utils).
+VERSION_STICKER_LATEST="ubuntu18.04.3-inkscape0.92.3"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-inkscape0.92.3-firefox69.0.2"
 
-case "$DOCKER_TAG" in
+case "${DOCKER_TAG}" in
+
+    latest | dev | dfw | nux)
+        VERSION_STICKER="${VERSION_STICKER_LATEST}"
+        ;;
+
+    firefox | dev-firefox | dfw-firefox | nux-firefox)
+        VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
+        ;; 
+esac
+
+case "${DOCKER_TAG}" in
 
     latest)
         BASEIMAGE="accetto/xubuntu-vnc"
@@ -22,7 +35,6 @@ case "$DOCKER_TAG" in
     firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="latest"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dev)
@@ -33,7 +45,6 @@ case "$DOCKER_TAG" in
     dev-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dev"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dfw)
@@ -44,7 +55,16 @@ case "$DOCKER_TAG" in
     dfw-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dfw"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
+        ;;
+
+    nux)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="nux"
+        ;;
+
+    nux-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="nux"
         ;;
 
     *)

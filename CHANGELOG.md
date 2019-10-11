@@ -6,6 +6,23 @@
 
 ***
 
+### Release 19.10.1
+
+- All images:
+  - badges re-designed
+    - previous badges removed and new status badges from `badge.net` and `shields.io` introduced
+    - `commit` badge from `microbadger.com` introduced (per tag)
+    - `version sticker` badge introduced (as static badge from `badge.net`)
+    - remark: it can take several hours until new badges are actually shown (caused by caching)
+  - build hooks updated
+  - script **util-refresh-readme.sh** introduced
+- Updated versions
+  - Firefox **69.0.2**
+  - VSCode **1.39.1**
+  - TypeScript **3.6.4**
+  - Heroku **7.33.3**
+  - Angular **8.3.9**
+
 ### Release 19.10
 
 - README updated

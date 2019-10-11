@@ -1,9 +1,6 @@
-# docker build -f Dockerfile.firefox.default -t accetto/xubuntu-vnc-firefox:default .
-# docker build -f Dockerfile.firefox.default --build-arg BASETAG=dev -t accetto/xubuntu-vnc-firefox:dev-default .
-# docker build -f Dockerfile.firefox.default --build-arg BASETAG=lab -t accetto/xubuntu-vnc-firefox:dfw-default .
-# docker build -f Dockerfile.firefox.default --build-arg ARG_MOZ_FORCE_DISABLE_E10S=anything_means_yes -t accetto/xubuntu-vnc-firefox:dfw-default .
-# docker build -f Dockerfile.firefox.default -t accetto/xubuntu-vnc-firefox:dfw-default-multiprocess .
-# ./hooks/build dev
+# ./hooks/build dev-default
+# ./hooks/build dfw-default
+# ./hooks/build nux-default
 
 ARG BASETAG=latest
 
@@ -49,6 +46,11 @@ FROM stage-firefox as stage-final
 
 ARG ARG_REFRESHED_AT
 ARG ARG_VERSION_STICKER
+ARG ARG_VCS_REF
+
+LABEL \
+    org.label-schema.vcs-ref="${ARG_VCS_REF}" \
+    version-sticker="${ARG_VERSION_STICKER}"
 
 ENV \
     REFRESHED_AT=${ARG_REFRESHED_AT} \

@@ -6,6 +6,11 @@
 
 ***
 
+![badge-docker-pulls][badge-docker-pulls]
+![badge-docker-stars][badge-docker-stars]
+![badge-github-release][badge-github-release]
+![badge-github-release-date][badge-github-release-date]
+
 **TIP** If you need also [noVNC][novnc], you can use the image [accetto/xubuntu-vnc-novnc-firefox][accetto-docker-xubuntu-vnc-novnc-firefox], which is a member of another family of application images ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
@@ -37,15 +42,18 @@ The following image tags are regularly maintained and rebuilt:
 
 - `latest` is based on `accetto/xubuntu-vnc:latest`, it includes the **plus** features and it is built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **disabled** (see below)
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-firefox:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-firefox:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:latest "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
+    ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `default` is similar to `latest`, but it doesn't include the **plus** features  
+- `default` is similar to `latest`, but it doesn't include the **plus** features
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-firefox:default.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:default "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-firefox:default.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:default "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_DEFAULT][badge-VERSION_STICKER_DEFAULT]
+    ![badge-github-commit-default][badge-github-commit-default]
 
-- `multiprocess` is also similar to `latest`, but it is not built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **enabled**  
+- `multiprocess` is also similar to `latest`, but it is not built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **enabled**
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-firefox:multiprocess.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:multiprocess "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-firefox:multiprocess.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-firefox:multiprocess "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_MULTIPROCESS][badge-VERSION_STICKER_MULTIPROCESS]
+    ![badge-github-commit-multiprocess][badge-github-commit-multiprocess]
 
 ### Dockerfiles
 
@@ -181,6 +189,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [firefox-doc-preferences]: https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 
+[firefox]: https://www.mozilla.org
 [mousepad]: https://github.com/codebrainz/mousepad
 [novnc]: https://github.com/kanaka/noVNC
 [tigervnc]: http://tigervnc.org
@@ -189,4 +198,32 @@ Credit goes to all the countless people and companies, who contribute to open so
 [vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
 
-[firefox]: https://www.mozilla.org
+<!-- docker badges -->
+
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-firefox?icon=docker&label=pulls
+
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-firefox?icon=docker&label=stars
+
+<!-- github badges -->
+
+[badge-github-release]: https://badgen.net/github/release/accetto/xubuntu-vnc?icon=github&label=release
+
+[badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
+
+<!-- latest tag badges -->
+
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox69.0.2/blue
+
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox.svg
+
+<!-- default tag badges -->
+
+[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox69.0.2/blue
+
+[badge-github-commit-default]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:default.svg
+
+<!-- multiprocess tag badges -->
+
+[badge-VERSION_STICKER_MULTIPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox69.0.2/blue
+
+[badge-github-commit-multiprocess]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:multiprocess.svg

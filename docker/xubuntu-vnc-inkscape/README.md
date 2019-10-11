@@ -6,6 +6,11 @@
 
 ***
 
+![badge-docker-pulls][badge-docker-pulls]
+![badge-docker-stars][badge-docker-stars]
+![badge-github-release][badge-github-release]
+![badge-github-release-date][badge-github-release-date]
+
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free professional vector graphics editor [Inkscape][inkscape].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
@@ -31,13 +36,15 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc:latest`  
+- `latest` is based on `accetto/xubuntu-vnc:latest`
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-inkscape:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-inkscape:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:latest "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
+    ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser and the **plus** features  
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser and the **plus** features
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-inkscape:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:firefox "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-inkscape:firefox.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-inkscape:firefox "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
+    ![badge-github-commit-firefox][badge-github-commit-firefox]
 
 ### Dockerfiles
 
@@ -102,6 +109,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
+[firefox]: https://www.mozilla.org
+[inkscape]: https://inkscape.org/
 [mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
@@ -109,4 +118,26 @@ Credit goes to all the countless people and companies, who contribute to open so
 [vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
 
-[inkscape]: https://inkscape.org/
+<!-- docker badges -->
+
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-inkscape?icon=docker&label=pulls
+
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-inkscape?icon=docker&label=stars
+
+<!-- github badges -->
+
+[badge-github-release]: https://badgen.net/github/release/accetto/xubuntu-vnc?icon=github&label=release
+
+[badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
+
+<!-- latest tag badges -->
+
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-inkscape0.92.3/blue
+
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape.svg
+
+<!-- firefox tag badges -->
+
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-inkscape0.92.3-firefox69.0.2/blue
+
+[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape:firefox.svg

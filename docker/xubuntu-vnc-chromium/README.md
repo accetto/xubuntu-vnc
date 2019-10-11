@@ -129,7 +129,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
 
-<!-- latest badges -->
+<!-- latest tag badges -->
 
 [badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-chromium77.0.3865.90/blue
 

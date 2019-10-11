@@ -1,5 +1,9 @@
 # ./hooks/build dev
 # ./hooks/build dfw
+# ./hooks/build nux
+# ./hooks/build dev-firefox
+# ./hooks/build dfw-firefox
+# ./hooks/build nux-firefox
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -28,6 +32,11 @@ FROM stage-inkscape as stage-final
 
 ARG ARG_REFRESHED_AT
 ARG ARG_VERSION_STICKER
+ARG ARG_VCS_REF
+
+LABEL \
+    org.label-schema.vcs-ref="${ARG_VCS_REF}" \
+    version-sticker="${ARG_VERSION_STICKER}"
 
 ENV \
     REFRESHED_AT=${ARG_REFRESHED_AT} \

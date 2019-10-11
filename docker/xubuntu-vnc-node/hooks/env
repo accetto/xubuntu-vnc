@@ -5,15 +5,32 @@ DOCKER_TAG=${DOCKER_TAG:-$1}
 DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
 DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-node}
 
-TODAY=$(date +%Y-%m-%d)
 BASEIMAGE=""
 BASETAG=""
+TODAY=$(date +%Y-%m-%d)
+VERSION_STICKER=""
 
-VERSION_STICKER="ubuntu18.04.3-node10.16.3-npm6.9.0"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0.1"
+### Warning! The values must be explicit strings (used by utils).
+VERSION_STICKER_LATEST="ubuntu18.04.3-node10.16.3-npm6.9.0"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0.2"
 VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium77.0.3865.90"
 
-case "$DOCKER_TAG" in
+case "${DOCKER_TAG}" in
+
+    latest | dev | dfw | nux)
+        VERSION_STICKER="${VERSION_STICKER_LATEST}"
+        ;;
+
+    chromium | dev-chromium | dfw-chromium | nux-chromium)
+        VERSION_STICKER="${VERSION_STICKER_CHROMIUM}"
+        ;;
+
+    firefox | dev-firefox | dfw-firefox | nux-firefox)
+        VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
+        ;; 
+esac
+
+case "${DOCKER_TAG}" in
 
     latest)
         BASEIMAGE="accetto/xubuntu-vnc"
@@ -23,13 +40,11 @@ case "$DOCKER_TAG" in
     chromium)
         BASEIMAGE="accetto/xubuntu-vnc-chromium"
         BASETAG="latest"
-        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="latest"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dev)
@@ -40,13 +55,11 @@ case "$DOCKER_TAG" in
     dev-chromium)
         BASEIMAGE="accetto/xubuntu-vnc-chromium"
         BASETAG="dev"
-        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     dev-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dev"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
         ;;
 
     dfw)
@@ -57,13 +70,26 @@ case "$DOCKER_TAG" in
     dfw-chromium)
         BASEIMAGE="accetto/xubuntu-vnc-chromium"
         BASETAG="dfw"
-        VERSION_STICKER="$VERSION_STICKER_CHROMIUM"
         ;;
 
     dfw-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dfw"
-        VERSION_STICKER="$VERSION_STICKER_FIREFOX"
+        ;;
+
+    nux)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="nux"
+        ;;
+
+    nux-chromium)
+        BASEIMAGE="accetto/xubuntu-vnc-chromium"
+        BASETAG="nux"
+        ;;
+
+    nux-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="nux"
         ;;
 
     *)

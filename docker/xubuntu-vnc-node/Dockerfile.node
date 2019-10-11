@@ -1,5 +1,12 @@
 # ./hooks/build dev
 # ./hooks/build dfw
+# ./hooks/build nux
+# ./hooks/build dev-chromium
+# ./hooks/build dfw-chromium
+# ./hooks/build nux-chromium
+# ./hooks/build dev-firefox
+# ./hooks/build dfw-firefox
+# ./hooks/build nux-firefox
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -62,6 +69,7 @@ FROM stage-node as stage-final
 ARG ARG_REFRESHED_AT
 ARG ARG_NODE_PORT
 ARG ARG_VERSION_STICKER
+ARG ARG_VCS_REF
 
 ENV NODE_PORT=${ARG_NODE_PORT:-3000}
 
@@ -76,6 +84,10 @@ RUN chmod -R g+w /usr/src
 
 ### optionally expose the node port
 # EXPOSE ${NODE_PORT}
+
+LABEL \
+    org.label-schema.vcs-ref="${ARG_VCS_REF}" \
+    version-sticker="${ARG_VERSION_STICKER}"
 
 ENV \
     REFRESHED_AT=${ARG_REFRESHED_AT} \
