@@ -6,6 +6,11 @@
 
 ***
 
+![badge-docker-pulls][badge-docker-pulls]
+![badge-docker-stars][badge-docker-stars]
+![badge-github-release][badge-github-release]
+![badge-github-release-date][badge-github-release-date]
+
 **TIP** If you need also [noVNC][novnc], then you can use the image [accetto/xubuntu-vnc-novnc-chromium][accetto-docker-xubuntu-vnc-novnc-chromium], which is a member of another family of application images ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
@@ -33,9 +38,10 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc:latest`  
+- `latest` is based on `accetto/xubuntu-vnc:latest`
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc-chromium:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-chromium:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc-chromium:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc-chromium:latest "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
+    ![badge-github-commit-latest][badge-github-commit-latest]
 
 ### Dockerfiles
 
@@ -110,3 +116,21 @@ Credit goes to all the countless people and companies, who contribute to open so
 [xfce]: http://www.xfce.org
 
 [chromium]: https://www.chromium.org/Home
+
+<!-- docker badges -->
+
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-chromium?icon=docker&label=pulls
+
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-chromium?icon=docker&label=stars
+
+<!-- github badges -->
+
+[badge-github-release]: https://badgen.net/github/release/accetto/xubuntu-vnc?icon=github&label=release
+
+[badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
+
+<!-- latest badges -->
+
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-chromium77.0.3865.90/blue
+
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-chromium.svg

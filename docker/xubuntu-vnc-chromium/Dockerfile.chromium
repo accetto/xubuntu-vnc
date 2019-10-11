@@ -1,5 +1,6 @@
 # ./hooks/build dev
 # ./hooks/build dfw
+# ./hooks/build nux
 
 ARG BASETAG=latest
 
