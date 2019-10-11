@@ -6,6 +6,11 @@
 
 ***
 
+![badge-docker-pulls][badge-docker-pulls]
+![badge-docker-stars][badge-docker-stars]
+![badge-github-release][badge-github-release]
+![badge-github-release-date][badge-github-release-date]
+
 **TIP** If you need also [noVNC][novnc], then you can use the image [accetto/xubuntu-vnc-novnc][accetto-docker-xubuntu-vnc-novnc], which is the base of another family of application images ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
@@ -33,13 +38,15 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `ubuntu:latest`  
+- `latest` is based on `ubuntu:latest`
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc:latest "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc:latest.svg)](https://microbadger.com/images/accetto/xubuntu-vnc:latest "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
+    ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `lab` is also based on `ubuntu:latest`, but built with `ARG_SUPPORT_USER_GROUP_OVERRIDE`  
+- `lab` is also based on `ubuntu:latest`, but built with `ARG_SUPPORT_USER_GROUP_OVERRIDE`
 
-    [![version badge](https://images.microbadger.com/badges/version/accetto/xubuntu-vnc:lab.svg)](https://microbadger.com/images/accetto/xubuntu-vnc:lab "Get your own version badge on microbadger.com") [![size badge](https://images.microbadger.com/badges/image/accetto/xubuntu-vnc:lab.svg)](https://microbadger.com/images/accetto/xubuntu-vnc:lab "Get your own image badge on microbadger.com")
+    ![badge-VERSION_STICKER_LAB][badge-VERSION_STICKER_LAB]
+    ![badge-github-commit-lab][badge-github-commit-lab]
 
 There are also archive images that are tagged like `ubuntu18.04.2` and similar. Those are previous production images and they can be useful for testing.
 
@@ -233,3 +240,27 @@ Credit goes to all the countless people and companies, who contribute to open so
 [tini]: https://github.com/krallin/tini
 [vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
+
+<!-- docker badges -->
+
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc?icon=docker&label=pulls
+
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc?icon=docker&label=stars
+
+<!-- github badges -->
+
+[badge-github-release]: https://badgen.net/github/release/accetto/xubuntu-vnc?icon=github&label=release
+
+[badge-github-release-date]: https://img.shields.io/github/release-date/accetto/xubuntu-vnc?logo=github
+
+<!-- latest badges -->
+
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3/blue
+
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc.svg
+
+<!-- lab badges -->
+
+[badge-VERSION_STICKER_LAB]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3/blue
+
+[badge-github-commit-lab]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc:lab.svg
