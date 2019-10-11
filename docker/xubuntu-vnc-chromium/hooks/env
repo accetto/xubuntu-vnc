@@ -28,6 +28,11 @@ case "${DOCKER_TAG}" in
         VERSION_STICKER="${VERSION_STICKER_LATEST}"
         ;;
 
+    nux)
+        BASETAG="nux"
+        VERSION_STICKER="${VERSION_STICKER_LATEST}"
+        ;;
+
     *)
         BASETAG=""
         ;;
