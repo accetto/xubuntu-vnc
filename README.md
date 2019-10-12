@@ -82,9 +82,13 @@ Contains utilities that make building the images more convenient.
   
   The comment lines at the top of included Dockerfiles are intended for this utility.
 
-Each utility displays the help if started with the `-h` or `--help` argument.
+  The utility displays the help if started with the `-h` or `--help` argument. It has been developed using my other utilities `utility-argbash-init.sh` and `utility-argbash.sh`, contained in the [accetto/argbash-docker][accetto-github-argbash-docker-utils] Git Hub repository, from which the [accetto/argbash-docker][accetto-docker-argbash-docker] Docker image is built.
 
-The utilities have been developed using my other utilities `utility-argbash-init.sh` and `utility-argbash.sh`, contained in the [accetto/argbash-docker][accetto-github-argbash-docker-utils] Git Hub repository, from which the [accetto/argbash-docker][accetto-docker-argbash-docker] Docker image is built.
+- `util-refresh-readme.sh`  
+  
+  This script can be used for updating the `version sticker` badges in README files. It is intended for local use before publishing the repository.
+
+  The script does not include any help, because it takes only a single argument - the path where to start searching for files (default is `../docker`).
 
 ## Issues
 

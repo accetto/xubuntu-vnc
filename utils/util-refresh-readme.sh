@@ -2,7 +2,7 @@
 ### @accetto, October 2019
 
 ### This script updates version sticker badges in README files.
-### The script is intended for local use before building images.
+### The script is intended for local use before publishing the repository.
 
 ### where to start processing
 searchdir=$1
