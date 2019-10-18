@@ -92,6 +92,24 @@ docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-types
 
 Containers created from these images run under the non-root **default application user** (headless, 1001:0). However, the **sudo** command allows user elevation. For more description check the base image [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc] or [Wiki][this-wiki].
 
+### Version sticker
+
+Version sticker serves multiple purposes that are closer described in [Wiki][this-wiki]. The **version sticker value** identifies the version of the docker image and it is persisted in it when it is built. It is also shown as a badge in the README file.
+
+However, the script `version_sticker.sh` can be used anytime for convenient checking of the current versions of installed applications.
+
+The script is deployed into the startup folder, which is defined by the environment variable `STARTUPDIR` with the default value of `/dockerstartup`.
+
+If the script is executed inside a container without an argument, then it returns the **current version sticker value** of the container. This value is newly calculated and it is based on the current versions of the essential applications in the container.
+
+The **current** version sticker value will differ from the **persisted** value, if any of the included application has been updated to another version.
+
+If the script is called with the argument `-v` (lower case `v`), then it prints out verbose versions of the essential applications that are included in the **version sticker value**.
+
+If it is called with the argument `-V` (upper case `v`), then it prints out verbose versions of some more applications.
+
+Examples can be found in [Wiki][this-wiki].
+
 ### Using headless containers
 
 The containers are intended to be used through a **VNC Viewer** (e.g. [TigerVNC][tigervnc] or [TightVNC][tightvnc]). The viewer should connect to the host running the container, pointing to its TCP port mapped to the container's port **5901**.
@@ -155,18 +173,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.1-tsc3.6.4/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-typescript.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.1-tsc3.6.4-chromium77.0.3865.90/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-chromium77.0.3865.90/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-typescript:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.1-tsc3.6.4-firefox69.0.2/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-firefox69.0.2/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-typescript:firefox.svg

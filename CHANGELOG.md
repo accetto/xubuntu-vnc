@@ -6,6 +6,18 @@
 
 ***
 
+### Release 19.10.2
+
+- All images:
+  - README updated
+    - **version sticker** described
+    - new badges added
+  - build hooks updated
+    - command line arguments passed to `build` hook
+- Updated versions:
+  - VSCode **1.39.2**
+  - Angular **8.3.10**
+
 ### Release 19.10.1
 
 - All images:
