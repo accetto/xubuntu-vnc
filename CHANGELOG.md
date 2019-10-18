@@ -6,6 +6,11 @@
 
 ***
 
+### Release 19.10.3
+
+- Updated versions:
+  - Angular **8.3.12**
+
 ### Release 19.10.2
 
 - All images:
