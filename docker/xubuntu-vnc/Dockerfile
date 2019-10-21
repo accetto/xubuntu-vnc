@@ -10,6 +10,8 @@ FROM ubuntu:${BASETAG} as stage-ubuntu
 ARG ARG_VERSION_STICKER
 ARG ARG_VCS_REF
 
+SHELL ["/bin/bash", "-c"]
+
 LABEL \
     maintainer="https://github.com/accetto" \
     vendor="accetto" \
@@ -26,8 +28,33 @@ RUN apt-get update && apt-get install -y \
         unzip \
         vim \
         zip \
+        curl \
+        git \
+        wget \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
+
+### install current 'jq' explicitly
+RUN \
+{ \
+    JQ_VERSION="1.6" ; \
+    JQ_DISTRO="jq-linux64" ; \
+    cd /tmp ; \
+    wget -q "https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/${JQ_DISTRO}" ; \
+    wget -q "https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}/sha256sum.txt" ; \
+    test=$(grep "${JQ_DISTRO}" sha256sum.txt | sha256sum -c | grep -c "${JQ_DISTRO}: OK") ; \
+    if [[ $test -ne 1 ]] ; then \
+        echo "FAILURE: ${JQ_DISTRO} failed checksum test" ; \
+        exit 1 ; \
+    else \
+        rm sha256sum.txt ; \
+        chown root "${JQ_DISTRO}" ; \
+        chmod +x "${JQ_DISTRO}" ; \
+        # mv -f "${JQ_DISTRO}" $(which jq) ; \
+        mv -f "${JQ_DISTRO}" /usr/bin/jq ; \
+    fi ; \
+    cd - ; \
+}    
 
 ### next ENTRYPOINT command supports development and should be overriden or disabled
 ### it allows running detached containers created from intermediate images, for example:
@@ -104,7 +131,6 @@ ENV \
 
 ### Creates home folder
 WORKDIR ${HOME}
-SHELL ["/bin/bash", "-c"]
 
 COPY [ "./src/startup", "${STARTUPDIR}/" ]
 
