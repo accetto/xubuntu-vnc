@@ -17,17 +17,16 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **zip**, **unzip**, **sudo**
-- popular text editor [vim][vim]
-- lite but advanced graphical editor [mousepad][mousepad]
-- [tini][tini] as the entry-point initial process (PID 1)
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- current version of JSON processor [jq][jq]
+- popular text editor [vim][vim] (Ubuntu distribution)
+- lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- current version of [tini][tini] as the entry-point initial process (PID 1)
 
 and adds
 
-- [Node.js][nodejs] JavaScript-based development platform
-- [npm][npm] package manager for Node.js
-- [curl][curl] utility
-- [Git][git] distributed version control system
+- current version of [Node.js][nodejs] JavaScript-based development platform
+- [npm][npm] package manager for Node.js (included with Node.js)
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -37,20 +36,25 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc:latest`
+- `latest` is based on `accetto/xubuntu-vnc:latest` and it includes the **current** version of [Node.js][nodejs] with the latest features
 
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser
 
     ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
     ![badge-github-commit-firefox][badge-github-commit-firefox]
 
-- `chromium` is based on `accetto/xubuntu-vnc-chromium:latest` and includes also [Chromium][chromium] web browser
+- `chromium` is based on `accetto/xubuntu-vnc-chromium:latest` and it includes also [Chromium][chromium] web browser
 
     ![badge-VERSION_STICKER_CHROMIUM][badge-VERSION_STICKER_CHROMIUM]
     ![badge-github-commit-chromium][badge-github-commit-chromium]
+
+- `lts` is based on `accetto/xubuntu-vnc:latest` and it includes the **LTS** version of [Node.js][nodejs]
+
+    ![badge-VERSION_STICKER_LTS][badge-VERSION_STICKER_LTS]
+    ![badge-github-commit-lts][badge-github-commit-lts]
 
 ### Dockerfiles
 
@@ -58,11 +62,15 @@ The [Git Hub][this-github-xubuntu-vnc-node] repository contains several Dockerfi
 
 - `Dockerfile.node`  
   
-  This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc:latest` tag by default.
+  This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc:latest` tag by default. This image contains the **current** version of [Node.js][nodejs] with the latest features.
 
   However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc:lab`.
 
   By providing the `BASEIMAGE` build argument it is possible to build images based on other base  images, for example `accetto/xubuntu-vnc-firefox`. The `firefox` and `chromium` tags are built that way.
+
+- `Dockerfile.node.lts`  
+  
+  This Dockerfile is for building the `lts` image tag. The image is similar to the `latest` one, but it contains the **LTS** version of [Node.js][nodejs] (recommended for most users).
 
 ### Ports
 
@@ -201,6 +209,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
+[jq]: https://stedolan.github.io/jq/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [vscode]: https://code.visualstudio.com/
@@ -219,18 +228,24 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-chromium77.0.3865.90/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-chromium77.0.3865.90/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0.2/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-firefox69.0.2/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:firefox.svg
+
+<!-- lts tag badges -->
+
+[badge-VERSION_STICKER_LTS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0/blue
+
+[badge-github-commit-lts]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:lts.svg

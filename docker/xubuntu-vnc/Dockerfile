@@ -89,11 +89,7 @@ FROM stage-xfce as stage-vnc
 
 ### 'apt-get clean' runs automatically
 ### installed into '/usr/share/usr/local/share/vnc'
-RUN apt-get update && apt-get install -y \
-        wget \
-        && wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C / \
-    && apt-get -y autoremove \
-    && rm -rf /var/lib/apt/lists/*
+RUN wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C /
 
 FROM stage-vnc as stage-tini
 

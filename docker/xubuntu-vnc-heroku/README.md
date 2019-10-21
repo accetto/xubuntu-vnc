@@ -1,6 +1,6 @@
-# Headless Ubuntu/Xfce container with VNC for JavaScript development with Heroku-CLI and PostgreSQL
+# Headless Ubuntu/Xfce container with VNC and Heroku-CLI for JavaScript development (with PostgreSQL)
 
-## accetto/xubuntu-vnc-js-heroku-postgresql
+## accetto/xubuntu-vnc-heroku-js-postgresql
 
 [Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
@@ -11,23 +11,26 @@
 ![badge-github-release][badge-github-release]
 ![badge-github-release-date][badge-github-release-date]
 
+**Attention:** This image has been previously named **xubuntu-vnc-js-heroku-postgresql**. That Docker Hub repository is deprecated and it will be removed.
+
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use, JavaScript development platform, [Heroku-CLI][heroku-cli] toolkit and [PostgreSQL][postgresql] database.
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc-typescript][accetto-docker-xubuntu-vnc-typescript]. They inherit all the features and therefore not the whole description will be repeated here.
 
 The `latest` image inherits among others
 
-- utilities **ping**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git]
-- [tini][tini] as the entry-point initial process (PID 1)
-- [Node.js][nodejs] JavaScript-based development platform
-- [npm][npm] package manager for Node.js
-- [Visual Studio Code][vscode] developer editor
-- [TypeScript][typescript] programming language
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- current version of JSON processor [jq][jq]
+- current version of [tini][tini] as the entry-point initial process (PID 1)
+- current version of [Node.js][nodejs] JavaScript-based development platform
+- [npm][npm] package manager for Node.js (included with Node.js)
+- current version of [Visual Studio Code][vscode] developer editor
+- current version of [TypeScript][typescript] programming language
 
 and adds
 
-- [Heroku-CLI][heroku-cli] toolkit
-- [PostgreSQL][postgresql] database
+- current version of [Heroku-CLI][heroku-cli] toolkit
+- [PostgreSQL][postgresql] database (Ubuntu distribution)
 
 The included features allow, for example, to complete the whole tutorial [Getting Started on Heroku with Node.js][heroku-getting-started-tutorial] inside the container, including the steps requiring a database.
 
@@ -44,12 +47,12 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-typescript:firefox` and includes also [Firefox][firefox] web browser
+- `firefox` is based on `accetto/xubuntu-vnc-typescript:firefox` and it includes also [Firefox][firefox] web browser
 
     ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
     ![badge-github-commit-firefox][badge-github-commit-firefox]
 
-- `chromium` is based on `accetto/xubuntu-vnc-typescript:chromium` and includes also [Chromium][chromium] web browser
+- `chromium` is based on `accetto/xubuntu-vnc-typescript:chromium` and it includes also [Chromium][chromium] web browser
 
     ![badge-VERSION_STICKER_CHROMIUM][badge-VERSION_STICKER_CHROMIUM]
     ![badge-github-commit-chromium][badge-github-commit-chromium]
@@ -58,7 +61,7 @@ The following image tags are regularly maintained and rebuilt:
 
 The [Git Hub][this-github-xubuntu-vnc-heroku] repository contains several Dockerfiles that can be used to build the images.
 
-- `Dockerfile.js.heroku`  
+- `Dockerfile.heroku.js`  
   
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc-typescript:latest` tag by default.
 
@@ -71,7 +74,7 @@ The image exposes only the TCP port **5901** and therefore the containers consum
 Other ports can be easily exposed using the `docker run` arguments. For example, the following container will expose its internal port **5000** and bind it to the next free TCP port on the host computer:
 
 ```shell
-docker run -itP --rm -p 5000 accetto/xubuntu-vnc-js-heroku-postgresql
+docker run -itP --rm -p 5000 accetto/xubuntu-vnc-heroku-js-postgresql
 ```
 
 ### Volumes
@@ -85,11 +88,11 @@ The folder `/usr/src` is intended as the working folder for development and it s
 For example, the following container would use the local folder **my_apps**:
 
 ```shell
-docker run -dP -v /my_apps:/usr/src accetto/js-heroku-postgresql
+docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-heroku-js-postgresql
 
 # or using the newer syntax
 
-docker run -dP --mount source=/my_apps,target=/usr/src accetto/js-heroku-postgresql
+docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-heroku-js-postgresql
 ```
 
 ### Container user
@@ -130,7 +133,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 ***
 
-[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-js-heroku-postgresql
+[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-heroku-js-postgresql
 [this-github-xubuntu-vnc-heroku]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-heroku
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
@@ -161,6 +164,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [git]: https://git-scm.com/
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
 [heroku-getting-started-tutorial]: https://devcenter.heroku.com/articles/getting-started-with-nodejs
+[jq]: https://stedolan.github.io/jq/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [postgresql]: https://www.postgresql.org/
@@ -169,9 +173,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- docker badges -->
 
-[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-js-heroku-postgresql?icon=docker&label=pulls
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-heroku-js-postgresql?icon=docker&label=pulls
 
-[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-js-heroku-postgresql?icon=docker&label=stars
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-heroku-js-postgresql?icon=docker&label=stars
 
 <!-- github badges -->
 
@@ -181,18 +185,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-heroku7.33.3-psql10.10/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-code1.39.2-tsc3.6.4-heroku7.33.3-psql10.10/blue
 
-[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-js-heroku-postgresql.svg
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-heroku7.33.3-psql10.10-chromium77.0.3865.90/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-code1.39.2-tsc3.6.4-heroku7.33.3-psql10.10-chromium77.0.3865.90/blue
 
-[badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-js-heroku-postgresql:chromium.svg
+[badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-heroku7.33.3-psql10.10-firefox69.0.2/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-code1.39.2-tsc3.6.4-heroku7.33.3-psql10.10-firefox69.0.2/blue
 
-[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-js-heroku-postgresql:firefox.svg
+[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:firefox.svg

@@ -17,16 +17,17 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git]
-- [tini][tini] as the entry-point initial process (PID 1)
-- [Node.js][nodejs] JavaScript-based development platform
-- [npm][npm] package manager for Node.js
-- [Visual Studio Code][vscode] developer editor
-- [TypeScript][typescript] programming language
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- current version of JSON processor [jq][jq]
+- current version of [tini][tini] as the entry-point initial process (PID 1)
+- current version of [Node.js][nodejs] JavaScript-based development platform
+- [npm][npm] package manager for Node.js (included with Node.js)
+- current version of [Visual Studio Code][vscode] developer editor
+- current version of [TypeScript][typescript] programming language
 
 and adds
 
-- [Angular][angular] CLI
+- current version of [Angular][angular] CLI
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -41,12 +42,12 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-typescript:firefox` and includes also [Firefox][firefox] web browser
+- `firefox` is based on `accetto/xubuntu-vnc-typescript:firefox` and it includes also [Firefox][firefox] web browser
 
     ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
     ![badge-github-commit-firefox][badge-github-commit-firefox]
 
-- `chromium` is based on `accetto/xubuntu-vnc-typescript:chromium` and includes also [Chromium][chromium] web browser
+- `chromium` is based on `accetto/xubuntu-vnc-typescript:chromium` and it includes also [Chromium][chromium] web browser
 
     ![badge-VERSION_STICKER_CHROMIUM][badge-VERSION_STICKER_CHROMIUM]
     ![badge-github-commit-chromium][badge-github-commit-chromium]
@@ -197,6 +198,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
+[jq]: https://stedolan.github.io/jq/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [typescript]: https://www.typescriptlang.org/
@@ -218,18 +220,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-angular8.3.12/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-code1.39.2-tsc3.6.4-angular8.3.12/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-angular8.3.12-chromium77.0.3865.90/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-code1.39.2-tsc3.6.4-angular8.3.12-chromium77.0.3865.90/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node10.16.3-npm6.9.0-code1.39.2-tsc3.6.4-angular8.3.12-firefox69.0.2/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-node12.12.0-npm6.11.3-code1.39.2-tsc3.6.4-angular8.3.12-firefox69.0.2/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular:firefox.svg

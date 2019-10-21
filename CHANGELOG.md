@@ -6,6 +6,37 @@
 
 ***
 
+### Release 19.10.4
+
+- **xubuntu-vnc**
+  - **ubuntu** base image updated (inherited by all images)
+  - **curl** and **git** added (inherited by all images)
+  - **jq** (JSON processor) added in its latest version **1.6** (inherited by all images)
+  - **version_of.sh** script handles also **jq** (inherited by all images)
+  - **version_sticker.sh** reports added apps (similar update by all images)
+  - `test` build hook updated (similar update by all images)
+  - README file updated (similar update by all images)
+- **xubuntu-vnc-chromium**, **xubuntu-vnc-inkscape**
+  - inherited new features from the base (see above)
+- **xubuntu-vnc-firefox**
+  - inherited new features from the base (see above)
+  - `env` build hook updated
+- **xubuntu-vnc-node**
+  - inherited new features from the base (see above), esp. note
+    - **curl** and **git** are inherited from the base now
+  - **Node.js** updated from **LTS** (10.16.3, npm 6.9.0) to **current** (12.12.0, npm 6.11.3)
+    - **LTS** version still maintained
+      - **Dockerfile.node.lts** added
+      - tag **lts** introduced (not with **chromium** or **firefox**)
+      - build hook **env** updated to support **lts** tag
+- **xubuntu-vnc-typescript**, **xubuntu-vnc-angular**
+  - inherited new features from the base (see above)
+- **xubuntu-vnc-heroku**
+  - inherited new features from the base (see above)
+  - Dockefile renamed to `Dockerfile.heroku.js`
+  - Docker Hub repository renamed to **xubuntu-vnc-heroku-js-postgresql**
+    - former repository **xubuntu-vnc-js-heroku-postgresql** is deprecated
+
 ### Release 19.10.3
 
 - Updated versions:

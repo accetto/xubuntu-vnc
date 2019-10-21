@@ -36,6 +36,8 @@ The images are streamlined and simplified versions of my other images [accetto/u
 
 Several variations are available, including the one supporting overriding both the container user and the user group.
 
+These base images already include commonly used utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] and also the current version of [jq][jq] JSON processor.
+
 Additional components and applications can be easily added by the user because **sudo** is supported.
 
 #### [xubuntu-vnc-firefox][this-github-xubuntu-vnc-firefox]
@@ -58,7 +60,9 @@ Contains resources for building [accetto/xubuntu-vnc-chromium][this-docker-xubun
 
 #### [xubuntu-vnc-node][this-github-xubuntu-vnc-node]
 
-Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-vnc-node] images with JavaScript-based development platform. It adds [Node.js][nodejs] platform, [npm][npm] package manager and distributed version control system [Git][git]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
+Contains resources for building [accetto/xubuntu-vnc-node][this-docker-xubuntu-vnc-node] images with JavaScript-based development platform. It adds [Node.js][nodejs] platform with [npm][npm] package manager. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
+
+Variations with the `current` and `LTS` versions of [Node.js][nodejs] are available.
 
 #### [xubuntu-vnc-typescript][this-github-xubuntu-vnc-typescript]
 
@@ -70,7 +74,7 @@ Contains resources for building [accetto/xubuntu-vnc-angular][this-docker-xubunt
 
 #### [xubuntu-vnc-heroku][this-github-xubuntu-vnc-heroku]
 
-Contains resources for building [accetto/xubuntu-vnc-js-heroku-postgresql][this-docker-xubuntu-vnc-js-heroku-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql] for JavaScript-based development with [Node.js][nodejs], [npm][npm], [Git][git], [Visual Studio Code][vscode] and [TypeScript][typescript]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
+Contains resources for building [accetto/xubuntu-vnc-heroku-js-postgresql][this-docker-xubuntu-vnc-heroku-js-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql] for JavaScript-based development with [Node.js][nodejs], [npm][npm], [Git][git], [Visual Studio Code][vscode] and [TypeScript][typescript]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
 #### [utils][this-github-utils]
   
@@ -133,7 +137,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-docker-xubuntu-vnc-typescript]: https://hub.docker.com/r/accetto/xubuntu-vnc-typescript/
 
 [this-github-xubuntu-vnc-heroku]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-heroku/
-[this-docker-xubuntu-vnc-js-heroku-postgresql]: https://hub.docker.com/r/accetto/xubuntu-vnc-js-heroku-postgresql
+[this-docker-xubuntu-vnc-heroku-js-postgresql]: https://hub.docker.com/r/accetto/xubuntu-vnc-heroku-js-postgresql
 
 [this-github-xubuntu-vnc-angular]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-angular/
 [this-docker-xubuntu-vnc-angular]: https://hub.docker.com/r/accetto/xubuntu-vnc-angular/
@@ -152,7 +156,10 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [angular]: https://angular.io/
 [chromium]: https://www.chromium.org/Home
+[curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[git]: https://git-scm.com/
 [inkscape]: https://inkscape.org/
+[jq]: https://stedolan.github.io/jq/
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli

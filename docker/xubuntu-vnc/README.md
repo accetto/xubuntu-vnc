@@ -21,14 +21,15 @@ The main image is a streamlined and simplified version of my other image [accett
 
 The main features and components of the images are:
 
-- light-weight [Xfce][xfce] desktop environment
-- high-performance [TigerVNC][tigervnc] server and client
-- popular text editor [vim][vim]
-- lite but advanced graphical editor [mousepad][mousepad]
-- **ping**, **zip** and **unzip** utilities
-- [tini][tini] as the entry-point initial process (PID 1)
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- current version of JSON processor [jq][jq]
+- light-weight [Xfce][xfce] desktop environment (Ubuntu distribution)
+- current version of high-performance [TigerVNC][tigervnc] server and client
+- popular text editor [vim][vim] (Ubuntu distribution)
+- lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- current version of [tini][tini] as the entry-point initial process (PID 1)
 - support for overriding both the container user account and its group
-- **sudo** command
+- support of **version sticker** (see below)
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -43,7 +44,7 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `lab` is also based on `ubuntu:latest`, but built with `ARG_SUPPORT_USER_GROUP_OVERRIDE`
+- `lab` is also based on `ubuntu:latest`, but it is built with `ARG_SUPPORT_USER_GROUP_OVERRIDE`
 
     ![badge-VERSION_STICKER_LAB][badge-VERSION_STICKER_LAB]
     ![badge-github-commit-lab][badge-github-commit-lab]
@@ -251,6 +252,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-doc]: https://docs.docker.com/
 [docker-doc-managing-data]: https://docs.docker.com/storage/
 
+[curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[git]: https://git-scm.com/
+[jq]: https://stedolan.github.io/jq/
 [mousepad]: https://github.com/codebrainz/mousepad
 [novnc]: https://github.com/kanaka/noVNC
 [tigervnc]: http://tigervnc.org

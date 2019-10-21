@@ -21,14 +21,15 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **zip**, **unzip**, **sudo**
-- popular text editor [vim][vim]
-- lite but advanced graphical editor [mousepad][mousepad]
-- [tini][tini] as the entry-point initial process (PID 1)
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- current version of JSON processor [jq][jq]
+- popular text editor [vim][vim] (Ubuntu distribution)
+- lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- current version of [tini][tini] as the entry-point initial process (PID 1)
 
 and adds
 
-- [Chromium][chromium] open-source web browser
+- current version of [Chromium][chromium] open-source web browser
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -125,6 +126,10 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-doc]: https://docs.docker.com/
 [docker-doc-managing-data]: https://docs.docker.com/storage/
 
+[chromium]: https://www.chromium.org/Home
+[curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[git]: https://git-scm.com/
+[jq]: https://stedolan.github.io/jq/
 [mousepad]: https://github.com/codebrainz/mousepad
 [novnc]: https://github.com/kanaka/noVNC
 [tigervnc]: http://tigervnc.org
@@ -132,8 +137,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 [tini]: https://github.com/krallin/tini
 [vim]: https://www.vim.org/
 [xfce]: http://www.xfce.org
-
-[chromium]: https://www.chromium.org/Home
 
 <!-- docker badges -->
 

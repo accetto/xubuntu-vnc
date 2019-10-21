@@ -17,14 +17,15 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **zip**, **unzip**, **sudo**
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git]
+- current version of JSON processor [jq][jq]
 - popular text editor [vim][vim]
 - lite but advanced graphical editor [mousepad][mousepad]
 - [tini][tini] as the entry-point initial process (PID 1)
 
 and adds
 
-- [Inkscape][inkscape] free professional vector graphics editor
+- current version of [Inkscape][inkscape] free professional vector graphics editor
 
 [Inkscape][inkscape] can be used for many things, including the conversion of bitmap images into the **SVG** format.
 
@@ -41,7 +42,7 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and includes also [Firefox][firefox] web browser and the **plus** features
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser and the **plus** features
 
     ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
     ![badge-github-commit-firefox][badge-github-commit-firefox]
@@ -127,6 +128,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
+[curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[git]: https://git-scm.com/
+[jq]: https://stedolan.github.io/jq/
 [firefox]: https://www.mozilla.org
 [inkscape]: https://inkscape.org/
 [mousepad]: https://github.com/codebrainz/mousepad

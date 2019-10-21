@@ -23,14 +23,15 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **zip**, **unzip**, **sudo**
-- popular text editor [vim][vim]
-- lite but advanced graphical editor [mousepad][mousepad]
-- [tini][tini] as the entry-point initial process (PID 1)
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- current version of JSON processor [jq][jq]
+- popular text editor [vim][vim] (Ubuntu distribution)
+- lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- current version of [tini][tini] as the entry-point initial process (PID 1)
 
 and adds
 
-- [Firefox Quantum][firefox] web browser and some additional **plus** features described below
+- current version of [Firefox Quantum][firefox] web browser and some additional **plus features** (see below)
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -207,6 +208,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [firefox-doc-preferences]: https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 
+[curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[git]: https://git-scm.com/
+[jq]: https://stedolan.github.io/jq/
 [firefox]: https://www.mozilla.org
 [mousepad]: https://github.com/codebrainz/mousepad
 [novnc]: https://github.com/kanaka/noVNC
