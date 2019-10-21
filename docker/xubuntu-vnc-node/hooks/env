@@ -4,7 +4,6 @@ SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
 DOCKER_TAG=${DOCKER_TAG:-$1}
 if [[ -n "$1" ]] ; then shift ; fi
 
-DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
 DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-node}
 
 BASEIMAGE=""
@@ -13,28 +12,38 @@ TODAY=$(date +%Y-%m-%d)
 VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
-VERSION_STICKER_LATEST="ubuntu18.04.3-node10.16.3-npm6.9.0"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node10.16.3-npm6.9.0-firefox69.0.2"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node10.16.3-npm6.9.0-chromium77.0.3865.90"
+VERSION_STICKER_LATEST="ubuntu18.04.3-node12.12.0-npm6.11.3"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node12.12.0-npm6.11.3-firefox69.0.2"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node12.12.0-npm6.11.3-chromium77.0.3865.90"
+
+VERSION_STICKER_LTS="ubuntu18.04.3-node10.16.3-npm6.9.0"
 
 case "${DOCKER_TAG}" in
 
     latest | dev | dfw | nux)
         VERSION_STICKER="${VERSION_STICKER_LATEST}"
+        DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
         ;;
 
     chromium | dev-chromium | dfw-chromium | nux-chromium)
         VERSION_STICKER="${VERSION_STICKER_CHROMIUM}"
+        DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
         ;;
 
     firefox | dev-firefox | dfw-firefox | nux-firefox)
         VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
-        ;; 
+        DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
+        ;;
+
+    lts | dev-lts | dfw-lts | nux-lts)
+        VERSION_STICKER="${VERSION_STICKER_LTS}"
+        DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node.lts}
+        ;;
 esac
 
 case "${DOCKER_TAG}" in
 
-    latest)
+    latest | lts)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="latest"
         ;;
@@ -49,7 +58,7 @@ case "${DOCKER_TAG}" in
         BASETAG="latest"
         ;;
 
-    dev)
+    dev | dev-lts)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="dev"
         ;;
@@ -64,7 +73,7 @@ case "${DOCKER_TAG}" in
         BASETAG="dev"
         ;;
 
-    dfw)
+    dfw | dfw-lts)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="dfw"
         ;;
@@ -79,7 +88,7 @@ case "${DOCKER_TAG}" in
         BASETAG="dfw"
         ;;
 
-    nux)
+    nux | nux-lts)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="nux"
         ;;

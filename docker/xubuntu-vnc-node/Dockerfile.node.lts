@@ -1,12 +1,6 @@
-# ./hooks/build dev
-# ./hooks/build dfw
-# ./hooks/build nux
-# ./hooks/build dev-chromium
-# ./hooks/build dfw-chromium
-# ./hooks/build nux-chromium
-# ./hooks/build dev-firefox
-# ./hooks/build dfw-firefox
-# ./hooks/build nux-firefox
+# ./hooks/build dev-lts
+# ./hooks/build dfw-lts
+# ./hooks/build nux-lts
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -15,9 +9,19 @@ FROM ${BASEIMAGE}:${BASETAG} as stage-node
 
 USER 0
 
-### install the current 'node' version explicitly
+### This would currently install 'node v8.10.0' with 'npm v3.5.2'
+### 'apt-get clean' runs automatically
+# RUN \
+#     chmod g+w /usr/local/lib \
+#     && apt-get update && apt-get install -y \
+#         nodejs \
+#         npm \
+#     && apt-get -y autoremove \
+#     && rm -rf /var/lib/apt/lists/*
+
+### Alternatively install a newer version explicitly
 ENV \
-    NODE_VERSION=v12.12.0 \
+    NODE_VERSION=v10.16.3 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global

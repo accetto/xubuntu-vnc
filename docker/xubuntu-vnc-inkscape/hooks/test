@@ -5,7 +5,7 @@
 it=$1
 it=${it:+-it}
 
-vars=($(docker run ${it} --rm ${DOCKER_REPO}:${DOCKER_TAG} -s printenv VERSION_STICKER STARTUPDIR | tail -n2))
+vars=($(docker run ${it} --rm ${DOCKER_REPO}:${DOCKER_TAG} printenv VERSION_STICKER STARTUPDIR | tail -n2))
 
 expected="${vars[0]}"
 

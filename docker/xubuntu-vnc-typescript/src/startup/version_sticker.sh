@@ -25,12 +25,14 @@ case "$1" in
         tigervnc=$("${STARTUPDIR}/version_of.sh" tigervnc)
         curl=$("${STARTUPDIR}/version_of.sh" curl)
         git=$("${STARTUPDIR}/version_of.sh" git)
+        jq=$("${STARTUPDIR}/version_of.sh" jq)
         echo "Ubuntu $ubuntu"
         echo "Mousepad $mousepad"
         echo "VIM $vim"
         echo "TigerVNC $tigervnc"
         echo "curl $curl"
         echo "Git $git"
+        echo "jq $jq"
         echo "Node $node"
         echo "npm $npm"
         echo "VSCode $code"
