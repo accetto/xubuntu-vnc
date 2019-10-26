@@ -7,9 +7,14 @@ if [[ -n "${BASETAG}" ]] ; then
     docker push ${DOCKER_REPO}:${DOCKER_TAG}
 
     case "${DOCKER_TAG}" in
-        latest | chromium | firefox)
+        latest | chromium | firefox | current)
             docker tag ${IMAGE_NAME} ${DOCKER_REPO}:${VERSION_STICKER}
             docker push ${DOCKER_REPO}:${VERSION_STICKER}
+            ;;
+
+        current)
+            docker tag ${IMAGE_NAME} ${DOCKER_REPO}:current-${VERSION_STICKER}
+            docker push ${DOCKER_REPO}:current-${VERSION_STICKER}
             ;;
     esac
 else

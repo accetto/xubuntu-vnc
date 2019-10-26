@@ -72,7 +72,7 @@ The [Git Hub][this-github-xubuntu-vnc-firefox] repository contains several Docke
   
   This Dockerfile is for building the `default` image tag, which is also based on the `accetto/xubuntu-vnc:latest`, but it does not include the **plus** features.
 
-- `Dockerfile.firefox.myown` can be used for building images with own Firefox preferences
+- `Dockerfile.firefox.myown` can be used for building images with your own Firefox preferences already built-in
 
 ### Ports
 
@@ -209,9 +209,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [firefox-doc-preferences]: https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
 
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
-[firefox]: https://www.mozilla.org
 [mousepad]: https://github.com/codebrainz/mousepad
 [novnc]: https://github.com/kanaka/noVNC
 [tigervnc]: http://tigervnc.org
@@ -234,18 +234,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox69.0.2/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox70.0/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox.svg
 
 <!-- default tag badges -->
 
-[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox69.0.2/blue
+[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox70.0/blue
 
 [badge-github-commit-default]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:default.svg
 
 <!-- multiprocess tag badges -->
 
-[badge-VERSION_STICKER_MULTIPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox69.0.2/blue
+[badge-VERSION_STICKER_MULTIPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-firefox70.0/blue
 
 [badge-github-commit-multiprocess]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:multiprocess.svg

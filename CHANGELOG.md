@@ -6,6 +6,22 @@
 
 ***
 
+### Release 19.10.5
+
+- **xubuntu-vnc-node**
+  - switched back to **LTS** version of **Node.js** (it has just been updated)
+    - **Dockerfile.node.current** added
+    - **Dockerfile.node.lts** removed
+  - build hooks updated
+- **xubuntu-vnc-typescript**, **xubuntu-vnc-angular**, **xubuntu-vnc-heroku**
+  - updated **Node.js** version (inherited from the base)
+- Updated versions
+  - Firefox version **70.0**
+  - Node.js
+    - `lts` version **12.13.0** (includes npm **6.12.0**)
+    - `current` version **13.0.1** (includes npm **6.12.0**)
+  - Angular version **8.3.14**
+
 ### Release 19.10.4
 
 - **xubuntu-vnc**

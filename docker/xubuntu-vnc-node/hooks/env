@@ -12,11 +12,11 @@ TODAY=$(date +%Y-%m-%d)
 VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
-VERSION_STICKER_LATEST="ubuntu18.04.3-node12.12.0-npm6.11.3"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node12.12.0-npm6.11.3-firefox69.0.2"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node12.12.0-npm6.11.3-chromium77.0.3865.90"
+VERSION_STICKER_LATEST="ubuntu18.04.3-node12.13.0-npm6.12.0"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node12.13.0-npm6.12.0-firefox70.0"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node12.13.0-npm6.12.0-chromium77.0.3865.90"
 
-VERSION_STICKER_LTS="ubuntu18.04.3-node10.16.3-npm6.9.0"
+VERSION_STICKER_CURRENT="ubuntu18.04.3-node13.0.1-npm6.12.0"
 
 case "${DOCKER_TAG}" in
 
@@ -35,15 +35,15 @@ case "${DOCKER_TAG}" in
         DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
         ;;
 
-    lts | dev-lts | dfw-lts | nux-lts)
-        VERSION_STICKER="${VERSION_STICKER_LTS}"
-        DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node.lts}
+    current | dev-current | dfw-current | nux-current)
+        VERSION_STICKER="${VERSION_STICKER_CURRENT}"
+        DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node.current}
         ;;
 esac
 
 case "${DOCKER_TAG}" in
 
-    latest | lts)
+    latest | current)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="latest"
         ;;
@@ -58,7 +58,7 @@ case "${DOCKER_TAG}" in
         BASETAG="latest"
         ;;
 
-    dev | dev-lts)
+    dev | dev-current)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="dev"
         ;;
@@ -73,7 +73,7 @@ case "${DOCKER_TAG}" in
         BASETAG="dev"
         ;;
 
-    dfw | dfw-lts)
+    dfw | dfw-current)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="dfw"
         ;;
@@ -88,7 +88,7 @@ case "${DOCKER_TAG}" in
         BASETAG="dfw"
         ;;
 
-    nux | nux-lts)
+    nux | nux-current)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="nux"
         ;;

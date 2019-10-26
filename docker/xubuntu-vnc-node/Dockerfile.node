@@ -15,9 +15,19 @@ FROM ${BASEIMAGE}:${BASETAG} as stage-node
 
 USER 0
 
-### install the current 'node' version explicitly
+### This would currently install 'node v8.10.0' with 'npm v3.5.2'
+### 'apt-get clean' runs automatically
+# RUN \
+#     chmod g+w /usr/local/lib \
+#     && apt-get update && apt-get install -y \
+#         nodejs \
+#         npm \
+#     && apt-get -y autoremove \
+#     && rm -rf /var/lib/apt/lists/*
+
+### Alternatively install the latest 'LTS' version explicitly
 ENV \
-    NODE_VERSION=v12.12.0 \
+    NODE_VERSION=v12.13.0 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global

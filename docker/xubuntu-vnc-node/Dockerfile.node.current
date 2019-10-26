@@ -1,6 +1,6 @@
-# ./hooks/build dev-lts
-# ./hooks/build dfw-lts
-# ./hooks/build nux-lts
+# ./hooks/build dev-current
+# ./hooks/build dfw-current
+# ./hooks/build nux-current
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -19,9 +19,9 @@ USER 0
 #     && apt-get -y autoremove \
 #     && rm -rf /var/lib/apt/lists/*
 
-### Alternatively install a newer version explicitly
+### Alternatively install the latest 'current' version explicitly
 ENV \
-    NODE_VERSION=v10.16.3 \
+    NODE_VERSION=v13.0.1 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global
