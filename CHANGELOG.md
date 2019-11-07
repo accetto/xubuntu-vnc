@@ -16,7 +16,7 @@
   - VSCode **1.40.0**
   - TypeScrip **3.7.2**
   - Heroku **7.34.2**
-  - Angular **8.3.17**
+  - Angular **8.3.18**
 
 ### Release 19.10.5
 
