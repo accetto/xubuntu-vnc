@@ -12,9 +12,9 @@ TODAY=$(date +%Y-%m-%d)
 VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
-VERSION_STICKER_LATEST="ubuntu18.04.3-node12.13.0-npm6.12.0-code1.39.2-tsc3.6.4"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node12.13.0-npm6.12.0-code1.39.2-tsc3.6.4-chromium77.0.3865.90"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-node12.13.0-npm6.12.0-code1.39.2-tsc3.6.4-firefox70.0"
+VERSION_STICKER_LATEST="ubuntu18.04.3-node12.13.0-npm6.12.0-code1.39.2-tsc3.7.2"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.3-node12.13.0-npm6.12.0-code1.39.2-tsc3.7.2-chromium78.0.3904.70"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-node12.13.0-npm6.12.0-code1.39.2-tsc3.7.2-firefox70.0.1"
 
 case "${DOCKER_TAG}" in
 

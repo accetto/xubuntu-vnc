@@ -6,6 +6,17 @@
 
 ***
 
+### Release 19.11
+
+- All images:
+  - **ubuntu** base image updated
+- Updated versions
+  - Chromium Browser **78.0.3904.70**
+  - Firefox **70.0.1**
+  - TypeScrip **3.7.2**
+  - Heroku **7.34.2**
+  - Angular **8.3.17**
+
 ### Release 19.10.5
 
 - **xubuntu-vnc-node**

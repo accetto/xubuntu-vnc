@@ -1,6 +1,7 @@
 # ./hooks/build dev
 # ./hooks/build dfw
 # ./hooks/build nux
+# ./hooks/build nux --no-cache
 # ./hooks/build dev-firefox
 # ./hooks/build dfw-firefox
 # ./hooks/build nux-firefox
