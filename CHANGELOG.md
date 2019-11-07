@@ -13,6 +13,7 @@
 - Updated versions
   - Chromium Browser **78.0.3904.70**
   - Firefox **70.0.1**
+  - VSCode **1.40.0**
   - TypeScrip **3.7.2**
   - Heroku **7.34.2**
   - Angular **8.3.17**
