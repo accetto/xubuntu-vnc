@@ -6,6 +6,11 @@
 
 ***
 
+### Release 19.11.1
+
+- Updated versions
+  - Heroku **7.35.0**
+
 ### Release 19.11
 
 - All images:
