@@ -1,6 +1,7 @@
 # ./hooks/build dev-current
 # ./hooks/build dfw-current
 # ./hooks/build nux-current
+# ./hooks/build nux-current --no-cache
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest

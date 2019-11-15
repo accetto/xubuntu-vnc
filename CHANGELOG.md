@@ -6,6 +6,16 @@
 
 ***
 
+### Release 19.11.2
+
+- All images:
+  - simplified output of `vnc_startup.sh` script
+  - bottom panel's auto-hide behavior changed from `Intelligently` to `Always`
+- Updated versions
+  - Chromium Browser **78.0.3904.97**
+  - VSCode **1.40.1**
+  - Angular **8.3.19**
+
 ### Release 19.11.1
 
 - Updated versions
