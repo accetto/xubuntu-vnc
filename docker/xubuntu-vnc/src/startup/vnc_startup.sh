@@ -66,7 +66,7 @@ echo "Script: $0"
 id
 
 ### only in debug mode
-if [[ $DEBUG ]] ; then
+if [[ ${DEBUG} ]] ; then
     echo "DEBUG: ls -la /"
     ls -la /
     echo "DEBUG: ls -la /home"
@@ -82,38 +82,35 @@ fi
 mkdir -p "${HOME}"/.vnc
 PASSWD_PATH="${HOME}/.vnc/passwd"
 
-if [[ "$VNC_VIEW_ONLY" == "true" ]]; then
+if [[ "${VNC_VIEW_ONLY}" == "true" ]]; then
     echo "Start VNC server in view only mode"
     ### create random pw to prevent access
-    echo $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20) | vncpasswd -f > "$PASSWD_PATH"
+    echo $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20) | vncpasswd -f > "${PASSWD_PATH}"
 fi
 
-echo "$VNC_PW" | vncpasswd -f >> "$PASSWD_PATH"
-chmod 600 "$PASSWD_PATH"
+echo "${VNC_PW}" | vncpasswd -f >> "${PASSWD_PATH}"
+chmod 600 "${PASSWD_PATH}"
 
 echo "Starting VNC server ..."
 echo "... remove old VNC locks to be a reattachable container"
-vncserver -kill $DISPLAY &> "$STARTUPDIR"/vnc_startup.log \
-    || rm -rfv /tmp/.X*-lock /tmp/.X11-unix &> "$STARTUPDIR"/vnc_startup.log \
+vncserver -kill ${DISPLAY} &> "${STARTUPDIR}"/vnc_startup.log \
+    || rm -rfv /tmp/.X*-lock /tmp/.X11-unix &> "${STARTUPDIR}"/vnc_startup.log \
     || echo "... no locks present"
 
-echo "... VNC params: VNC_COL_DEPTH=$VNC_COL_DEPTH, VNC_RESOLUTION=$VNC_RESOLUTION"
-if [[ $DEBUG == true ]]; then 
-    echo "... vncserver $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION"
-fi
-
-vncserver $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION \
-    -BlacklistTimeout $VNC_BLACKLIST_TIMEOUT \
-    -BlacklistThreshold $VNC_BLACKLIST_THRESHOLD &> "$STARTUPDIR"/vnc_startup.log
+echo "... VNC params: VNC_COL_DEPTH=${VNC_COL_DEPTH}, VNC_RESOLUTION=${VNC_RESOLUTION}"
+echo "... VNC params: VNC_BLACKLIST_TIMEOUT=${VNC_BLACKLIST_TIMEOUT}, VNC_BLACKLIST_THRESHOLD=${VNC_BLACKLIST_THRESHOLD}"
+vncserver ${DISPLAY} -depth ${VNC_COL_DEPTH} -geometry ${VNC_RESOLUTION} \
+    -BlacklistTimeout ${VNC_BLACKLIST_TIMEOUT} \
+    -BlacklistThreshold ${VNC_BLACKLIST_THRESHOLD} &> "${STARTUPDIR}"/vnc_startup.log
 
 ### log connect options
-echo "... VNC server started on display $DISPLAY"
-echo "Connect via VNC viewer with $VNC_IP:$VNC_PORT"
+echo "... VNC server started on display ${DISPLAY}"
+echo "Connect via VNC viewer with ${VNC_IP}:${VNC_PORT}"
 
-if [[ $DEBUG == true ]] || [[ $1 =~ -t|--tail-log ]]; then
-    echo "Display log: ${HOME}/.vnc/*$DISPLAY.log"
+if [[ ${DEBUG} == true ]] || [[ $1 =~ -t|--tail-log ]]; then
+    echo "Display log: ${HOME}/.vnc/*${DISPLAY}.log"
     ### if option `-t` or `--tail-log` block the execution and tail the VNC log
-    tail -f "$STARTUPDIR"/*.log "${HOME}"/.vnc/*$DISPLAY.log
+    tail -f "${STARTUPDIR}"/*.log "${HOME}"/.vnc/*${DISPLAY}.log
 fi
 
 if [ -z "$1" ] || [[ $1 =~ -w|--wait ]]; then
