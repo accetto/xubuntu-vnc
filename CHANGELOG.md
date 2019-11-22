@@ -6,6 +6,13 @@
 
 ***
 
+### Release 19.11.3
+
+- Updated versions:
+  - Chromium Browser **78.0.3904.108**
+  - Node.js **12.13.1**
+  - npm **6.12.1**
+
 ### Release 19.11.2
 
 - All images:
