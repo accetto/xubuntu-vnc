@@ -120,7 +120,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github-xubuntu-vnc-inkscape]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-inkscape
 
-[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-inkscape/xubuntu-vnc-inkscape-gimp.jpg
+[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-inkscape/xubuntu-vnc-inkscape.jpg
 
 [accetto-docker-xubuntu-vnc]: https://hub.docker.com/r/accetto/xubuntu-vnc/
 
