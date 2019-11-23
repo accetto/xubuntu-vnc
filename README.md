@@ -50,7 +50,7 @@ The images are streamlined and simplified versions of my other images [accetto/u
 
 #### [xubuntu-vnc-inkscape][this-github-xubuntu-vnc-inkscape]
   
-Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape].
+Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape] and the free open-source bitmap image editor [GIMP][gimp].
 
 Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
 
@@ -157,6 +157,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [angular]: https://angular.io/
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[gimp]: https://www.gimp.org/
 [git]: https://git-scm.com/
 [inkscape]: https://inkscape.org/
 [jq]: https://stedolan.github.io/jq/

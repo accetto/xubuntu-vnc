@@ -6,6 +6,17 @@
 
 ***
 
+### Release 19.11.4
+
+- **xubuntu-vnc-inkscape**
+  - bitmap image editor **GIMP** added (version **2.8.22** from Ubuntu distribution)
+  - Docker image renamed to **xubuntu-vnc-inkscape-gimp**
+    - previous Docker image **xubuntu-vnc-inkscape** deprecated (no future builds)
+- **xubuntu-vnc-node**
+  - `current` image updated
+    - Node.js **13.2.0**
+    - npm **6.13.1**
+
 ### Release 19.11.3
 
 - Updated versions:
