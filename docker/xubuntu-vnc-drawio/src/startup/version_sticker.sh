@@ -2,12 +2,13 @@
 ### @accetto, September 2019
 
 ubuntu=$("${STARTUPDIR}/version_of.sh" ubuntu)
+drawio=$("${STARTUPDIR}/version_of.sh" drawio)
 firefox=$("${STARTUPDIR}/version_of.sh" firefox)
 
 case "$1" in
     -v)
         echo "Ubuntu $ubuntu"
-        echo "Inkscape $inkscape"
+        echo "draw.io Desktop $drawio"
         [[ -n "$firefox" ]] && echo "Firefox $firefox"
         ;;
     -V)
@@ -24,13 +25,14 @@ case "$1" in
         echo "curl $curl"
         echo "Git $git"
         echo "jq $jq"
+        echo "draw.io Desktop $drawio"
         [[ -n "$firefox" ]] && echo "Firefox $firefox"
         ;;
     *)
-        ### example: ubuntu18.04.3-TODO
-        sticker="ubuntu$ubuntu"-"TODO"
+        ### example: ubuntu18.04.3-drawio12.2.2
+        sticker="ubuntu$ubuntu"-"drawio$drawio"
         if [[ -n "$firefox" ]] ; then
-            ### example: ubuntu18.04.3-TODO-firefox69.0
+            ### example: ubuntu18.04.3-drawio12.2.2-firefox69.0
             sticker="$sticker"-"firefox$firefox"
         fi
         echo "$sticker"
