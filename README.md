@@ -48,12 +48,6 @@ Several variations are available, including the one supporting easy pre-configur
 
 The images are streamlined and simplified versions of my other images [accetto/ubuntu-vnc-xfce-firefox-plus][accetto-docker-ubuntu-vnc-xfce-firefox-plus] and [accetto/ubuntu-vnc-xfce-firefox-default][accetto-docker-ubuntu-vnc-xfce-firefox-default].
 
-#### [xubuntu-vnc-inkscape][this-github-xubuntu-vnc-inkscape]
-  
-Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape] and the free open-source bitmap image editor [GIMP][gimp].
-
-Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
-
 #### [xubuntu-vnc-chromium][this-github-xubuntu-vnc-chromium]
   
 Contains resources for building [accetto/xubuntu-vnc-chromium][this-docker-xubuntu-vnc-chromium] images with the open-source [Chromium][chromium] web browser.
@@ -75,6 +69,18 @@ Contains resources for building [accetto/xubuntu-vnc-angular][this-docker-xubunt
 #### [xubuntu-vnc-heroku][this-github-xubuntu-vnc-heroku]
 
 Contains resources for building [accetto/xubuntu-vnc-heroku-js-postgresql][this-docker-xubuntu-vnc-heroku-js-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql] for JavaScript-based development with [Node.js][nodejs], [npm][npm], [Git][git], [Visual Studio Code][vscode] and [TypeScript][typescript]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
+
+#### [xubuntu-vnc-inkscape][this-github-xubuntu-vnc-inkscape]
+  
+Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape] and the free open-source bitmap image editor [GIMP][gimp].
+
+Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
+
+#### [xubuntu-vnc-gimp][this-github-xubuntu-vnc-gimp]
+
+Contains resources for building [accetto/xubuntu-vnc-gimp][this-docker-xubuntu-vnc-gimp] images with the free open-source bitmap image editor [GIMP][gimp].
+
+Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
 
 #### [utils][this-github-utils]
   
@@ -124,9 +130,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-github-xubuntu-vnc-firefox]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-firefox/
 [this-docker-xubuntu-vnc-firefox]: https://hub.docker.com/r/accetto/xubuntu-vnc-firefox/
 
-[this-github-xubuntu-vnc-inkscape]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-inkscape/
-[this-docker-xubuntu-vnc-inkscape]: https://hub.docker.com/r/accetto/xubuntu-vnc-inkscape/
-
 [this-github-xubuntu-vnc-chromium]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-chromium/
 [this-docker-xubuntu-vnc-chromium]: https://hub.docker.com/r/accetto/xubuntu-vnc-chromium/
 
@@ -141,6 +144,12 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-github-xubuntu-vnc-angular]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-angular/
 [this-docker-xubuntu-vnc-angular]: https://hub.docker.com/r/accetto/xubuntu-vnc-angular/
+
+[this-github-xubuntu-vnc-inkscape]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-inkscape/
+[this-docker-xubuntu-vnc-inkscape]: https://hub.docker.com/r/accetto/xubuntu-vnc-inkscape/
+
+[this-github-xubuntu-vnc-gimp]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-gimp/
+[this-docker-xubuntu-vnc-gimp]: https://hub.docker.com/r/accetto/xubuntu-vnc-gimp/
 
 [accetto-docker-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce
 [accetto-docker-ubuntu-vnc-xfce-firefox-default]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-default

@@ -6,6 +6,14 @@
 
 ***
 
+### Release 19.11.5
+
+- **xubuntu-vnc-gimp**
+  - new GitHub repository folder and Docker image have been introduced
+  - **GIMP** version **2.8.22** (from Ubuntu distribution)
+- **xubuntu-vnc-inkscape**
+  - GitHub repository folder and Docker image have been restored and they'll be maintained again
+
 ### Release 19.11.4
 
 - **xubuntu-vnc-inkscape**
