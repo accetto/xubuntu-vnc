@@ -1,0 +1,75 @@
+### hooks/env
+
+SOURCE_BRANCH=${SOURCE_BRANCH:-$1}
+DOCKER_TAG=${DOCKER_TAG:-$1}
+if [[ -n "$1" ]] ; then shift ; fi
+
+DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.gimp}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-gimp}
+
+BASEIMAGE=""
+BASETAG=""
+TODAY=$(date +%Y-%m-%d)
+VERSION_STICKER=""
+
+### Warning! The values must be explicit strings (used by utils).
+VERSION_STICKER_LATEST="ubuntu18.04.3-gimp2.8.22"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-gimp2.8.22-firefox70.0.1"
+
+case "${DOCKER_TAG}" in
+
+    latest | dev | dfw | nux)
+        VERSION_STICKER="${VERSION_STICKER_LATEST}"
+        ;;
+
+    firefox | dev-firefox | dfw-firefox | nux-firefox)
+        VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
+        ;; 
+esac
+
+case "${DOCKER_TAG}" in
+
+    latest)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="latest"
+        ;;
+
+    firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="latest"
+        ;;
+
+    dev)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="dev"
+        ;;
+
+    dev-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="dev"
+        ;;
+
+    dfw)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="dfw"
+        ;;
+
+    dfw-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="dfw"
+        ;;
+
+    nux)
+        BASEIMAGE="accetto/xubuntu-vnc"
+        BASETAG="nux"
+        ;;
+
+    nux-firefox)
+        BASEIMAGE="accetto/xubuntu-vnc-firefox"
+        BASETAG="nux"
+        ;;
+
+    *)
+        BASETAG=""
+        ;;
+esac
