@@ -136,7 +136,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [drawio]: https://about.draw.io/
-[drawio-desktop]: https://github.com/jgraph/drawio-desktop
+[drawio-desktop]: https://github.com/jgraph/drawio-desktop/
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
 [firefox]: https://www.mozilla.org
