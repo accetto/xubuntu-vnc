@@ -1,6 +1,6 @@
-# Headless Ubuntu/Xfce container with VNC and Inkscape and GIMP
+# Headless Ubuntu/Xfce container with VNC and Inkscape
 
-## accetto/xubuntu-vnc-inkscape-gimp
+## accetto/xubuntu-vnc-inkscape
 
 [Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
@@ -11,7 +11,7 @@
 ![badge-github-release][badge-github-release]
 ![badge-github-release-date][badge-github-release-date]
 
-This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free professional vector graphics editor [Inkscape][inkscape] and the free bitmap image editor [GIMP][gimp].
+This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free professional vector graphics editor [Inkscape][inkscape].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
 
@@ -26,7 +26,6 @@ The `latest` image inherits among others
 and adds
 
 - current version of [Inkscape][inkscape] free professional vector graphics editor
-- free bitmap image editor [GIMP][gimp] (Ubuntu distribution)
 
 [Inkscape][inkscape] can be used for many things, including the conversion of bitmap images into the **SVG** format.
 
@@ -108,7 +107,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 ***
 
-[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-inkscape-gimp/
+[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-inkscape/
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
@@ -133,7 +132,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
 [firefox]: https://www.mozilla.org
-[gimp]: https://www.gimp.org/
 [inkscape]: https://inkscape.org/
 [mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
@@ -144,9 +142,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- docker badges -->
 
-[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-inkscape-gimp?icon=docker&label=pulls
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-inkscape?icon=docker&label=pulls
 
-[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-inkscape-gimp?icon=docker&label=stars
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-inkscape?icon=docker&label=stars
 
 <!-- github badges -->
 
@@ -156,12 +154,12 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-inkscape0.92.3-gimp2.8.22/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-inkscape0.92.3/blue
 
-[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape-gimp.svg
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-inkscape0.92.3-gimp2.8.22-firefox70.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-inkscape0.92.3-firefox70.0.1/blue
 
-[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape-gimp:firefox.svg
+[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape:firefox.svg

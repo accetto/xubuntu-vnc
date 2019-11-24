@@ -5,7 +5,7 @@ DOCKER_TAG=${DOCKER_TAG:-$1}
 if [[ -n "$1" ]] ; then shift ; fi
 
 DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.inkscape}
-DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-inkscape-gimp}
+DOCKER_REPO=${DOCKER_REPO:-accetto/xubuntu-vnc-inkscape}
 
 BASEIMAGE=""
 BASETAG=""
@@ -13,8 +13,8 @@ TODAY=$(date +%Y-%m-%d)
 VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
-VERSION_STICKER_LATEST="ubuntu18.04.3-inkscape0.92.3-gimp2.8.22"
-VERSION_STICKER_FIREFOX="ubuntu18.04.3-inkscape0.92.3-gimp2.8.22-firefox70.0.1"
+VERSION_STICKER_LATEST="ubuntu18.04.3-inkscape0.92.3"
+VERSION_STICKER_FIREFOX="ubuntu18.04.3-inkscape0.92.3-firefox70.0.1"
 
 case "${DOCKER_TAG}" in
 

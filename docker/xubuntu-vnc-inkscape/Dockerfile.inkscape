@@ -9,7 +9,7 @@
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
 
-FROM ${BASEIMAGE}:${BASETAG} as stage-tools
+FROM ${BASEIMAGE}:${BASETAG} as stage-inkscape
 
 ### Switch to root user before install
 USER 0
@@ -17,7 +17,6 @@ USER 0
 ### 'apt-get clean' runs automatically
 RUN apt-get update && apt-get install -y \
         inkscape \
-        gimp \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
@@ -30,7 +29,7 @@ RUN \
     chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
-FROM stage-tools as stage-final
+FROM stage-inkscape as stage-final
 
 ARG ARG_REFRESHED_AT
 ARG ARG_VERSION_STICKER
