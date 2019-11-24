@@ -1,6 +1,6 @@
-# Headless Ubuntu/Xfce container with VNC and GIMP
+# Headless Ubuntu/Xfce container with VNC and drawio-desktop
 
-## accetto/xubuntu-vnc-gimp
+## accetto/xubuntu-vnc-drawio
 
 [Docker Hub][this-docker] - [Git Hub][this-github] - [Changelog][this-changelog] - [Wiki][this-wiki] - [Hierarchy][this-wiki-image-hierarchy]
 
@@ -11,7 +11,7 @@
 ![badge-github-release][badge-github-release]
 ![badge-github-release-date][badge-github-release-date]
 
-This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free open-source bitmap image editor [GIMP][gimp].
+This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free open-source [desktop version][drawio-desktop] of the diagramming tool [draw.io][drawio].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
 
@@ -25,7 +25,15 @@ The `latest` image inherits among others
 
 and adds
 
-- free bitmap image editor [GIMP][gimp] (Ubuntu distribution)
+- current [desktop version][drawio-desktop] of the diagramming tool [draw.io][drawio]
+
+**Important excerpt** from the author's description:
+
+> Security
+> 
+> [draw.io Desktop][drawio-desktop] is designed to be completely isolated from the Internet. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
+> 
+> No diagram data is ever sent externally, nor do we send any analytics about app usage externally. This means certain functionality for which we do not have a JavaScript implementation do not work in the Desktop build, namely .vsd and Gliffy import.
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -47,9 +55,9 @@ The following image tags are regularly maintained and rebuilt:
 
 ### Dockerfiles
 
-The [Git Hub][this-github-xubuntu-vnc-gimp] repository contains several Dockerfiles that can be used to build the images.
+The [Git Hub][this-github-xubuntu-vnc-drawio] repository contains several Dockerfiles that can be used to build the images.
 
-- `Dockerfile.gimp`  
+- `Dockerfile.drawio`  
   
   This is the main Dockerfile for building the `latest` image tag based on the `accetto/xubuntu-vnc:latest` tag by default.
 
@@ -105,7 +113,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 ***
 
-[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-gimp/
+[this-docker]: https://hub.docker.com/r/accetto/xubuntu-vnc-drawio/
 
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-changelog]: https://github.com/accetto/xubuntu-vnc/blob/master/CHANGELOG.md
@@ -115,9 +123,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
-[this-github-xubuntu-vnc-gimp]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-gimp
+[this-github-xubuntu-vnc-drawio]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-drawio
 
-[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-gimp/xubuntu-vnc-gimp.jpg
+[this-screenshot-container]: https://raw.githubusercontent.com/accetto/xubuntu-vnc/master/docker/xubuntu-vnc-drawio/xubuntu-vnc-drawio.jpg
 
 [accetto-docker-xubuntu-vnc]: https://hub.docker.com/r/accetto/xubuntu-vnc/
 
@@ -127,10 +135,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[drawio]: https://about.draw.io/
+[drawio-desktop]: https://github.com/jgraph/drawio-desktop
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
 [firefox]: https://www.mozilla.org
-[gimp]: https://www.gimp.org/
 [mousepad]: https://github.com/codebrainz/mousepad
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
@@ -140,9 +149,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- docker badges -->
 
-[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-gimp?icon=docker&label=pulls
+[badge-docker-pulls]: https://badgen.net/docker/pulls/accetto/xubuntu-vnc-drawio?icon=docker&label=pulls
 
-[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-gimp?icon=docker&label=stars
+[badge-docker-stars]: https://badgen.net/docker/stars/accetto/xubuntu-vnc-drawio?icon=docker&label=stars
 
 <!-- github badges -->
 
@@ -152,12 +161,12 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-gimp2.8.22/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-TODO/blue
 
-[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-gimp.svg
+[badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-gimp2.8.22-firefox70.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-TODO-firefox70.0.1/blue
 
-[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-gimp:firefox.svg
+[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio:firefox.svg

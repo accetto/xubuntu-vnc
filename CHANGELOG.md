@@ -8,11 +8,14 @@
 
 ### Release 19.11.5
 
+- **xubuntu-vnc-inkscape**
+  - GitHub repository folder and Docker image have been restored and they'll be maintained as previously
 - **xubuntu-vnc-gimp**
   - new GitHub repository folder and Docker image have been introduced
   - **GIMP** version **2.8.22** (from Ubuntu distribution)
-- **xubuntu-vnc-inkscape**
-  - GitHub repository folder and Docker image have been restored and they'll be maintained again
+- **xubuntu-vnc-drawio**
+  - new GitHub repository folder and Docker image have been introduced
+  - **drawio-desktop** version **12.2.2** (the current version)
 
 ### Release 19.11.4
 

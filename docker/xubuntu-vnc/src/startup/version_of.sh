@@ -18,6 +18,10 @@ case "$1" in
         ### source example: curl 7.58.0 (x86_64-pc-linux-gnu) libcurl/7.58.0 OpenSSL/1.1.1 zlib/1.2.11 libidn2/2.0.4 libpsl/0.19.1 (+libidn2/2.0.4) nghttp2/1.30.0 librtmp/2.3
         echo $(curl --version 2>/dev/null | grep -Po '(?<=curl\s)[0-9.]+')
         ;;
+    draw | drawio | drawio-desktop)
+        ### source example: 12.2.2
+        echo $(drawio --no-sandbox --version 2>/dev/null | grep -Po '^[0-9.]+$')
+        ;;
     firefox | fox)
         ### source example: Mozilla Firefox 68.0.2
         echo $(firefox -v 2>/dev/null | grep -Po '[0-9.]+$')

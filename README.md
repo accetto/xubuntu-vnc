@@ -70,9 +70,15 @@ Contains resources for building [accetto/xubuntu-vnc-angular][this-docker-xubunt
 
 Contains resources for building [accetto/xubuntu-vnc-heroku-js-postgresql][this-docker-xubuntu-vnc-heroku-js-postgresql] images with [heroku/CLI][heroku-cli] and [PostgreSQL][postgresql] for JavaScript-based development with [Node.js][nodejs], [npm][npm], [Git][git], [Visual Studio Code][vscode] and [TypeScript][typescript]. Additional [Node.js][nodejs] modules can be easily added using [npm][npm].
 
+#### [xubuntu-vnc-drawio][this-github-xubuntu-vnc-drawio]
+  
+Contains resources for building [accetto/xubuntu-vnc-drawio][this-docker-xubuntu-vnc-drawio] images with the free open-source [desktop version][drawio-desktop] of the diagramming tool [draw.io][drawio].
+
+Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
+
 #### [xubuntu-vnc-inkscape][this-github-xubuntu-vnc-inkscape]
   
-Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape] and the free open-source bitmap image editor [GIMP][gimp].
+Contains resources for building [accetto/xubuntu-vnc-inkscape][this-docker-xubuntu-vnc-inkscape] images with the free open-source vector graphics editor [Inkscape][inkscape].
 
 Several variations are available, including the one with the current [Firefox Quantum][firefox] web browser.
 
@@ -145,6 +151,9 @@ Credit goes to all the countless people and companies, who contribute to open so
 [this-github-xubuntu-vnc-angular]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-angular/
 [this-docker-xubuntu-vnc-angular]: https://hub.docker.com/r/accetto/xubuntu-vnc-angular/
 
+[this-github-xubuntu-vnc-drawio]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-drawio/
+[this-docker-xubuntu-vnc-drawio]: https://hub.docker.com/r/accetto/xubuntu-vnc-drawio/
+
 [this-github-xubuntu-vnc-inkscape]: https://github.com/accetto/xubuntu-vnc/tree/master/docker/xubuntu-vnc-inkscape/
 [this-docker-xubuntu-vnc-inkscape]: https://hub.docker.com/r/accetto/xubuntu-vnc-inkscape/
 
@@ -166,6 +175,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 [angular]: https://angular.io/
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[drawio]: https://about.draw.io/
+[drawio-desktop]: https://github.com/jgraph/drawio-desktop
 [gimp]: https://www.gimp.org/
 [git]: https://git-scm.com/
 [inkscape]: https://inkscape.org/
