@@ -6,6 +6,14 @@
 
 ***
 
+### Release 19.11.6
+
+- All images:
+  - **TigerVNC** server and client updated to version **1.10.0**
+- Updated versions:
+  - VSCode **1.40.2**
+  - Angular **8.3.20**
+  
 ### Release 19.11.5
 
 - **xubuntu-vnc-inkscape**
@@ -47,7 +55,7 @@
 
 ### Release 19.11.1
 
-- Updated versions
+- Updated versions:
   - Heroku **7.35.0**
 
 ### Release 19.11
