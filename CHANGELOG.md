@@ -6,6 +6,13 @@
 
 ***
 
+### Release 19.12
+
+- Updated versions:
+  - Firefox **71.0**
+  - Node.js `current` **13.3.0**
+  - TypeScrip **3.7.3**
+
 ### Release 19.11.6
 
 - All images:
