@@ -6,6 +6,13 @@
 
 ***
 
+### Release 19.12.1
+
+- Updated versions:
+  - VSCode **1.41.0**
+- Utilities:
+  - **util-inspect.sh** added
+
 ### Release 19.12
 
 - Updated versions:
