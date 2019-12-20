@@ -6,6 +6,19 @@
 
 ***
 
+### Release 19.12.2
+
+- All images:
+  - **Ubuntu** base image has been updated
+- Updated versions:
+  - Chromium Browser **79.0.3945.79**
+  - Node.js **12.14.0**
+    - `current` tag with **13.5.0**
+  - npm **6.13.4**
+  - VSCode **1.41.1**
+  - Heroku **7.35.1**
+  - Angular **8.3.21**
+
 ### Release 19.12.1
 
 - Updated versions:
