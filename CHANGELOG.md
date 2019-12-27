@@ -6,6 +6,11 @@
 
 ***
 
+### Release 19.12.3
+
+- Updated versions:
+  - TypeScript **3.7.4**
+
 ### Release 19.12.2
 
 - All images:
@@ -31,7 +36,7 @@
 - Updated versions:
   - Firefox **71.0**
   - Node.js `current` **13.3.0**
-  - TypeScrip **3.7.3**
+  - TypeScript **3.7.3**
 
 ### Release 19.11.6
 
