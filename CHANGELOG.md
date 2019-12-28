@@ -6,6 +6,11 @@
 
 ***
 
+### Release 19.12.4
+
+- All images:
+  - TigerVNC version **1.10.1**
+
 ### Release 19.12.3
 
 - Updated versions:
