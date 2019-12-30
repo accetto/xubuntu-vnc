@@ -8,8 +8,12 @@
 
 ### Release 19.12.4
 
-- All images:
-  - TigerVNC version **1.10.1**
+- **xubuntu-vnc**
+  - **TigerVNC** version **1.10.1**
+    - version still incorrectly reported as **1.10.0** (see [issue #925](https://github.com/TigerVNC/tigervnc/issues/925))
+  - **vnc_startup.sh** and some other session related stuff updated
+  - **Dockerfile** updated
+- all other images inherited the above changes
 
 ### Release 19.12.3
 

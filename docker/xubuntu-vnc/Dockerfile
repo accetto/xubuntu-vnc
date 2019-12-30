@@ -90,8 +90,6 @@ RUN apt-get update && apt-get install -y \
 
 FROM stage-xfce as stage-vnc
 
-### 'apt-get clean' runs automatically
-### installed into '/usr/share/usr/local/share/vnc'
 RUN wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.10.1.x86_64.tar.gz | tar xz --strip 1 -C /
 
 FROM stage-vnc as stage-tini
@@ -136,6 +134,7 @@ COPY [ "./src/startup", "${STARTUPDIR}/" ]
 ### Preconfigure Xfce
 COPY [ "./src/home/Desktop", "${HOME}/Desktop/" ]
 COPY [ "./src/home/config/xfce4", "${HOME}/.config/xfce4/" ]
+COPY [ "./src/home/config/autostart", "${HOME}/.config/autostart/" ]
 
 ### Create the default application user (non-root, but member of the group zero)
 ### and make '/etc/passwd' and '/etc/group' writable for the group.
