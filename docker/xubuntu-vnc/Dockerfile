@@ -76,11 +76,13 @@ ENV \
 
 ### 'apt-get clean' runs automatically
 RUN apt-get update && apt-get install -y \
-        mousepad \
         locales \
         supervisor \
         xfce4 \
         xfce4-terminal \
+        xfce4-screenshooter \
+        mousepad \
+        ristretto \
     && locale-gen en_US.UTF-8 \
     && apt-get purge -y \
         pm-utils \
@@ -122,7 +124,7 @@ ENV \
     VNC_COL_DEPTH=24 \
     VNC_PORT="5901" \
     VNC_PW=${ARG_VNC_PW:-headless} \
-    VNC_RESOLUTION=${ARG_VNC_RESOLUTION:-1024x768} \
+    VNC_RESOLUTION=${ARG_VNC_RESOLUTION:-1360x768} \
     VNC_VIEW_ONLY=false \
     SUPPORT_USER_GROUP_OVERRIDE=${ARG_SUPPORT_USER_GROUP_OVERRIDE}
 

@@ -20,9 +20,12 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 The `latest` image inherits among others
 
 - utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
-- current version of JSON processor [jq][jq]
+- popular text editor [vim][vim] (Ubuntu distribution)
+- lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- [xfce4-screenshooter][screenshooter] and image viewer [ristretto][ristretto] (Ubuntu distribution)
 - current version of [tini][tini] as the entry-point initial process (PID 1)
-- current version of [Node.js][nodejs] JavaScript-based development platform
+- current version of JSON processor [jq][jq]
+- current version [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js (included with Node.js)
 - current version of [Visual Studio Code][vscode] developer editor
 - current version of [TypeScript][typescript] programming language
@@ -153,10 +156,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-doc-managing-data]: https://docs.docker.com/storage/
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
-[tigervnc]: http://tigervnc.org
-[tightvnc]: http://www.tightvnc.com
-[tini]: https://github.com/krallin/tini
-[xfce]: http://www.xfce.org
 
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
@@ -168,8 +167,14 @@ Credit goes to all the countless people and companies, who contribute to open so
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [postgresql]: https://www.postgresql.org/
+[ristretto]: https://docs.xfce.org/apps/ristretto/start
+[screenshooter]: https://docs.xfce.org/apps/screenshooter/start
+[tigervnc]: http://tigervnc.org
+[tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
 [typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/
+[xfce]: http://www.xfce.org
 
 <!-- docker badges -->
 

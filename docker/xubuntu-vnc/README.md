@@ -22,12 +22,13 @@ The main image is a streamlined and simplified version of my other image [accett
 The main features and components of the images are:
 
 - utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
-- current version of JSON processor [jq][jq]
 - light-weight [Xfce][xfce] desktop environment (Ubuntu distribution)
 - current version of high-performance [TigerVNC][tigervnc] server and client
 - popular text editor [vim][vim] (Ubuntu distribution)
 - lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- [xfce4-screenshooter][screenshooter] and image viewer [ristretto][ristretto] (Ubuntu distribution)
 - current version of [tini][tini] as the entry-point initial process (PID 1)
+- current version of JSON processor [jq][jq]
 - support for overriding both the container user account and its group
 - support of **version sticker** (see below)
 
@@ -257,6 +258,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 [jq]: https://stedolan.github.io/jq/
 [mousepad]: https://github.com/codebrainz/mousepad
 [novnc]: https://github.com/kanaka/noVNC
+[ristretto]: https://docs.xfce.org/apps/ristretto/start
+[screenshooter]: https://docs.xfce.org/apps/screenshooter/start
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
 [tini]: https://github.com/krallin/tini

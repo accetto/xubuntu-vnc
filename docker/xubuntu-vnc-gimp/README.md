@@ -17,11 +17,12 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git]
-- current version of JSON processor [jq][jq]
-- popular text editor [vim][vim]
-- lite but advanced graphical editor [mousepad][mousepad]
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- popular text editor [vim][vim] (Ubuntu distribution)
+- lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- [xfce4-screenshooter][screenshooter] and image viewer [ristretto][ristretto] (Ubuntu distribution)
 - [tini][tini] as the entry-point initial process (PID 1)
+- current version of JSON processor [jq][jq]
 
 and adds
 
@@ -132,6 +133,8 @@ Credit goes to all the countless people and companies, who contribute to open so
 [firefox]: https://www.mozilla.org
 [gimp]: https://www.gimp.org/
 [mousepad]: https://github.com/codebrainz/mousepad
+[ristretto]: https://docs.xfce.org/apps/ristretto/start
+[screenshooter]: https://docs.xfce.org/apps/screenshooter/start
 [tigervnc]: http://tigervnc.org
 [tightvnc]: http://www.tightvnc.com
 [tini]: https://github.com/krallin/tini

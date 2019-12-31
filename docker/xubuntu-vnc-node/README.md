@@ -18,10 +18,11 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 The `latest` image inherits among others
 
 - utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
-- current version of JSON processor [jq][jq]
 - popular text editor [vim][vim] (Ubuntu distribution)
 - lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
+- [xfce4-screenshooter][screenshooter] and image viewer [ristretto][ristretto] (Ubuntu distribution)
 - current version of [tini][tini] as the entry-point initial process (PID 1)
+- current version of JSON processor [jq][jq]
 
 and adds
 
@@ -198,21 +199,22 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
-[mousepad]: https://github.com/codebrainz/mousepad
-[tigervnc]: http://tigervnc.org
-[tightvnc]: http://www.tightvnc.com
-[tini]: https://github.com/krallin/tini
-[vim]: https://www.vim.org/
-[xfce]: http://www.xfce.org
-
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
+[mousepad]: https://github.com/codebrainz/mousepad
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
+[ristretto]: https://docs.xfce.org/apps/ristretto/start
+[screenshooter]: https://docs.xfce.org/apps/screenshooter/start
+[tigervnc]: http://tigervnc.org
+[tightvnc]: http://www.tightvnc.com
+[tini]: https://github.com/krallin/tini
+[vim]: https://www.vim.org/
 [vscode]: https://code.visualstudio.com/
+[xfce]: http://www.xfce.org
 
 <!-- docker badges -->
 
