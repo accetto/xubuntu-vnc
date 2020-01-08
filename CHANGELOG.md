@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.01
+
+- **xubuntu-vnc**
+  - auto-starting again:
+    - Xfsettingsd
+    - User folders update
+- all other images inherit the above changes
+- Updated versions:
+  - Node.js **12.14.1**
+
 ### Release 19.12.4
 
 - **xubuntu-vnc**
