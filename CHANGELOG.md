@@ -6,6 +6,15 @@
 
 ***
 
+### Release 20.02
+
+- **Ubuntu** base image has been updated
+- Updated versions:
+  - Firefox **72.0.1**
+  - TypeScript **3.7.5**
+  - Heroku **7.36.3**
+  - Angular **8.3.23**
+
 ### Release 20.01
 
 - **xubuntu-vnc**
