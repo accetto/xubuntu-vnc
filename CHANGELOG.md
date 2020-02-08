@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.02
+
+- Updated versions:
+  - Chromium Browser **79.0.3945.130**
+  - Firefox **72.0.2**
+  - Node.js **12.15.0** (includes npm **6.13.4**)
+  - VSCode **1.42.0**
+  - Heroku **7.38.0**
+  - Angular **9.0.1**
+
 ### Release 20.01.1
 
 - **Ubuntu** base image has been updated

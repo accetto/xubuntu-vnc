@@ -170,6 +170,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-drawio12.2.2-firefox72.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.3-drawio12.2.2-firefox72.0.2/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio:firefox.svg
