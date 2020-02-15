@@ -6,6 +6,25 @@
 
 ***
 
+### Release 20.02.1
+
+- **xubuntu-vnc-novnc**
+  - **gdebi** utility for installing local `.deb` packages added 
+  - auto-starting again:
+    - AT-SPI D-Bus Bus
+  - desktop launcher for version sticker script (verbose) added
+  - all other images inherit the above changes
+- **README** updated (better explanation of default passwords)
+- container screenshots updated
+- Updated versions:
+  - Chromium Browser **80.0.3987.87**
+  - Firefox **73.0**
+  - Node.js **12.16.0** (includes npm **6.13.4**)
+    - `current` tag with **13.8.0** (includes npm **6.13.6**)
+  - VSCode **1.42.1**
+  - Heroku **7.38.1**
+  - Angular **9.0.2**
+
 ### Release 20.02
 
 - Updated versions:
