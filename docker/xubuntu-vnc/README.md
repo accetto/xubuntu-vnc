@@ -113,7 +113,7 @@ Examples can be found in [Wiki][this-wiki].
 
 The containers are intended to be used through a **VNC Viewer** (e.g. [TigerVNC][tigervnc] or [TightVNC][tightvnc]). The viewer should connect to the host running the container, pointing to its TCP port mapped to the container's port **5901**.
 
-The default **VNC user** password is **headless** and it can be changed through the environment variable **VNC_PW**. For example the following container would use a password value **mynewpwd**:
+The default **VNC user** password is **headless** and it can be changed through the environment variable **VNC_PW**. For example the following container would use the password value **mynewpwd**:
 
 ```shell
 docker run -dP -e VNC_PW=mynewpwd accetto/xubuntu-vnc
@@ -127,7 +127,7 @@ Containers created from this image run under the **default application user** (h
 passwd
 ```
 
-Please to not confuse the **default application user** password with the **VNC user** password, because they both have the same default values. However, the former one is used for **sudo** and it can be changed using `passwd` command. The latter one is used for VNC access and it can be changed through the **VNC_PW** environment variable (see above).
+Please do not confuse the **default application user** password with the **VNC user** password, because they both have the same default value. However, the former one is used for **sudo** and it can be changed using `passwd` command. The latter one is used for VNC access and it can be changed through the **VNC_PW** environment variable (see above).
 
 The **sudo** command allows user elevation, so the default application user can, for example, install new applications.
 
