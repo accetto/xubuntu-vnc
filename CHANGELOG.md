@@ -8,7 +8,7 @@
 
 ### Release 20.02.1
 
-- **xubuntu-vnc-novnc**
+- **xubuntu-vnc**
   - **gdebi** utility for installing local `.deb` packages added 
   - auto-starting again:
     - AT-SPI D-Bus Bus
