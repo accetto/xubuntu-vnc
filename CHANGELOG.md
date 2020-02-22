@@ -6,10 +6,21 @@
 
 ***
 
+### Release 20.02.2
+
+- **Ubuntu** base image updated to version **18.04.4**
+- Updated versions:
+  - Node.js **12.16.1** (includes npm **6.13.4**)
+    - `current` tag with **13.9.0** (includes npm **6.13.7**)
+  - Typescript **3.8.2**
+  - Heroku **7.38.2**
+  - PostgreSQL **10.12**
+  - Angular **9.0.3**
+
 ### Release 20.02.1
 
 - **xubuntu-vnc**
-  - **gdebi** utility for installing local `.deb` packages added 
+  - **gdebi** utility for installing local `.deb` packages added
   - auto-starting again:
     - AT-SPI D-Bus Bus
   - desktop launcher for version sticker script (verbose) added
