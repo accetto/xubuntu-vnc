@@ -6,6 +6,13 @@
 
 ***
 
+### Release 20.02.3
+
+- Updated versions:
+  - Firefox **73.0.1**
+  - Typescript **3.8.3**
+  - Angular **9.0.4**
+
 ### Release 20.02.2
 
 - **Ubuntu** base image updated to version **18.04.4**
