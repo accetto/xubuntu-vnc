@@ -6,6 +6,13 @@
 
 ***
 
+### Release 20.03
+
+- Updated versions:
+  - Node.js `current` tag **13.10.1** (includes npm **6.13.7**)
+  - Heroku **7.39.0**
+  - Angular **9.0.5**
+
 ### Release 20.02.3
 
 - Updated versions:
