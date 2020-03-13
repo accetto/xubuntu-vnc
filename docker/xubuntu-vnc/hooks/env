@@ -15,6 +15,8 @@ VERSION_STICKER=""
 VERSION_STICKER_LATEST="ubuntu18.04.4"
 VERSION_STICKER_LAB="ubuntu18.04.4"
 
+VERSION_STICKER_NEXT="ubuntu20.04"
+
 case "${DOCKER_TAG}" in
 
     latest | dev | dfw | nux)
@@ -27,6 +29,12 @@ case "${DOCKER_TAG}" in
         BASETAG="latest"
         VERSION_STICKER="${VERSION_STICKER_LAB}"
         SUPPORT_USER_GROUP_OVERRIDE="yes"
+        ;;
+
+    nux-next)
+        BASETAG="devel"
+        VERSION_STICKER="${VERSION_STICKER_NEXT}"
+        SUPPORT_USER_GROUP_OVERRIDE=
         ;;
 
     *)
