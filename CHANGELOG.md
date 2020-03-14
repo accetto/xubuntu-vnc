@@ -6,6 +6,14 @@
 
 ***
 
+### Release 20.03.1
+
+- Updated versions:
+  - Firefox **74.0**
+  - Node.js `current` tag **13.11.0** (includes npm **6.13.7**)
+  - VSCode **1.43.0**
+  - Angular **9.0.6**
+
 ### Release 20.03
 
 - Updated versions:

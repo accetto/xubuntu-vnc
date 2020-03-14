@@ -22,7 +22,7 @@ USER 0
 
 ### Alternatively install the latest 'current' version explicitly
 ENV \
-    NODE_VERSION=v13.10.1 \
+    NODE_VERSION=v13.11.0 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global

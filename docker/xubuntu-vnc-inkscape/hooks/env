@@ -14,7 +14,7 @@ VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.4-inkscape0.92.3"
-VERSION_STICKER_FIREFOX="ubuntu18.04.4-inkscape0.92.3-firefox73.0.1"
+VERSION_STICKER_FIREFOX="ubuntu18.04.4-inkscape0.92.3-firefox74.0"
 
 case "${DOCKER_TAG}" in
 
