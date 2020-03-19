@@ -6,6 +6,12 @@
 
 ***
 
+### Release 20.03.2
+
+- Updated versions:
+  - VSCode **1.43.1**
+  - Angular **9.0.7**
+
 ### Release 20.03.1
 
 - Updated versions:
