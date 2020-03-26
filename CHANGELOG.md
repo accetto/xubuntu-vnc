@@ -6,6 +6,15 @@
 
 ***
 
+### Release 20.03.3
+
+- **xubuntu-vnc**
+  - **Ubuntu** base image updated (inherited by all derived images)
+- Updated versions:
+  - VSCode **1.43.2**
+  - Heroku **7.39.1**
+  - Angular **9.1.0**
+
 ### Release 20.03.2
 
 - Updated versions:
