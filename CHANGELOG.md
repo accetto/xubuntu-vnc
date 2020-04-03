@@ -6,6 +6,13 @@
 
 ***
 
+### Release 20.04
+
+- Updated versions:
+  - Chromium Browser **80.0.3987.149**
+  - Node.js `current` tag **13.12.0** (includes npm **6.14.4**)
+  - Heroku **7.39.2**
+
 ### Release 20.03.3
 
 - **xubuntu-vnc**
