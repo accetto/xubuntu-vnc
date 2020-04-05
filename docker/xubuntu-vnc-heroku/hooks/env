@@ -14,7 +14,7 @@ VERSION_STICKER=""
 ### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.4-node12.16.1-npm6.13.4-code1.43.2-tsc3.8.3-heroku7.39.2-psql10.12"
 VERSION_STICKER_CHROMIUM="ubuntu18.04.4-node12.16.1-npm6.13.4-code1.43.2-tsc3.8.3-heroku7.39.2-psql10.12-chromium80.0.3987.149"
-VERSION_STICKER_FIREFOX="ubuntu18.04.4-node12.16.1-npm6.13.4-code1.43.2-tsc3.8.3-heroku7.39.2-psql10.12-firefox74.0"
+VERSION_STICKER_FIREFOX="ubuntu18.04.4-node12.16.1-npm6.13.4-code1.43.2-tsc3.8.3-heroku7.39.2-psql10.12-firefox74.0.1"
 
 case "${DOCKER_TAG}" in
 

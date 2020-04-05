@@ -13,7 +13,7 @@ VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.4-node12.16.1-npm6.13.4"
-VERSION_STICKER_FIREFOX="ubuntu18.04.4-node12.16.1-npm6.13.4-firefox74.0"
+VERSION_STICKER_FIREFOX="ubuntu18.04.4-node12.16.1-npm6.13.4-firefox74.0.1"
 VERSION_STICKER_CHROMIUM="ubuntu18.04.4-node12.16.1-npm6.13.4-chromium80.0.3987.149"
 
 VERSION_STICKER_CURRENT="ubuntu18.04.4-node13.12.0-npm6.14.4"
