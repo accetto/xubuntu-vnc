@@ -6,6 +6,13 @@
 
 ***
 
+### Release 20.04.3
+
+- Updated versions:
+  - Node.js **12.16.2** (includes npm **6.14.4**)
+  - VSCode **1.44.0**
+  - Angular **9.1.1**
+
 ### Release 20.04.2
 
 - Updated versions:
