@@ -14,8 +14,14 @@ FROM ${BASEIMAGE}:${BASETAG} as stage-inkscape
 ### Switch to root user before install
 USER 0
 
-### 'apt-get clean' runs automatically
+### install current version explicitly
+### 'apt-get clean' runs automatically later
+ENV \
+    INKSCAPE_VERSION="0.92"
 RUN apt-get update && apt-get install -y \
+        software-properties-common \
+    && add-apt-repository ppa:inkscape.dev/stable-${INKSCAPE_VERSION} \
+    && apt-get update && apt-get install -y \
         inkscape \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*

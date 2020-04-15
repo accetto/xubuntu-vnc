@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.04.4
+
+- **xubuntu-vnc-inkscape**
+  - Dockerfile updated
+    - current **Inkscape** version is now installed explicitly
+- Updated versions:
+  - VSCode **1.44.1**
+  - drawio-desktop **12.9.9**
+  - Inkscape **0.92.5**
+
 ### Release 20.04.3
 
 - Updated versions:

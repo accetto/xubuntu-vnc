@@ -14,10 +14,10 @@ FROM ${BASEIMAGE}:${BASETAG} as stage-drawio
 ### Switch to root user before install
 USER 0
 
-### install current 'drawio-desktop' explicitly
+### install current version explicitly
 ### https://github.com/jgraph/drawio-desktop/releases/download/v12.2.2/draw.io-amd64-12.2.2.deb
 ENV \
-    DRAWIO_VERSION="12.2.2"
+    DRAWIO_VERSION="12.9.9"
 RUN apt-get update && apt-get install -y \
         xdg-utils \
         libappindicator3-1 \
