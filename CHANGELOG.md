@@ -6,6 +6,13 @@
 
 ***
 
+### Release 20.04.5
+
+- Updated versions:
+  - drawio-desktop **12.9.9**
+  - Node.js `current` tag **13.13.0** (includes npm **6.14.4**)
+  - Heroku **7.39.3**
+
 ### Release 20.04.4
 
 - **xubuntu-vnc-inkscape**
