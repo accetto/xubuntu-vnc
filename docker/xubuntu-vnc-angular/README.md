@@ -234,18 +234,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.1-tsc3.8.3-angular9.1.1/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.2-tsc3.8.3-angular9.1.1/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.1-tsc3.8.3-angular9.1.1-chromium80.0.3987.163/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.2-tsc3.8.3-angular9.1.1-chromium80.0.3987.163/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.1-tsc3.8.3-angular9.1.1-firefox75.0/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.2-tsc3.8.3-angular9.1.1-firefox75.0/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular:firefox.svg

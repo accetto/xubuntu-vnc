@@ -6,6 +6,11 @@
 
 ***
 
+### Release 20.04.6
+
+- Updated versions:
+  - VSCode **1.44.2**
+
 ### Release 20.04.5
 
 - Updated versions:
