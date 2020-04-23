@@ -257,6 +257,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- current tag badges -->
 
-[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node13.13.0-npm6.14.4/blue
+[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node14.0.0-npm6.14.4/blue
 
 [badge-github-commit-current]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:current.svg

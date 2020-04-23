@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.04.7
+
+- **xubuntu-vnc**
+  - **tini** updated to version **0.19.0** (inherited by all derived images)
+- Updated versions:
+  - drawio-desktop **13.0.1**
+  - Node.js `current` tag **14.0.0** (includes npm **6.14.4**)
+  - Heroku **7.39.5**
+  - Angular **9.1.3**
+
 ### Release 20.04.6
 
 - Updated versions:

@@ -97,7 +97,7 @@ RUN wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.10.1.x86_64.tar.
 
 FROM stage-vnc as stage-tini
 
-ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini /tini
+ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini /tini
 RUN chmod +x /tini
 
 FROM stage-tini as stage-final
