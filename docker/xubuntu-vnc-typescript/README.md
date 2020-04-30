@@ -189,18 +189,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.2-tsc3.8.3/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.3-npm6.14.4-code1.44.2-tsc3.8.3/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-typescript.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.2-tsc3.8.3-chromium80.0.3987.163/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.3-npm6.14.4-code1.44.2-tsc3.8.3-chromium80.0.3987.163/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-typescript:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.2-npm6.14.4-code1.44.2-tsc3.8.3-firefox75.0/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.3-npm6.14.4-code1.44.2-tsc3.8.3-firefox75.0/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-typescript:firefox.svg

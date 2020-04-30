@@ -6,7 +6,7 @@
 # ./hooks/build dfw-lab
 # ./hooks/build nux-lab
 
-ARG BASETAG=latest
+ARG BASETAG=18.04
 
 FROM ubuntu:${BASETAG} as stage-ubuntu
 

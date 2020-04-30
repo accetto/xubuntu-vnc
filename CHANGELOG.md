@@ -6,6 +6,19 @@
 
 ***
 
+### Release 20.04.8
+
+- **xubuntu-vnc**
+  - using base image tag **ubuntu:18.04** explicitly
+    - **env** hook script updated accordingly
+    - note that the tag **latest** now means **based on ubuntu:18.04**
+  - all above changes inherited by all derived images
+- Updated versions:
+  - drawio-desktop **13.0.3**
+  - Node.js **12.16.3** (includes npm **6.14.4**)
+  - Node.js `current` tag **14.1.0** (includes npm **6.14.4**)
+  - Angular **9.1.4**
+
 ### Release 20.04.7
 
 - **xubuntu-vnc**
