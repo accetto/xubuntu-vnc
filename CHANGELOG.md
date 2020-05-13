@@ -6,6 +6,18 @@
 
 ***
 
+### Release 20.05
+
+- Updated versions:
+  - Chromium Browser **81.0.4044.138**
+  - Firefox **76.0.1**
+  - Inkscape **1.0**
+  - Node.js `current` tag **14.2.0** (includes npm **6.14.4**)
+  - VSCode **1.45.0**
+  - Typescript **3.9.2**
+  - Heroku **7.41.1**
+  - Angular **9.1.5**
+
 ### Release 20.04.8
 
 - **xubuntu-vnc**

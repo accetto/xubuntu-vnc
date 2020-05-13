@@ -16,11 +16,11 @@ USER 0
 
 ### install current version explicitly
 ### 'apt-get clean' runs automatically later
-ENV \
-    INKSCAPE_VERSION="0.92"
+##ENV INKSCAPE_VERSION="1.0"
+##add-apt-repository ppa:inkscape.dev/stable-${INKSCAPE_VERSION}
 RUN apt-get update && apt-get install -y \
         software-properties-common \
-    && add-apt-repository ppa:inkscape.dev/stable-${INKSCAPE_VERSION} \
+    && add-apt-repository ppa:inkscape.dev/stable \
     && apt-get update && apt-get install -y \
         inkscape \
     && apt-get -y autoremove \
