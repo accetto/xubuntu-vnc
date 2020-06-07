@@ -6,6 +6,20 @@
 
 ***
 
+### Release 20.06
+
+- Fixed a bug in **vnc_startup.sh**
+  - fixes startup-up options **--debug** and **--tail-log**
+- Updated versions:
+  - Chromium Browser **83.0.4103.61**
+  - Firefox **77.0.1**
+  - Node.js **12.18.0** (includes npm **6.14.4**)
+    - Node.js `current` tag **14.4.0** (includes npm **6.14.5**)
+  - VSCode **1.45.1**
+  - Typescript **3.9.5**
+  - Heroku **7.42.1**
+  - Angular **9.1.7**
+
 ### Release 20.05
 
 - Updated versions:

@@ -191,18 +191,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.3-npm6.14.4-code1.45.0-tsc3.9.2-heroku7.41.1-psql10.12/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.18.0-npm6.14.4-code1.45.1-tsc3.9.5-heroku7.42.1-psql10.12/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.3-npm6.14.4-code1.45.0-tsc3.9.2-heroku7.41.1-psql10.12-chromium81.0.4044.138/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.18.0-npm6.14.4-code1.45.1-tsc3.9.5-heroku7.42.1-psql10.12-chromium83.0.4103.61/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.16.3-npm6.14.4-code1.45.0-tsc3.9.2-heroku7.41.1-psql10.12-firefox76.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-node12.18.0-npm6.14.4-code1.45.1-tsc3.9.5-heroku7.42.1-psql10.12-firefox77.0.1/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:firefox.svg
