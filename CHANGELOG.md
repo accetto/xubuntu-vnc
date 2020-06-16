@@ -6,9 +6,32 @@
 
 ***
 
+### Release 20.06.2
+
+- **xubuntu-vnc-firefox**
+  - **IMPORTANT**: multi-threaded mode is default now, but larger shared memory is required (see bellow)
+    - environment variable MOZ_FORCE_DISABLE_E10S=1 is not default any more
+    - **containers with Firefox require more shared memory** (/dev/shm) to run reliably
+      - at least 256MB is recommended (default is 64MB)
+      - use `docker run --shm-size=256m`
+        - or `shm_size: 256m` at service level in docker-compose
+    - this could be **possibly a breaking change**!
+    - FIXED: [Issue #7 (Firefox 77.0.1 scrambles pages)](https://github.com/accetto/xubuntu-vnc/issues/7)
+    - Internet browsing should be sand-boxed now
+    - tag `multiprocess` is replaced by `singleprocess`
+      - which is single-threaded, but
+      - please be aware that in **this** release (Firefox 77.0.1) webpages still will be scrambled (issue #7)
+  - all above changes are inherited by all derived images using Firefox
+- Other changes:
+  - added some help comments into Dockerfiles
+  - //TODO: README files have been updated
+- Updated versions:
+  - Firefox **77.0.1**
+  - drawio-desktop **13.2.2**
+
 ### Release 20.06.1
 
-- Quick mitigation of issue [#7 (Firefox 77.0.1 scrambles pages)](https://github.com/accetto/xubuntu-vnc/issues/7)
+- Quick mitigation of [issue #7 (Firefox 77.0.1 scrambles pages)](https://github.com/accetto/xubuntu-vnc/issues/7)
   - by rolling back **Firefox** to version **76.0.1**
 
 ### Release 20.06

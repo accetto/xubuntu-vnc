@@ -1,13 +1,24 @@
-# ./hooks/build dev
-# ./hooks/build dfw
 # ./hooks/build nux
 # ./hooks/build nux --no-cache
-# ./hooks/build dev-chromium
-# ./hooks/build dfw-chromium
+# ./hooks/build dfw
+# ./hooks/build dfw --no-cache
+# ./hooks/build dev
+# ./hooks/build dev --no-cache
 # ./hooks/build nux-chromium
-# ./hooks/build dev-firefox
-# ./hooks/build dfw-firefox
+# ./hooks/build dfw-chromium
+# ./hooks/build dev-chromium
 # ./hooks/build nux-firefox
+# ./hooks/build dfw-firefox
+# ./hooks/build dev-firefox
+
+### Build it locally like, for example:
+### ./utils/util-hdx.sh Dockerfile.heroku.js 2
+### Test it locally like, for example:
+### ./hooks/test nux
+### Result last line should be:
+### + exit 0
+### If 'exit 1' then adjust the version sticker variables in
+### ./hooks/env
 
 ARG BASETAG=latest
 

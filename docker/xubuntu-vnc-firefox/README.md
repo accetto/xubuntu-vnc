@@ -43,7 +43,7 @@ The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
 The following image tags are regularly maintained and rebuilt:
 
-- `latest` is based on `accetto/xubuntu-vnc:latest`, it includes the **plus** features and it is built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **disabled** (see below)
+- `latest` is based on `accetto/xubuntu-vnc:latest`, it includes the **plus** features and the Firefox multiprocess is **enabled** (see below)
 
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
@@ -53,9 +53,9 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_DEFAULT][badge-VERSION_STICKER_DEFAULT]
     ![badge-github-commit-default][badge-github-commit-default]
 
-- `multiprocess` is also similar to `latest`, but it is not built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **enabled**
+- `singleprocess` is also similar to `latest`, but it is built with the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **disabled**
 
-    ![badge-VERSION_STICKER_MULTIPROCESS][badge-VERSION_STICKER_MULTIPROCESS]
+    ![badge-VERSION_STICKER_SINGLEPROCESS][badge-VERSION_STICKER_SINGLEPROCESS]
     ![badge-github-commit-multiprocess][badge-github-commit-multiprocess]
 
 ### Dockerfiles
@@ -112,17 +112,17 @@ Examples can be found in [Wiki][this-wiki].
 
 The containers are intended to be used through a **VNC Viewer** (e.g. [TigerVNC][tigervnc] or [TightVNC][tightvnc]). The viewer should connect to the host running the container, pointing to its TCP port mapped to the container's port **5901**.
 
-## Firefox multi-process
+## TODO: Firefox multi-process
 
-Firefox multi-process (also known as **Electrolysis** or just **E10S**) causes in Docker container heavy crashing (**Gah. Your tab just crashed.**) and therefore it needs to be disabled.
+Firefox multi-process (also known as **Electrolysis** or just **E10S**) can cause in Docker container heavy crashing (**Gah. Your tab just crashed.**) if there is not enough shared memory.
 
-In Firefox versions till **67.0.4** it could be done by setting the preferences **browser.tabs.remote.autostart** and **browser.tabs.remote.autostart.2** to **false**. However, Mozilla has removed this possibility since the Firefox version **68.0**.
+In Firefox versions till **67.0.4** it was possible to disable multi-process by setting the preferences **browser.tabs.remote.autostart** and **browser.tabs.remote.autostart.2** to **false**. However, Mozilla has removed this possibility since the Firefox version **68.0**. Since than it can be done only by setting the environment variable **MOZ_FORCE_DISABLE_E10S**.
 
-Since than it can be done only by setting the following environment variable:
+However, disabling multi-process in Firefox **67.0.1** caused ugly scrambling of almost all websites, because they were not decompressed. Considering that Mozilla plans to stop supporting the **MOZ_FORCE_DISABLE_E10S** switch, there is no way around multi-process any more.
 
-```bash
-MOZ_FORCE_DISABLE_E10S
-```
+The heavy crashing in containers seems to be caused by setting the shared memory size (`/dev/shm`) too low. Indeed, Docker sets it to only **64MB** by default.
+
+TODO: continue here
 
 Therefore the images tagged `latest` and `default` set this variable to **1** by using the build argument **ARG_MOZ_FORCE_DISABLE_E10S**.
 
@@ -238,18 +238,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox76.0.1/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox77.0.1/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox.svg
 
 <!-- default tag badges -->
 
-[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox76.0.1/blue
+[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox77.0.1/blue
 
 [badge-github-commit-default]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:default.svg
 
 <!-- multiprocess tag badges -->
 
-[badge-VERSION_STICKER_MULTIPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox76.0.1/blue
+[badge-VERSION_STICKER_SINGLEPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox76.0.1/blue
 
 [badge-github-commit-multiprocess]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:multiprocess.svg
