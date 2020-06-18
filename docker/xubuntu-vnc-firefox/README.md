@@ -114,7 +114,15 @@ The containers are intended to be used through a **VNC Viewer** (e.g. [TigerVNC]
 
 ## TODO: Firefox multi-process
 
-Firefox multi-process (also known as **Electrolysis** or just **E10S**) can cause in Docker container heavy crashing (**Gah. Your tab just crashed.**) if there is not enough shared memory.
+Firefox multi-process (also known as **Electrolysis** or just **E10S**) can cause heavy crashing in Docker containers (**Gah. Your tab just crashed.**) if there is not enough shared memory.
+
+In Firefox versions till **76.0.1** it has been possible to disable multi-process by setting the environment variable **MOZ_FORCE_DISABLE_E10S**. However, in Firefox **77.0.1** it has caused ugly scrambling of almost all web pages, because they were not decompressed.
+
+Mozilla has fixed the problem in next releases, but they still plan to stop supporting the switch. That is why I've decided that the mainstream images tagged `latest` and `default` will use multi-process, even if they will require larger shared memory. The previous tag `multiprocess` is replaced by `singleprocess` one.
+
+Please check the Wiki page [Firefox multi-process][this-wiki-firefox-multiprocess] for more information and the instructions how to set the shared memory (`/dev/shm`) size in different scenarios.
+
+TODO: continue here
 
 In Firefox versions till **67.0.4** it was possible to disable multi-process by setting the preferences **browser.tabs.remote.autostart** and **browser.tabs.remote.autostart.2** to **false**. However, Mozilla has removed this possibility since the Firefox version **68.0**. Since than it can be done only by setting the environment variable **MOZ_FORCE_DISABLE_E10S**.
 
@@ -122,7 +130,6 @@ However, disabling multi-process in Firefox **67.0.1** caused ugly scrambling of
 
 The heavy crashing in containers seems to be caused by setting the shared memory size (`/dev/shm`) too low. Indeed, Docker sets it to only **64MB** by default.
 
-TODO: continue here
 
 Therefore the images tagged `latest` and `default` set this variable to **1** by using the build argument **ARG_MOZ_FORCE_DISABLE_E10S**.
 
@@ -190,6 +197,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 [this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
+[this-wiki-firefox-multiprocess]: https://github.com/accetto/xubuntu-vnc/wiki/Firefox-multiprocess
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
