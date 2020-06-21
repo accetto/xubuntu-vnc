@@ -39,7 +39,7 @@ USER 0
 
 ### Alternatively install the latest 'LTS' version explicitly
 ENV \
-    NODE_VERSION=v12.18.0 \
+    NODE_VERSION=v12.18.1 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global

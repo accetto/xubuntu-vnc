@@ -13,6 +13,12 @@
 
 ***
 
+**WARNING** about images with Firefox
+
+Starting from the release **20.06.2**, the single-process and multi-process modes of the Firefox browser have been swapped. Be aware, that multi-process requires larger shared memory (`/dev/shm`). At least **256MB** is recommended. Please check the README file of the Firefox image and the [Firefox multi-process][this-wiki-firefox-multiprocess] page in Wiki for more information and the instructions, how to set the shared memory size in different scenarios.
+
+***
+
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free open-source [desktop version][drawio-desktop] of the diagramming tool [draw.io][drawio].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
@@ -34,9 +40,9 @@ and adds
 **Important excerpt** from the author's description:
 
 > Security
-> 
+>
 > [draw.io Desktop][drawio-desktop] is designed to be completely isolated from the Internet. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
-> 
+>
 > No diagram data is ever sent externally, nor do we send any analytics about app usage externally. This means certain functionality for which we do not have a JavaScript implementation do not work in the Desktop build, namely .vsd and Gliffy import.
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
@@ -52,7 +58,7 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser and the **plus** features
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser and the **plus** features. Be aware that Firefox uses multi-process and therefore requires larger shared memory. See the [Firefox multi-process][this-wiki-firefox-multiprocess] page in Wiki for more information and the instructions, how to set the shared memory size in different scenarios.
 
     ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
     ![badge-github-commit-firefox][badge-github-commit-firefox]
@@ -124,6 +130,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 [this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
+[this-wiki-firefox-multiprocess]: https://github.com/accetto/xubuntu-vnc/wiki/Firefox-multiprocess
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -167,12 +174,12 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-drawio13.2.2/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-drawio13.2.4/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-drawio13.2.2-firefox77.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-drawio13.2.4-firefox77.0.1/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio:firefox.svg

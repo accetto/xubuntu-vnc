@@ -8,26 +8,33 @@
 
 ### Release 20.06.2
 
+- **xubuntu-vnc**
+  - `version_of.sh` updated (Firefox version pattern)
+    - this will be inherited by all derived images
 - **xubuntu-vnc-firefox**
-  - **IMPORTANT**: multi-threaded mode is default now, but larger shared memory is required (see bellow)
-    - environment variable MOZ_FORCE_DISABLE_E10S=1 is not default any more
-    - **containers with Firefox require more shared memory** (/dev/shm) to run reliably
-      - at least 256MB is recommended (default is 64MB)
+  - **IMPORTANT**: Firefox multi-process mode is default now and therefore larger shared memory (`/dev/shm`) is required (see bellow)
+    - environment variable **MOZ_FORCE_DISABLE_E10S** is not set by default any more
+    - **containers with Firefox require larger shared memory** (`/dev/shm`) to run reliably
+      - at least **256MB** is recommended (default is just 64MB)
       - use `docker run --shm-size=256m`
-        - or `shm_size: 256m` at service level in docker-compose
-    - this could be **possibly a breaking change**!
-    - FIXED: [Issue #7 (Firefox 77.0.1 scrambles pages)](https://github.com/accetto/xubuntu-vnc/issues/7)
-    - Internet browsing should be sand-boxed now
-    - tag `multiprocess` is replaced by `singleprocess`
+        - or `shm_size: 256m` at service level in docker-compose files
+        - see [Firefox multi-process][this-wiki-firefox-multiprocess] in Wiki for description and instructions
+    - this fixes the [issue #7 (Firefox 77.0.1 scrambles pages)](https://github.com/accetto/xubuntu-vnc/issues/7)
+    - Internet browsing should be **sand-boxed** now
+    - tag `multiprocess` replaced by `singleprocess` one
       - which is single-threaded, but
-      - please be aware that in **this** release (Firefox 77.0.1) webpages still will be scrambled (issue #7)
-  - all above changes are inherited by all derived images using Firefox
+      - please be aware that in **this** release (still Firefox **77.0.1**) webpages still will be scrambled (issue #7)
+      - it should be fixed by Mozilla in the next Firefox release
+  - all above changes are inherited by all derived images that include Firefox
 - Other changes:
   - added some help comments into Dockerfiles
-  - //TODO: README files have been updated
+  - README files have been updated
 - Updated versions:
   - Firefox **77.0.1**
-  - drawio-desktop **13.2.2**
+  - drawio-desktop **13.2.4**
+  - Node.js **12.18.1** (includes npm **6.14.5**)
+  - VSCode **1.46.1**
+  - Angular **9.1.9**
 
 ### Release 20.06.1
 
@@ -719,6 +726,7 @@ Initial version is derived from the version **19.06** of [accetto/ubuntu-vnc-xfc
 [this-github]: https://github.com/accetto/xubuntu-vnc/
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 [this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
+[this-wiki-firefox-multiprocess]: https://github.com/accetto/xubuntu-vnc/wiki/Firefox-multiprocess
 
 [accetto-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce/
 [accetto-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus/

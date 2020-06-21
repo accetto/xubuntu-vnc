@@ -13,6 +13,12 @@
 
 ***
 
+**WARNING** about images with Firefox
+
+Starting from the release **20.06.2**, the single-process and multi-process modes of the Firefox browser have been swapped. Be aware, that multi-process requires larger shared memory (`/dev/shm`). At least **256MB** is recommended. Please check the README file of the Firefox image and the [Firefox multi-process][this-wiki-firefox-multiprocess] page in Wiki for more information and the instructions, how to set the shared memory size in different scenarios.
+
+***
+
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free open-source vector graphics editor [Inkscape][inkscape].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
@@ -46,7 +52,7 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser and the **plus** features
+- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser and the **plus** features. Be aware that Firefox uses multi-process and therefore requires larger shared memory. See the [Firefox multi-process][this-wiki-firefox-multiprocess] page in Wiki for more information and the instructions, how to set the shared memory size in different scenarios.
 
     ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
     ![badge-github-commit-firefox][badge-github-commit-firefox]
@@ -118,6 +124,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 [this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
+[this-wiki-firefox-multiprocess]: https://github.com/accetto/xubuntu-vnc/wiki/Firefox-multiprocess
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
