@@ -59,7 +59,7 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_DEFAULT][badge-VERSION_STICKER_DEFAULT]
     ![badge-github-commit-default][badge-github-commit-default]
 
-- `singleprocess` is also similar to `latest`, but it is built without the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multiprocess is **disabled**
+- `singleprocess` is also similar to `latest`, but it is built without the build argument **ARG_MOZ_FORCE_DISABLE_E10S**, so the Firefox multi-process is **disabled**
 
     ![badge-VERSION_STICKER_SINGLEPROCESS][badge-VERSION_STICKER_SINGLEPROCESS]
     ![badge-github-commit-singleprocess][badge-github-commit-singleprocess]
@@ -246,18 +246,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox77.0.1/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox78.0.1/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox.svg
 
 <!-- default tag badges -->
 
-[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox77.0.1/blue
+[badge-VERSION_STICKER_DEFAULT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox78.0.1/blue
 
 [badge-github-commit-default]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:default.svg
 
 <!-- singleprocess tag badges -->
 
-[badge-VERSION_STICKER_SINGLEPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox77.0.1/blue
+[badge-VERSION_STICKER_SINGLEPROCESS]: https://badgen.net/badge/version%20sticker/ubuntu18.04.4-firefox78.0.1/blue
 
 [badge-github-commit-singleprocess]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-firefox:singleprocess.svg

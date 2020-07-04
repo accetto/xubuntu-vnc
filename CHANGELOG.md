@@ -6,6 +6,19 @@
 
 ***
 
+### Release 20.07
+
+- **xubuntu-vnc-firefox**
+  - fix in `push` hook script
+- Updated versions:
+  - Firefox **78.0.1**
+  - drawio-desktop **13.3.5**
+  - Node.js **12.18.2** (includes npm **6.14.5**)
+    - Node.js `current` tag **14.5.0** (includes npm **6.14.5**)
+  - TypeScript **3.9.6**
+  - Heroku **7.42.2**
+  - Angular **10.0.1**
+
 ### Release 20.06.2
 
 - **xubuntu-vnc**

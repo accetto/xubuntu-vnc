@@ -4,9 +4,9 @@
 # ./hooks/build dfw --no-cache
 # ./hooks/build dev
 # ./hooks/build dev --no-cache
-# ./hooks/build dev-lab
-# ./hooks/build dfw-lab
 # ./hooks/build nux-lab
+# ./hooks/build dfw-lab
+# ./hooks/build dev-lab
 
 ### Build it locally like, for example:
 ### ./utils/util-hdx.sh Dockerfile 2
