@@ -6,6 +6,19 @@
 
 ***
 
+### Release 20.07.1
+
+- **xubuntu-vnc**
+  - base **ubuntu:18.04** image has been updated
+  - *version_of** updated (to keep it in sync with **xubuntu-vnc-novnc** project)
+  - all above changes inherited by all derived images
+- Updated versions:
+  - Firefox **78.0.2**
+  - drawio-desktop **13.4.4**
+  - VSCode **1.47.1**
+  - Heroku **7.42.4**
+  - Angular **10.0.2**
+
 ### Release 20.07
 
 - **xubuntu-vnc-firefox**
