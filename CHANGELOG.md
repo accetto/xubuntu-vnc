@@ -6,6 +6,21 @@
 
 ***
 
+### Release 20.08
+
+- **xubuntu-vnc-novnc**
+  - base **ubuntu:18.04** image has been updated
+    - derived images inherit this change
+- Updated versions:
+  - Firefox **79.0**
+  - drawio-desktop **13.5.7**
+  - Node.js **12.18.3** (includes npm **6.14.6**)
+    - Node.js `current` tag **14.7.0** (includes npm **6.14.7**)
+  - VSCode **1.47.3**
+  - TypeScript **3.9.7**
+  - Heroku **7.42.6**
+  - Angular **10.0.5**
+
 ### Release 20.07.1
 
 - **xubuntu-vnc**
