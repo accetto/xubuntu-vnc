@@ -6,6 +6,20 @@
 
 ***
 
+### Release 20.08.1
+
+- **xubuntu-vnc-novnc**
+  - base image **ubuntu:18.04** has been updated to version **18.04.5**
+    - derived images inherit this change
+- Updated versions:
+  - Chromium Browser **84.0.4147.105**
+  - drawio-desktop **13.6.2**
+  - Node.js `current` tag **14.8.0** (includes npm **6.14.7**)
+  - VSCode **1.48.0**
+  - TypeScript **4.0.2**
+  - Heroku **7.42.8**
+  - Angular **10.0.7**
+
 ### Release 20.08
 
 - **xubuntu-vnc-novnc**
