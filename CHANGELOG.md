@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.08.2
+
+- Updated versions:
+  - Firefox **80.0**
+  - Node.js `current` tag **14.9.0** (includes npm **6.14.8**)
+  - VSCode **1.48.2**
+  - Heroku **7.42.13**
+  - PostgreSQL **10.14**
+  - Angular **10.0.8**
+
 ### Release 20.08.1
 
 - **xubuntu-vnc-novnc**
