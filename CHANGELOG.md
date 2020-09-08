@@ -6,6 +6,13 @@
 
 ***
 
+### Release 20.09
+
+- Updated versions:
+  - Firefox **80.0.1**
+  - Inkscape **1.0.1**
+  - Angular **10.1.0**
+
 ### Release 20.08.2
 
 - Updated versions:

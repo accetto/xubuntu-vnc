@@ -210,6 +210,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-code1.48.2-tsc4.0.2-heroku7.42.13-psql10.14-firefox80.0/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-code1.48.2-tsc4.0.2-heroku7.42.13-psql10.14-firefox80.0.1/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:firefox.svg
