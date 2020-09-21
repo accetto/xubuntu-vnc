@@ -26,6 +26,9 @@ FROM accetto/xubuntu-vnc-node:${BASETAG} as stage-vscode
 
 USER 0
 
+### suppress WSL related hint
+ENV DONT_PROMPT_WSL_INSTALL=1
+
 ### 'apt-get clean' runs automatically
 RUN \
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \

@@ -28,7 +28,7 @@ USER 0
 ### install current version explicitly
 ### https://github.com/jgraph/drawio-desktop/releases/download/v12.2.2/draw.io-amd64-12.2.2.deb
 ENV \
-    DRAWIO_VERSION="13.6.2"
+    DRAWIO_VERSION="13.7.3"
 RUN apt-get update && apt-get install -y \
         xdg-utils \
         libappindicator3-1 \

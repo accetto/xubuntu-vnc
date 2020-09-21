@@ -27,7 +27,7 @@ The `latest` image inherits among others
 
 - utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
 - utility **gdebi** lets  you install local `.deb` packages resolving and installing their dependencies (Ubuntu distribution)
-- popular text editor [vim][vim] (Ubuntu distribution)
+- popular text editors [vim][vim] and [nano][nano] (Ubuntu distribution)
 - lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
 - [xfce4-screenshooter][screenshooter] and image viewer [ristretto][ristretto] (Ubuntu distribution)
 - current version of [tini][tini] as the entry-point initial process (PID 1)
@@ -215,6 +215,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
 [mousepad]: https://github.com/codebrainz/mousepad
+[nano]: https://www.nano-editor.org/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [ristretto]: https://docs.xfce.org/apps/ristretto/start
@@ -240,24 +241,24 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.4-npm6.14.6/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-chromium84.0.4147.105/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.4-npm6.14.6-chromium85.0.4183.83/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-firefox80.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.4-npm6.14.6-firefox80.0.1/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:firefox.svg
 
 <!-- current tag badges -->
 
-[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.9.0-npm6.14.8/blue
+[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.11.0-npm6.14.8/blue
 
 [badge-github-commit-current]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:current.svg

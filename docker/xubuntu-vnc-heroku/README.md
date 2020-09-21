@@ -27,7 +27,7 @@ The `latest` image inherits among others
 
 - utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
 - utility **gdebi** lets  you install local `.deb` packages resolving and installing their dependencies (Ubuntu distribution)
-- popular text editor [vim][vim] (Ubuntu distribution)
+- popular text editors [vim][vim] and [nano][nano] (Ubuntu distribution)
 - lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
 - [xfce4-screenshooter][screenshooter] and image viewer [ristretto][ristretto] (Ubuntu distribution)
 - current version of [tini][tini] as the entry-point initial process (PID 1)
@@ -172,6 +172,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
 [heroku-getting-started-tutorial]: https://devcenter.heroku.com/articles/getting-started-with-nodejs
 [jq]: https://stedolan.github.io/jq/
+[nano]: https://www.nano-editor.org/
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [postgresql]: https://www.postgresql.org/
@@ -181,6 +182,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 [tightvnc]: http://www.tightvnc.com
 [tini]: https://github.com/krallin/tini
 [typescript]: https://www.typescriptlang.org/
+[vim]: https://www.vim.org/
 [vscode]: https://code.visualstudio.com/
 [xfce]: http://www.xfce.org
 
@@ -198,18 +200,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-code1.48.2-tsc4.0.2-heroku7.42.13-psql10.14/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.4-npm6.14.6-code1.49.1-tsc4.0.3-heroku7.43.0-psql10.14/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-code1.48.2-tsc4.0.2-heroku7.42.13-psql10.14-chromium84.0.4147.105/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.4-npm6.14.6-code1.49.1-tsc4.0.3-heroku7.43.0-psql10.14-chromium85.0.4183.83/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.3-npm6.14.6-code1.48.2-tsc4.0.2-heroku7.42.13-psql10.14-firefox80.0.1/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node12.18.4-npm6.14.6-code1.49.1-tsc4.0.3-heroku7.43.0-psql10.14-firefox80.0.1/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:firefox.svg
