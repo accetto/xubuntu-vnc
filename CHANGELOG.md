@@ -6,16 +6,30 @@
 
 ***
 
+### Release 20.10
+
+- updated scripts (all images):
+  - version_of.sh
+  - version_sticker.sh
+  - util-hdx.sh
+- Updated versions:
+  - Chromium Browser **85.0.4183.121**
+  - Firefox **81.0**
+  - Node.js `current` tag **14.13.0** (includes npm **6.14.8**)
+  - VSCode **1.49.3**
+  - Heroku **7.44.0**
+  - Angular **10.1.4**
+
 ### Release 20.09.1
 
 - **nano** editor added
-Updated versions:
+- Updated versions:
   - Chromium Browser **85.0.4183.83**
   - drawio-desktop **13.7.3**
   - Node.js **12.18.4** (includes npm **6.14.6**)
     - Node.js `current` tag **14.11.0** (includes npm **6.14.8**)
   - VSCode **1.49.1**
-    - environment variable **DONT_PROMPT_WSL_INSTALL** added to suprress the WSL hint by start
+    - environment variable **DONT_PROMPT_WSL_INSTALL** added to suppress the WSL hint by start
   - TypeScript **4.0.3**
   - Heroku **7.43.0**
   - Angular **10.1.2**

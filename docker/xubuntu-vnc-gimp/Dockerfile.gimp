@@ -1,15 +1,14 @@
 # ./hooks/build nux
-# ./hooks/build nux --no-cache
 # ./hooks/build dfw
-# ./hooks/build dfw --no-cache
 # ./hooks/build dev
-# ./hooks/build dev --no-cache
 # ./hooks/build nux-firefox
 # ./hooks/build dfw-firefox
 # ./hooks/build dev-firefox
 
 ### Build it locally like, for example:
 ### ./utils/util-hdx.sh Dockerfile.gimp 2
+### or for example
+### ./utils/util-hdx.sh Dockerfile.gimp 2 --no-cache
 ### Test it locally like, for example:
 ### ./hooks/test nux
 ### Result last line should be:

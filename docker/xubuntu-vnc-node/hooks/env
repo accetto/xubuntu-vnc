@@ -13,10 +13,10 @@ VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.5-node12.18.4-npm6.14.6"
-VERSION_STICKER_FIREFOX="ubuntu18.04.5-node12.18.4-npm6.14.6-firefox80.0.1"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.5-node12.18.4-npm6.14.6-chromium85.0.4183.83"
+VERSION_STICKER_FIREFOX="ubuntu18.04.5-node12.18.4-npm6.14.6-firefox81.0"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.5-node12.18.4-npm6.14.6-chromium85.0.4183.121"
 
-VERSION_STICKER_CURRENT="ubuntu18.04.5-node14.11.0-npm6.14.8"
+VERSION_STICKER_CURRENT="ubuntu18.04.5-node14.13.0-npm6.14.8"
 
 case "${DOCKER_TAG}" in
 

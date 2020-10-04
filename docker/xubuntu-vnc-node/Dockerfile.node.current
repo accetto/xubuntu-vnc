@@ -1,8 +1,17 @@
 # ./hooks/build nux-current
-# ./hooks/build nux-current --no-cache
 # ./hooks/build dfw-current
-# ./hooks/build dfw-current --no-cache
 # ./hooks/build dev-current
+
+### Build it locally like, for example:
+### ./utils/util-hdx.sh Dockerfile.node.current 2
+### or for example
+### ./utils/util-hdx.sh Dockerfile.node.current 2 --no-cache
+### Test it locally like, for example:
+### ./hooks/test dfw-current
+### Result last line should be:
+### + exit 0
+### If 'exit 1' then adjust the version sticker variables in
+### ./hooks/env
 
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
@@ -23,7 +32,7 @@ USER 0
 
 ### Alternatively install the latest 'current' version explicitly
 ENV \
-    NODE_VERSION=v14.11.0 \
+    NODE_VERSION=v14.13.0 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global

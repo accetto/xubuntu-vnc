@@ -17,6 +17,7 @@ case "$1" in
         screenshooter=$("${STARTUPDIR}/version_of.sh" screenshooter)
         ristretto=$("${STARTUPDIR}/version_of.sh" ristretto)
         vim=$("${STARTUPDIR}/version_of.sh" vim)
+        nano=$("${STARTUPDIR}/version_of.sh" nano)
         tigervnc=$("${STARTUPDIR}/version_of.sh" tigervnc)
         curl=$("${STARTUPDIR}/version_of.sh" curl)
         gdebi=$("${STARTUPDIR}/version_of.sh" gdebi)
@@ -25,6 +26,7 @@ case "$1" in
         echo "Ubuntu $ubuntu"
         echo "VIM $vim"
         echo "TigerVNC $tigervnc"
+        echo "GNU nano $nano"
         echo "Mousepad $mousepad"
         echo "Ristretto $ristretto"
         echo "xfce4-screenshooter $screenshooter"
