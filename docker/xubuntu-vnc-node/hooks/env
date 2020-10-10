@@ -12,30 +12,30 @@ TODAY=$(date +%Y-%m-%d)
 VERSION_STICKER=""
 
 ### Warning! The values must be explicit strings (used by utils).
-VERSION_STICKER_LATEST="ubuntu18.04.5-node12.18.4-npm6.14.6"
-VERSION_STICKER_FIREFOX="ubuntu18.04.5-node12.18.4-npm6.14.6-firefox81.0"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.5-node12.18.4-npm6.14.6-chromium85.0.4183.121"
+VERSION_STICKER_LATEST="ubuntu18.04.5-node12.19.0-npm6.14.8"
+VERSION_STICKER_FIREFOX="ubuntu18.04.5-node12.19.0-npm6.14.8-firefox81.0"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.5-node12.19.0-npm6.14.8-chromium85.0.4183.121"
 
-VERSION_STICKER_CURRENT="ubuntu18.04.5-node14.13.0-npm6.14.8"
+VERSION_STICKER_CURRENT="ubuntu18.04.5-node14.13.1-npm6.14.8"
 
 case "${DOCKER_TAG}" in
 
-    latest | dev | dfw | nux)
+    latest | dev )
         VERSION_STICKER="${VERSION_STICKER_LATEST}"
         DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
         ;;
 
-    chromium | dev-chromium | dfw-chromium | nux-chromium)
+    chromium | dev-chromium )
         VERSION_STICKER="${VERSION_STICKER_CHROMIUM}"
         DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
         ;;
 
-    firefox | dev-firefox | dfw-firefox | nux-firefox)
+    firefox | dev-firefox )
         VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
         DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node}
         ;;
 
-    current | dev-current | dfw-current | nux-current)
+    current | dev-current )
         VERSION_STICKER="${VERSION_STICKER_CURRENT}"
         DOCKERFILE_PATH=${DOCKERFILE_PATH:-./Dockerfile.node.current}
         ;;
@@ -71,36 +71,6 @@ case "${DOCKER_TAG}" in
     dev-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dev"
-        ;;
-
-    dfw | dfw-current)
-        BASEIMAGE="accetto/xubuntu-vnc"
-        BASETAG="dfw"
-        ;;
-
-    dfw-chromium)
-        BASEIMAGE="accetto/xubuntu-vnc-chromium"
-        BASETAG="dfw"
-        ;;
-
-    dfw-firefox)
-        BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="dfw"
-        ;;
-
-    nux | nux-current)
-        BASEIMAGE="accetto/xubuntu-vnc"
-        BASETAG="nux"
-        ;;
-
-    nux-chromium)
-        BASEIMAGE="accetto/xubuntu-vnc-chromium"
-        BASETAG="nux"
-        ;;
-
-    nux-firefox)
-        BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="nux"
         ;;
 
     *)

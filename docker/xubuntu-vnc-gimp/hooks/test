@@ -12,6 +12,7 @@ expected="${vars[0]}"
 startup="${vars[1]}"
 startup="${startup%%[[:space:]]}"
 
+### Windows only: VSC with GitBash requires the first slash doubled
 [[ -n "${WINDIR}" ]] && startup=/${startup}
 
 ### Warning! Inkscape requires display, do not use '-s' option!

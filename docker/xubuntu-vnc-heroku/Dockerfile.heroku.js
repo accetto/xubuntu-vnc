@@ -1,23 +1,28 @@
-# ./hooks/build nux
-# ./hooks/build dfw
+# ./hooks/build latest
+# ./hooks/test latest
 # ./hooks/build dev
-# ./hooks/build nux-chromium
-# ./hooks/build dfw-chromium
+# ./hooks/test dev
+# ./hooks/build chromium
+# ./hooks/test chromium
 # ./hooks/build dev-chromium
-# ./hooks/build nux-firefox
-# ./hooks/build dfw-firefox
+# ./hooks/test dev-chromium
+# ./hooks/build firefox
+# ./hooks/test firefox
 # ./hooks/build dev-firefox
+# ./hooks/test dev-firefox
 
-### Build it locally like, for example:
-### ./utils/util-hdx.sh Dockerfile.heroku.js 2
-### or for example
-### ./utils/util-hdx.sh Dockerfile.heroku.js 2 --no-cache
-### Test it locally like, for example:
-### ./hooks/test dfw
-### Result last line should be:
-### + exit 0
-### If 'exit 1' then adjust the version sticker variables in
-### ./hooks/env
+### Build and test 'dev' tag locally like
+### ./hooks/build dev
+### ./hooks/test dev
+### or with additional arguments
+### ./hooks/build dev 
+### ./hooks/test dev --no-cache
+### or using the utility
+### ./utils/util-hdx.sh Dockerfile 3
+### ./utils/util-hdx.sh Dockerfile 4
+### The last output line should be '+ exit 0'
+### If '+ exit 1' then adjust the version sticker
+### variables in script './hooks/env'
 
 ARG BASETAG=latest
 

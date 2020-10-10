@@ -6,6 +6,24 @@
 
 ***
 
+### Release 20.10.1
+
+- hook scripts updated (all images)
+  - automatic archiving of previous image versions removed
+- **xubuntu-vnc-firefox**
+  - switch **MOZ_FORCE_DISABLE_E10S=1** seems not working any more
+    - build argument **ARG_MOZ_FORCE_DISABLE_E10S** removed 
+    - environment variable **MOZ_FORCE_DISABLE_E10S** removed
+    - `singleprocess` tag removed
+    - hook scripts updated accordingly
+- Updated versions:
+  - drawio-desktop **13.7.9**
+  - Node.js **12.19.0** (includes npm **6.14.8**)
+    - Node.js `current` tag **14.13.1** (includes npm **6.14.8**)
+  - VSCode **1.50.0**
+  - Heroku **7.45.0**
+  - Angular **10.1.6**
+
 ### Release 20.10
 
 - updated scripts (all images):

@@ -18,11 +18,11 @@ VERSION_STICKER_FIREFOX="ubuntu18.04.5-gimp2.8.22-firefox81.0"
 
 case "${DOCKER_TAG}" in
 
-    latest | dev | dfw | nux)
+    latest | dev )
         VERSION_STICKER="${VERSION_STICKER_LATEST}"
         ;;
 
-    firefox | dev-firefox | dfw-firefox | nux-firefox)
+    firefox | dev-firefox )
         VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
         ;; 
 esac
@@ -47,26 +47,6 @@ case "${DOCKER_TAG}" in
     dev-firefox)
         BASEIMAGE="accetto/xubuntu-vnc-firefox"
         BASETAG="dev"
-        ;;
-
-    dfw)
-        BASEIMAGE="accetto/xubuntu-vnc"
-        BASETAG="dfw"
-        ;;
-
-    dfw-firefox)
-        BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="dfw"
-        ;;
-
-    nux)
-        BASEIMAGE="accetto/xubuntu-vnc"
-        BASETAG="nux"
-        ;;
-
-    nux-firefox)
-        BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="nux"
         ;;
 
     *)
