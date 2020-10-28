@@ -5,8 +5,8 @@
 ### ./hooks/build dev-current
 ### ./hooks/test dev-current
 ### or with additional arguments
-### ./hooks/build dev-current
-### ./hooks/test dev-current --no-cache
+### ./hooks/build dev-current --no-cache
+### ./hooks/test dev-current
 ### or using the utility
 ### ./utils/util-hdx.sh Dockerfile 1
 ### ./utils/util-hdx.sh Dockerfile 2
