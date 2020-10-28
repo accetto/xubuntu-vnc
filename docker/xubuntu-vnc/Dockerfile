@@ -1,35 +1,18 @@
-# ./hooks/build latest
-# ./hooks/test latest
 # ./hooks/build dev
 # ./hooks/test dev
-# ./hooks/build lab
-# ./hooks/test lab
-# ./hooks/build dev-lab
-# ./hooks/test dev-lab
 
-### Build and test 'dev' tag locally like
+### Example: Build and test 'dev' tag locally like
 ### ./hooks/build dev
 ### ./hooks/test dev
 ### or with additional arguments
 ### ./hooks/build dev 
 ### ./hooks/test dev --no-cache
 ### or using the utility
-### ./utils/util-hdx.sh Dockerfile 3
-### ./utils/util-hdx.sh Dockerfile 4
+### ./utils/util-hdx.sh Dockerfile 1
+### ./utils/util-hdx.sh Dockerfile 2
 ### The last output line should be '+ exit 0'
 ### If '+ exit 1' then adjust the version sticker
 ### variables in script './hooks/env'
-
-### Build it locally like, for example:
-### ./utils/util-hdx.sh Dockerfile 2
-### or for example
-### ./utils/util-hdx.sh Dockerfile 2 --no-cache
-### Test it locally like, for example:
-### ./hooks/test dfw
-### Result last line should be:
-### + exit 0
-### If 'exit 1' then adjust the version sticker variables in
-### ./hooks/env
 
 ARG BASETAG=18.04
 

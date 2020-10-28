@@ -6,13 +6,25 @@
 
 ***
 
+### Release 20.10.2
+
+- Updated versions:
+  - Chromium Browser **86.0.4240.75**
+  - Firefox **82.0**
+  - Node.js **14.15.0** (includes npm **6.14.8**)
+    - Node.js `current` tag **15.0.1** (includes npm **7.0.3**)
+  - VSCode **1.50.1**
+  - TypeScript **4.0.5**
+  - Heroku **7.46.2**
+  - Angular **10.2.0**
+
 ### Release 20.10.1
 
 - hook scripts updated (all images)
   - automatic archiving of previous image versions removed
 - **xubuntu-vnc-firefox**
   - switch **MOZ_FORCE_DISABLE_E10S=1** seems not working any more
-    - build argument **ARG_MOZ_FORCE_DISABLE_E10S** removed 
+    - build argument **ARG_MOZ_FORCE_DISABLE_E10S** removed
     - environment variable **MOZ_FORCE_DISABLE_E10S** removed
     - `singleprocess` tag removed
     - hook scripts updated accordingly

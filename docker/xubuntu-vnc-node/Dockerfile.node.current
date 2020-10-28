@@ -1,17 +1,15 @@
-# ./hooks/build current
-# ./hooks/test current
 # ./hooks/build dev-current
 # ./hooks/test dev-current
 
-### Build and test 'dev' tag locally like
-### ./hooks/build dev
-### ./hooks/test dev
+### Example: Build and test 'dev' tag locally like
+### ./hooks/build dev-current
+### ./hooks/test dev-current
 ### or with additional arguments
-### ./hooks/build dev 
-### ./hooks/test dev --no-cache
+### ./hooks/build dev-current
+### ./hooks/test dev-current --no-cache
 ### or using the utility
-### ./utils/util-hdx.sh Dockerfile 3
-### ./utils/util-hdx.sh Dockerfile 4
+### ./utils/util-hdx.sh Dockerfile 1
+### ./utils/util-hdx.sh Dockerfile 2
 ### The last output line should be '+ exit 0'
 ### If '+ exit 1' then adjust the version sticker
 ### variables in script './hooks/env'
@@ -35,7 +33,7 @@ USER 0
 
 ### Alternatively install the latest 'current' version explicitly
 ENV \
-    NODE_VERSION=v14.13.1 \
+    NODE_VERSION=v15.0.1 \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global
