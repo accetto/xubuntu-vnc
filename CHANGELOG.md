@@ -15,7 +15,7 @@
   - Node.js **14.15.1** (includes npm **6.14.8**)
     - Node.js `current` tag **15.2.1** (includes npm **7.0.8**)
   - VSCode **1.51.1**
-  - Heroku **7.47.2** (with PostgreSQL **10.15**)
+  - Heroku **7.47.3** (with PostgreSQL **10.15**)
   - Angular **11.0.1**
 
 ### Release 20.10.2
