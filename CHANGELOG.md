@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.12
+
+- Updated versions:
+  - Chromium Browser **87.0.4280.66**
+  - Node.js `current` tag **15.4.0** (includes npm **7.0.15**)
+  - VSCode **1.52.0**
+  - TypeScript **4.1.3**
+  - Heroku **7.47.5** (with PostgreSQL **10.15**)
+  - Angular **11.0.4**
+
 ### Release 20.11
 
 - Updated versions:

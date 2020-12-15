@@ -247,7 +247,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.1-npm6.14.8-chromium86.0.4240.198/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.1-npm6.14.8-chromium87.0.4280.66/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:chromium.svg
 
@@ -259,6 +259,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- current tag badges -->
 
-[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node15.2.1-npm7.0.8/blue
+[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node15.4.0-npm7.0.15/blue
 
 [badge-github-commit-current]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:current.svg
