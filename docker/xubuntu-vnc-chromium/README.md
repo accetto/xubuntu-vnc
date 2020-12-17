@@ -11,7 +11,9 @@
 ![badge-github-release][badge-github-release]
 ![badge-github-release-date][badge-github-release-date]
 
-**TIP** If you need also [noVNC][novnc], then you can use the image [accetto/xubuntu-vnc-novnc-chromium][accetto-docker-xubuntu-vnc-novnc-chromium], which is a member of another family of application images ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
+**Tip** If you want newer images based on [Ubuntu 20.04 LTS][docker-ubuntu] with the latest [TigerVNC][tigervnc-releases]/[noVNC][novnc-releases] versions, please check the **third generation** (G3) [accetto/ubuntu-vnc-xfce-g3][accetto-docker-ubuntu-vnc-xfce-g3], [accetto/ubuntu-vnc-xfce-chromium-g3][accetto-docker-ubuntu-vnc-xfce-chromium-g3] or [accetto/ubuntu-vnc-xfce-firefox-g3][accetto-docker-ubuntu-vnc-xfce-firefox-g3].
+
+**Tip** If you need also [noVNC][novnc], then you can use the image [accetto/xubuntu-vnc-novnc-chromium][accetto-docker-xubuntu-vnc-novnc-chromium], which is a member of another family of application images ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
 
@@ -123,6 +125,10 @@ Credit goes to all the countless people and companies, who contribute to open so
 [accetto-docker-xubuntu-vnc-novnc-chromium]: https://hub.docker.com/r/accetto/xubuntu-vnc-novnc-chromium
 [accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc-novnc/wiki/Image-hierarchy
 
+[accetto-docker-ubuntu-vnc-xfce-g3]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-g3
+[accetto-docker-ubuntu-vnc-xfce-chromium-g3]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-chromium-g3
+[accetto-docker-ubuntu-vnc-xfce-firefox-g3]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-g3
+
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
 [docker-doc]: https://docs.docker.com/
@@ -135,9 +141,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 [mousepad]: https://github.com/codebrainz/mousepad
 [nano]: https://www.nano-editor.org/
 [novnc]: https://github.com/kanaka/noVNC
+[novnc-releases]: https://github.com/novnc/noVNC/releases
 [ristretto]: https://docs.xfce.org/apps/ristretto/start
 [screenshooter]: https://docs.xfce.org/apps/screenshooter/start
 [tigervnc]: http://tigervnc.org
+[tigervnc-releases]: https://github.com/TigerVNC/tigervnc/releases
 [tightvnc]: http://www.tightvnc.com
 [tini]: https://github.com/krallin/tini
 [vim]: https://www.vim.org/

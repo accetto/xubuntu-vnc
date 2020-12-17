@@ -6,6 +6,16 @@
 
 ***
 
+### Release 20.12.1
+
+- README got links to the third generation (G3) of images
+- Updated versions:
+  - Firefox **84.0**
+  - Node.js **14.15.2** (includes npm **6.14.9**)
+  - VSCode **1.52.1**
+  - Heroku **7.47.6** (with PostgreSQL **10.15**)
+  - Angular **11.0.5**
+
 ### Release 20.12
 
 - Updated versions:

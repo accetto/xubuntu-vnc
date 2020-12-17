@@ -16,7 +16,9 @@
 ![badge-github-commits][badge-github-commits]
 ![badge-github-last-commit][badge-github-last-commit]
 
-**TIP** If you need also [noVNC][novnc], then you can use my other images from the project [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc] ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
+**Tip** If you want newer images based on [Ubuntu 20.04 LTS][docker-ubuntu] with the latest [TigerVNC][tigervnc-releases]/[noVNC][novnc-releases] versions, please check the **third generation** (G3) [accetto/ubuntu-vnc-xfce-g3][accetto-docker-ubuntu-vnc-xfce-g3], [accetto/ubuntu-vnc-xfce-chromium-g3][accetto-docker-ubuntu-vnc-xfce-chromium-g3] or [accetto/ubuntu-vnc-xfce-firefox-g3][accetto-docker-ubuntu-vnc-xfce-firefox-g3].
+
+**Tip** If you need also [noVNC][novnc], then you can use my other images from the project [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc] ([image hierarchy][accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]).
 
 ***
 
@@ -167,6 +169,10 @@ Credit goes to all the countless people and companies, who contribute to open so
 [accetto-github-xubuntu-vnc-novnc]: https://github.com/accetto/xubuntu-vnc-novnc/
 [accetto-xubuntu-vnc-novnc-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc-novnc/wiki/Image-hierarchy
 
+[accetto-docker-ubuntu-vnc-xfce-g3]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-g3
+[accetto-docker-ubuntu-vnc-xfce-chromium-g3]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-chromium-g3
+[accetto-docker-ubuntu-vnc-xfce-firefox-g3]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-g3
+
 [accetto-docker-argbash-docker]: https://hub.docker.com/r/accetto/argbash-docker
 [accetto-github-argbash-docker-utils]: https://github.com/accetto/argbash-docker/tree/master/utils
 
@@ -186,9 +192,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
 [nodejs]: https://nodejs.org/en/
 [novnc]: https://github.com/kanaka/noVNC
+[novnc-releases]: https://github.com/novnc/noVNC/releases
 [npm]: https://www.npmjs.com/
 [postgresql]: https://www.postgresql.org/
 [tigervnc]: http://tigervnc.org
+[tigervnc-releases]: https://github.com/TigerVNC/tigervnc/releases
 [typescript]: https://www.typescriptlang.org/
 [vscode]: https://code.visualstudio.com/
 [xfce]: http://www.xfce.org
