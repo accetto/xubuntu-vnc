@@ -11,12 +11,15 @@ BASETAG=""
 TODAY=$(date +%Y-%m-%d)
 VERSION_STICKER=""
 
-### Warning! The values must be explicit strings (used by utils).
-VERSION_STICKER_LATEST="ubuntu18.04.5-node14.15.2-npm6.14.9"
-VERSION_STICKER_FIREFOX="ubuntu18.04.5-node14.15.2-npm6.14.9-firefox84.0"
-VERSION_STICKER_CHROMIUM="ubuntu18.04.5-node14.15.2-npm6.14.9-chromium87.0.4280.66"
+NODE_VERSION="14.15.3"
+NODE_VERSION_CURRENT="15.5.0"
 
-VERSION_STICKER_CURRENT="ubuntu18.04.5-node15.4.0-npm7.0.15"
+### Warning! The values must be explicit strings (used by utils).
+VERSION_STICKER_LATEST="ubuntu18.04.5-node14.15.3-npm6.14.9"
+VERSION_STICKER_FIREFOX="ubuntu18.04.5-node14.15.3-npm6.14.9-firefox84.0"
+VERSION_STICKER_CHROMIUM="ubuntu18.04.5-node14.15.3-npm6.14.9-chromium87.0.4280.66"
+
+VERSION_STICKER_CURRENT="ubuntu18.04.5-node15.5.0-npm7.0.15"
 
 case "${DOCKER_TAG}" in
 

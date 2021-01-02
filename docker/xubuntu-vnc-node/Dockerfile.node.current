@@ -18,6 +18,7 @@ ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
 
 FROM ${BASEIMAGE}:${BASETAG} as stage-node
+ARG ARG_NODE_VERSION_CURRENT
 
 USER 0
 
@@ -33,7 +34,7 @@ USER 0
 
 ### Alternatively install the latest 'current' version explicitly
 ENV \
-    NODE_VERSION=v15.4.0 \
+    NODE_VERSION="v${ARG_NODE_VERSION_CURRENT}" \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global

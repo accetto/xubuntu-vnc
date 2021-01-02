@@ -11,6 +11,8 @@ if [[ -n "${BASETAG}" ]] ; then
             --build-arg ARG_REFRESHED_AT="${TODAY}" \
             --build-arg ARG_VERSION_STICKER="${VERSION_STICKER}" \
             --build-arg ARG_VCS_REF=`git rev-parse --short HEAD` \
+            --build-arg ARG_NODE_VERSION="${NODE_VERSION}" \
+            --build-arg ARG_NODE_VERSION_CURRENT="${NODE_VERSION_CURRENT}" \
         -t ${DOCKER_REPO}:${DOCKER_TAG} .
 else
     echo "Build request not recognized: ${SOURCE_BRANCH}"

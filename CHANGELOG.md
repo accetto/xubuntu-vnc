@@ -6,6 +6,14 @@
 
 ***
 
+### Release 21.01
+
+- 
+- Updated versions:
+  - drawio-desktop **14.1.5**
+  - Node.js **14.15.3** (includes npm **6.14.9**)
+    - Node.js `current` tag **15.5.0** (includes npm **7.3.0**)
+
 ### Release 20.12.1
 
 - README got links to the third generation (G3) of images

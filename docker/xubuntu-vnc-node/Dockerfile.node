@@ -18,6 +18,7 @@ ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
 
 FROM ${BASEIMAGE}:${BASETAG} as stage-node
+ARG ARG_NODE_VERSION
 
 USER 0
 
@@ -33,7 +34,7 @@ USER 0
 
 ### Alternatively install the latest 'LTS' version explicitly
 ENV \
-    NODE_VERSION=v14.15.2 \
+    NODE_VERSION="v${ARG_NODE_VERSION}" \
     NODE_DISTRO=linux-x64 \
     NODE_PATH=/usr/local/lib/nodejs \
     NPM_CONFIG_PREFIX=${HOME}/.npm-global
