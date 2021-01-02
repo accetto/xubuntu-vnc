@@ -8,7 +8,7 @@
 
 ### Release 21.01
 
-- 
+- `ARG_DRAWIO_VERSION` and `ARG_NODE_VERSION` added
 - Updated versions:
   - drawio-desktop **14.1.5**
   - Node.js **14.15.3** (includes npm **6.14.9**)
