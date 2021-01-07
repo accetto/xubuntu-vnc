@@ -6,6 +6,16 @@
 
 ***
 
+### Release 21.01.1
+
+- Updated versions:
+  - Firefox **84.0.1**
+  - drawio-desktop **14.1.8**
+  - Node.js **14.15.4** (includes npm **6.14.10**)
+    - Node.js `current` tag **15.5.1** (includes npm **7.3.0**)
+  - Heroku **7.47.7** (with PostgreSQL **10.15**)
+  - Angular **11.0.6**
+
 ### Release 21.01
 
 - `ARG_DRAWIO_VERSION` and `ARG_NODE_VERSION` added

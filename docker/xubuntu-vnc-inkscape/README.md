@@ -174,6 +174,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-inkscape1.0.1-firefox84.0/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-inkscape1.0.1-firefox84.0.1/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-inkscape:firefox.svg
