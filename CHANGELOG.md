@@ -6,6 +6,13 @@
 
 ***
 
+### Release 21.01.2
+
+- Updated versions:
+  - Firefox **84.0.2**
+  - Inkscape **1.0.2**
+  - Angular **11.0.7**
+
 ### Release 21.01.1
 
 - Updated versions:

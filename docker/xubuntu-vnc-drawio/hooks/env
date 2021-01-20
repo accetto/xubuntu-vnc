@@ -16,7 +16,7 @@ DRAWIO_VERSION="14.1.8"
 
 ### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.5-drawio14.1.8"
-VERSION_STICKER_FIREFOX="ubuntu18.04.5-drawio14.1.8-firefox84.0.1"
+VERSION_STICKER_FIREFOX="ubuntu18.04.5-drawio14.1.8-firefox84.0.2"
 
 case "${DOCKER_TAG}" in
 
