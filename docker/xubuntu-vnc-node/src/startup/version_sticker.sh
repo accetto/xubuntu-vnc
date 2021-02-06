@@ -26,6 +26,8 @@ case "$1" in
         gdebi=$("${STARTUPDIR}/version_of.sh" gdebi)
         git=$("${STARTUPDIR}/version_of.sh" git)
         jq=$("${STARTUPDIR}/version_of.sh" jq)
+        fakeroot=$("${STARTUPDIR}/version_of.sh" fakeroot)
+        rpm=$("${STARTUPDIR}/version_of.sh" rpm)
         echo "Ubuntu $ubuntu"
         echo "VIM $vim"
         echo "GNU nano $nano"
@@ -39,6 +41,8 @@ case "$1" in
         echo "jq $jq"
         echo "Node $node"
         echo "npm $npm"
+        echo "fakeroot $fakeroot"
+        echo "RPM $rpm"
         [[ -n "$chromium" ]] && echo "Chromium $chromium"
         [[ -n "$firefox" ]] && echo "Firefox $firefox"
         ;;

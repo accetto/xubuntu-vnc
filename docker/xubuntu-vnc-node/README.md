@@ -37,6 +37,8 @@ and adds
 
 - current version of [Node.js][nodejs] JavaScript-based development platform
 - [npm][npm] package manager for Node.js (included with Node.js)
+- [fakeroot][fakeroot] tool for simulating superuser privileges (Ubuntu distribution)
+- **rpm** package manager for RPM (Ubuntu distribution)
 
 The history of notable changes is documented in the [CHANGELOG][this-changelog].
 
@@ -211,6 +213,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[fakeroot]: http://manpages.ubuntu.com/manpages/bionic/man1/fakeroot-tcp.1.html
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
@@ -253,12 +256,12 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-firefox84.0.2/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-firefox85.0/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:firefox.svg
 
 <!-- current tag badges -->
 
-[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node15.6.0-npm7.4.0/blue
+[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node15.8.0-npm7.5.1/blue
 
 [badge-github-commit-current]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:current.svg

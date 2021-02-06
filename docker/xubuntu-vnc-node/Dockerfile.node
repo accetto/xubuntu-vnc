@@ -17,12 +17,22 @@
 ARG BASEIMAGE=accetto/xubuntu-vnc
 ARG BASETAG=latest
 
-FROM ${BASEIMAGE}:${BASETAG} as stage-node
-ARG ARG_NODE_VERSION
+FROM ${BASEIMAGE}:${BASETAG} as stage-utils
 
 USER 0
 
-### This would currently install 'node v8.10.0' with 'npm v3.5.2'
+### 'apt-get clean' runs automatically
+RUN apt-get update \
+    && apt-get install -y \
+        fakeroot \
+        rpm \
+    && apt-get -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
+FROM stage-utils as stage-node
+ARG ARG_NODE_VERSION
+
+### This would install the current distribution version
 ### 'apt-get clean' runs automatically
 # RUN \
 #     chmod g+w /usr/local/lib \
@@ -55,11 +65,11 @@ RUN \
     && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin/npx /usr/bin/npx \
     && npm config set prefix ${NPM_CONFIG_PREFIX}
 
-COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
+COPY [ "./src/startup/", "${STARTUPDIR}/" ]
 
 ### Fix permissions
 RUN \
-    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    chmod a+wx "${STARTUPDIR}"/*.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-node as stage-final
