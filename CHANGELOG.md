@@ -6,6 +6,20 @@
 
 ***
 
+### Release 21.02
+
+- **xubuntu-vnc-node**
+  - `fakeroot` tool for simulating superuser privileges added
+  - `rpm` package manager for RPM added
+  - base image script `version_of.sh` is overridden
+  - these changes are inherited by all derived images
+- Updated versions:
+  - Firefox **85.0**
+  - Node.js `current` tag **15.8.0** (includes npm **7.5.1**)
+  - VSCode **1.53.0**
+  - Heroku **7.47.12**
+  - Angular **11.1.4**
+
 ### Release 21.01.2
 
 - Updated versions:

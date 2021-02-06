@@ -31,7 +31,8 @@ LABEL \
     org.label-schema.vcs-url="https://github.com/accetto/xubuntu-vnc"
 
 ### 'apt-get clean' runs automatically
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+    && apt-get install -y \
         inetutils-ping \
         lsb-release \
         net-tools \

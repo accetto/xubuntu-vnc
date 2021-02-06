@@ -25,7 +25,7 @@ The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] 
 
 The `latest` image inherits among others
 
-- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git] (Ubuntu distribution)
+- utilities **ping**, **wget**, **zip**, **unzip**, **sudo**, [curl][curl], [git][git], [fakeroot][fakeroot], **rpm** (Ubuntu distribution)
 - utility **gdebi** lets  you install local `.deb` packages resolving and installing their dependencies (Ubuntu distribution)
 - popular text editors [vim][vim] and [nano][nano] (Ubuntu distribution)
 - lite but advanced graphical editor [mousepad][mousepad] (Ubuntu distribution)
@@ -167,6 +167,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
+[fakeroot]: http://manpages.ubuntu.com/manpages/bionic/man1/fakeroot-tcp.1.html
 [firefox]: https://www.mozilla.org
 [git]: https://git-scm.com/
 [heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
@@ -200,18 +201,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-code1.52.1-tsc4.1.3-heroku7.47.7-psql10.15/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-code1.53.0-tsc4.1.3-heroku7.47.12-psql10.15/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-code1.52.1-tsc4.1.3-heroku7.47.7-psql10.15-chromium87.0.4280.66/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-code1.53.0-tsc4.1.3-heroku7.47.12-psql10.15-chromium87.0.4280.66/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-code1.52.1-tsc4.1.3-heroku7.47.7-psql10.15-firefox84.0.2/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.15.4-npm6.14.10-code1.53.0-tsc4.1.3-heroku7.47.12-psql10.15-firefox85.0/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-heroku-js-postgresql:firefox.svg
