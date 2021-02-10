@@ -6,6 +6,14 @@
 
 ***
 
+### Release 21.02.1
+
+- Updated versions:
+  - Firefox **85.0.1**
+  - Node.js **14.15.5** (includes npm **6.14.11**)
+  - VSCode **1.53.1**
+  - TypeScript **4.1.4**
+
 ### Release 21.02
 
 - **xubuntu-vnc-node**
