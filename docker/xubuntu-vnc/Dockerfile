@@ -32,7 +32,7 @@ LABEL \
 
 ### 'apt-get clean' runs automatically
 RUN apt-get update \
-    && apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         inetutils-ping \
         lsb-release \
         net-tools \
@@ -80,13 +80,13 @@ RUN \
 FROM stage-ubuntu as stage-xfce
 
 ENV \
-    DEBIAN_FRONTEND=noninteractive \
     LANG='en_US.UTF-8' \
     LANGUAGE='en_US:en' \
     LC_ALL='en_US.UTF-8'
 
 ### 'apt-get clean' runs automatically
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         locales \
         supervisor \
         xfce4 \

@@ -13,12 +13,6 @@
 
 ***
 
-**WARNING** about images with Firefox
-
-Starting from the release **20.10.1**, there is no single-process Firefox image and the multi-process mode is always enabled. Be aware, that multi-process requires larger shared memory (`/dev/shm`). At least 256MB is recommended. Please check the [Firefox multi-process][that-wiki-firefox-multiprocess] page in Wiki for more information and the instructions, how to set the shared memory size in different scenarios.
-
-***
-
 This repository contains resources for building Docker images based on [Ubuntu][docker-ubuntu] with [Xfce][xfce] desktop environment, [VNC][tigervnc] server for headless use and the free open-source [desktop version][drawio-desktop] of the diagramming tool [draw.io][drawio].
 
 The images are part of the growing [image hierarchy][this-wiki-image-hierarchy] and they are based on [accetto/xubuntu-vnc][accetto-docker-xubuntu-vnc]. They inherit all the features and therefore not the whole description will be repeated here.
@@ -58,11 +52,6 @@ The following image tags are regularly maintained and rebuilt:
     ![badge-VERSION_STICKER_LATEST][badge-VERSION_STICKER_LATEST]
     ![badge-github-commit-latest][badge-github-commit-latest]
 
-- `firefox` is based on `accetto/xubuntu-vnc-firefox:latest` and it includes also [Firefox][firefox] web browser and the **plus** features. Be aware that Firefox uses multi-process and therefore requires larger shared memory. See the [Firefox multi-process][this-wiki-firefox-multiprocess] page in Wiki for more information and the instructions, how to set the shared memory size in different scenarios.
-
-    ![badge-VERSION_STICKER_FIREFOX][badge-VERSION_STICKER_FIREFOX]
-    ![badge-github-commit-firefox][badge-github-commit-firefox]
-
 ### Dockerfiles
 
 The [Git Hub][this-github-xubuntu-vnc-drawio] repository contains several Dockerfiles that can be used to build the images.
@@ -73,7 +62,7 @@ The [Git Hub][this-github-xubuntu-vnc-drawio] repository contains several Docker
 
   However, by providing the `BASETAG` build argument it is possible to build images based on other base tags, for example `accetto/xubuntu-vnc:lab`.
   
-  By providing the `BASEIMAGE` build argument it is possible to build images based on other base  images, for example `accetto/xubuntu-vnc-firefox`. The `firefox` tag is built that way.
+  By providing the `BASEIMAGE` build argument it is possible to build images based on other base  images, for example `accetto/xubuntu-vnc-firefox`.
 
 ### Ports
 
@@ -130,7 +119,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [this-wiki]: https://github.com/accetto/xubuntu-vnc/wiki
 [this-wiki-image-hierarchy]: https://github.com/accetto/xubuntu-vnc/wiki/Image-hierarchy
-[this-wiki-firefox-multiprocess]: https://github.com/accetto/xubuntu-vnc/wiki/Firefox-multiprocess
 
 [this-issues]: https://github.com/accetto/xubuntu-vnc/issues
 
@@ -150,7 +138,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 [drawio-desktop]: https://github.com/jgraph/drawio-desktop/
 [git]: https://git-scm.com/
 [jq]: https://stedolan.github.io/jq/
-[firefox]: https://www.mozilla.org
 [mousepad]: https://github.com/codebrainz/mousepad
 [nano]: https://www.nano-editor.org/
 [ristretto]: https://docs.xfce.org/apps/ristretto/start
@@ -178,9 +165,3 @@ Credit goes to all the countless people and companies, who contribute to open so
 [badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-drawio14.1.8/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio.svg
-
-<!-- firefox tag badges -->
-
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-drawio14.1.8-firefox85.0.1/blue
-
-[badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-drawio:firefox.svg

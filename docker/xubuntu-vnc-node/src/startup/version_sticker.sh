@@ -39,10 +39,10 @@ case "$1" in
         echo "gdebi $gdebi"
         echo "Git $git"
         echo "jq $jq"
-        echo "Node $node"
-        echo "npm $npm"
         echo "fakeroot $fakeroot"
         echo "RPM $rpm"
+        echo "Node $node"
+        echo "npm $npm"
         [[ -n "$chromium" ]] && echo "Chromium $chromium"
         [[ -n "$firefox" ]] && echo "Firefox $firefox"
         ;;

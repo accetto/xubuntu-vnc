@@ -23,7 +23,8 @@ FROM ${BASEIMAGE}:${BASETAG} as stage-gimp
 USER 0
 
 ### 'apt-get clean' runs automatically
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         gimp \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*

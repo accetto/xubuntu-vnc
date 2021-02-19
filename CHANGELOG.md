@@ -6,6 +6,38 @@
 
 ***
 
+### Release 21.02.2
+
+- some optimizations in all Dockerfiles
+- **xubuntu-vnc-drawio**
+  - tag `firefox` will not be published any more
+- **xubuntu-vnc-gimp**
+  - tag `firefox` will not be published any more
+- **xubuntu-vnc-inkscape**
+  - tag `firefox` will not be published any more
+- **xubuntu-vnc-node**
+  - `Node.js` and `npm` installation has changed (more standard way)
+  - build argument **ARG_SAMPLES_DIR** has been added
+  - environment variable **SAMPLES_DIR** has been added
+  - samples home moved from `/usr/src` to `${SAMPLES_DIR}` (default `/usr/local/src/samples`)
+  - `EXPOSE ${NODE_PORT}` added to Dockerfile
+  - this changes are inherited by all derived images
+- **xubuntu-vnc-typescript**
+  - build argument **ARG_SAMPLES_DIR** has been added
+  - environment variable **SAMPLES_DIR** has been added
+- **xubuntu-vnc-heroku**
+  - build argument **ARG_SAMPLES_DIR** has been added
+  - environment variable **SAMPLES_DIR** has been added
+- **xubuntu-vnc-angular**
+  - build argument **ARG_SAMPLES_DIR** has been added
+  - environment variable **SAMPLES_DIR** has been added
+  - **angular** installed under non-root user (1001) now
+- Updated versions:
+  - Node.js `current` tag **15.9.0** (includes npm **7.5.3**)
+  - VSCode **1.53.2**
+  - TypeScript **4.1.5**
+  - Heroku **7.47.13**
+
 ### Release 21.02.1
 
 - Updated versions:

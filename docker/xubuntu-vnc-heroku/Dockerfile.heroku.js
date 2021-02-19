@@ -25,8 +25,13 @@ RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | bash \
 
 FROM stage-heroku as stage-postgresql
 
+ARG ARG_SAMPLES_DIR
+
+ENV SAMPLES_DIR=${ARG_SAMPLES_DIR:-/usr/local/src/samples}
+
 ### 'apt-get clean' runs automatically
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         postgresql \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -43,9 +48,12 @@ RUN apt-get update && apt-get install -y \
 
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
+WORKDIR "${SAMPLES_DIR}"
+
 ### Fix permissions
 RUN \
-    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    chmod -R g+w "${SAMPLES_DIR}" \
+    && chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 
 FROM stage-postgresql as stage-final

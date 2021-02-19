@@ -16,7 +16,7 @@ DRAWIO_VERSION="14.1.8"
 
 ### Warning! The values must be explicit strings (used by utils).
 VERSION_STICKER_LATEST="ubuntu18.04.5-drawio14.1.8"
-VERSION_STICKER_FIREFOX="ubuntu18.04.5-drawio14.1.8-firefox85.0.1"
+# VERSION_STICKER_FIREFOX="ubuntu18.04.5-drawio14.1.8-firefox85.0.1"
 
 case "${DOCKER_TAG}" in
 
@@ -24,9 +24,9 @@ case "${DOCKER_TAG}" in
         VERSION_STICKER="${VERSION_STICKER_LATEST}"
         ;;
 
-    firefox | dev-firefox )
-        VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
-        ;; 
+    # firefox | dev-firefox )
+    #     VERSION_STICKER="${VERSION_STICKER_FIREFOX}"
+    #     ;; 
 esac
 
 case "${DOCKER_TAG}" in
@@ -36,20 +36,20 @@ case "${DOCKER_TAG}" in
         BASETAG="latest"
         ;;
 
-    firefox)
-        BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="latest"
-        ;;
+    # firefox)
+    #     BASEIMAGE="accetto/xubuntu-vnc-firefox"
+    #     BASETAG="latest"
+    #     ;;
 
     dev)
         BASEIMAGE="accetto/xubuntu-vnc"
         BASETAG="dev"
         ;;
 
-    dev-firefox)
-        BASEIMAGE="accetto/xubuntu-vnc-firefox"
-        BASETAG="dev"
-        ;;
+    # dev-firefox)
+    #     BASEIMAGE="accetto/xubuntu-vnc-firefox"
+    #     BASETAG="dev"
+    #     ;;
 
     *)
         BASETAG=""

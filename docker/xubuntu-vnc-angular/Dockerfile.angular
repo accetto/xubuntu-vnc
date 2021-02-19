@@ -18,19 +18,28 @@ ARG BASETAG=latest
 
 FROM accetto/xubuntu-vnc-typescript:${BASETAG} as stage-angular
 
+ARG ARG_SAMPLES_DIR
+
 USER 0
 
-ENV NG_CLI_ANALYTICS=false
-
-RUN npm install -g @angular/cli
+ENV \
+    NG_CLI_ANALYTICS=false \
+    SAMPLES_DIR=${ARG_SAMPLES_DIR:-/usr/local/src/samples}
 
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
+
+WORKDIR "${SAMPLES_DIR}"
 
 ### Fix permissions
 ### Don't break building, setting permissions takes quite a while.
 RUN \
-    chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
+    chmod -R g+w "${SAMPLES_DIR}" \
+    && chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
+
+USER 1001
+
+RUN npm install -g @angular/cli
 
 FROM stage-angular as stage-final
 

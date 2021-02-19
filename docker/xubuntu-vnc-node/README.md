@@ -106,9 +106,9 @@ For example the following command would build an image with the **NODE_PORT** se
 docker build -f Dockerfile.node --build-arg ARG_NODE_PORT=5000 -t accetto/xubuntu-vnc-node:5000 .
 ```
 
-To be able to test the [Node.js][nodejs] installation and its default port, a very simple application has been included (`/usr/src/node-test-app/app.js`).
+To be able to test the [Node.js][nodejs] installation and its default port, a very simple application has been included (`/usr/local/src/samples/node-test-app/app.js`).
 
-It can be started from the `/usr/src/node-test-app` folder (inside the container) with the following command:
+It can be started from the `/usr/local/src/samples/node-test-app` folder (inside the container) with the following command:
 
 ```shell
 node app.js
@@ -138,16 +138,18 @@ The containers do not create or use any external volumes by default. However, th
 
 Both **named volumes** and **bind mounts** can be used. More about volumes can be found in the [Docker documentation][docker-doc] (e.g. [Manage data in Docker][docker-doc-managing-data]).
 
-The folder `/usr/src` is intended as the working folder for development and it should be mounted to an external volume or folder if you want to keep the projects outside the container.
+The folder `/usr/local/src/samples` is intended as the working folder for development and it should be mounted to an external volume or folder if you want to keep the projects outside the container.
+
+The working folder can be changed through the build argument `ARG_SAMPLES_DIR`. The path is also available to scripts through the environment variable `SAMPLES_DIR`.
 
 For example, the following container would use the local folder **my_apps**:
 
 ```shell
-docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-node
+docker run -dP -v /my_apps:/usr/local/src/samples accetto/xubuntu-vnc-node
 
 # or using the newer syntax
 
-docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-node
+docker run -dP --mount source=/my_apps,target=/usr/local/src/samples accetto/xubuntu-vnc-node
 ```
 
 ### Container user
@@ -262,6 +264,6 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- current tag badges -->
 
-[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node15.8.0-npm7.5.1/blue
+[badge-VERSION_STICKER_CURRENT]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node15.9.0-npm7.5.3/blue
 
 [badge-github-commit-current]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:current.svg

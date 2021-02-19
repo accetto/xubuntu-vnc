@@ -89,16 +89,18 @@ The containers do not create or use any external volumes by default. However, th
 
 Both **named volumes** and **bind mounts** can be used. More about volumes can be found in the [Docker documentation][docker-doc] (e.g. [Manage data in Docker][docker-doc-managing-data]).
 
-The folder `/usr/src` is intended as the working folder for development and it should be mounted to an external volume or folder if you want to keep the projects outside the container.
+The folder `/usr/local/src/samples` is intended as the working folder for development and it should be mounted to an external volume or folder if you want to keep the projects outside the container.
+
+The working folder can be changed through the build argument `ARG_SAMPLES_DIR`. The path is also available to scripts through the environment variable `SAMPLES_DIR`.
 
 For example, the following container would use the local folder **my_apps**:
 
 ```shell
-docker run -dP -v /my_apps:/usr/src accetto/xubuntu-vnc-typescript
+docker run -dP -v /my_apps:/usr/local/src/samples accetto/xubuntu-vnc-typescript
 
 # or using the newer syntax
 
-docker run -dP --mount source=/my_apps,target=/usr/src accetto/xubuntu-vnc-typescript
+docker run -dP --mount source=/my_apps,target=/usr/local/src/samples accetto/xubuntu-vnc-typescript
 ```
 
 ### Container user

@@ -23,7 +23,7 @@ USER 0
 
 ### 'apt-get clean' runs automatically
 RUN apt-get update \
-    && apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         fakeroot \
         rpm \
     && apt-get -y autoremove \
@@ -43,27 +43,12 @@ ARG ARG_NODE_VERSION
 #     && rm -rf /var/lib/apt/lists/*
 
 ### Alternatively install the latest 'LTS' version explicitly
-ENV \
+RUN \
+    NODE_PATH=/usr/local \
     NODE_VERSION="v${ARG_NODE_VERSION}" \
     NODE_DISTRO=linux-x64 \
-    NODE_PATH=/usr/local/lib/nodejs \
-    NPM_CONFIG_PREFIX=${HOME}/.npm-global
-ENV \
-    PATH=${NPM_CONFIG_PREFIX}/bin:/usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin:${PATH}
-RUN \
-    mkdir -p \
-        ${NPM_CONFIG_PREFIX} \
-        ${NODE_PATH} \
-        ${HOME}/.npm \
-    && chmod g+w \
-        ${NPM_CONFIG_PREFIX} \
-        /usr/local/lib \
     && wget -qO- https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-${NODE_DISTRO}.tar.xz \
-        | tar -xJv -C /usr/local/lib/nodejs \
-    && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin/node /usr/bin/node \
-    && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}O/bin/npm /usr/bin/npm \
-    && ln -s /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin/npx /usr/bin/npx \
-    && npm config set prefix ${NPM_CONFIG_PREFIX}
+        | tar --strip-components 1 -xJv -C ${NODE_PATH}
 
 COPY [ "./src/startup/", "${STARTUPDIR}/" ]
 
@@ -76,22 +61,25 @@ FROM stage-node as stage-final
 
 ARG ARG_REFRESHED_AT
 ARG ARG_NODE_PORT
+ARG ARG_SAMPLES_DIR
 ARG ARG_VERSION_STICKER
 ARG ARG_VCS_REF
 
-ENV NODE_PORT=${ARG_NODE_PORT:-3000}
+ENV \
+    NODE_PORT=${ARG_NODE_PORT:-3000} \
+    SAMPLES_DIR=${ARG_SAMPLES_DIR:-/usr/local/src/samples}
 
-WORKDIR /usr/src
+WORKDIR "${SAMPLES_DIR}"
 
 ### add a simple app for testing node
 ### start it by 'node app.js' and connect to the container's port ${NODE_PORT}
 ### dont'f forget to create the container as for example 'docker run -p 3000 ...'
-COPY [ "./src/node-test-app", "./node-test-app/" ]
+COPY [ "./src/node-test-app", "${SAMPLES_DIR}/node-test-app/" ]
 
-RUN chmod -R g+w /usr/src
+RUN chmod -R g+w "${SAMPLES_DIR}"
 
 ### optionally expose the node port
-# EXPOSE ${NODE_PORT}
+EXPOSE ${NODE_PORT}
 
 LABEL \
     org.label-schema.vcs-ref="${ARG_VCS_REF}" \
