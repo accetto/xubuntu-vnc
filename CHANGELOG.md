@@ -17,6 +17,8 @@
   - samples moved to `${PROJECTS_DIR}/samples`
   - readme file for `node` and `node-test-app` added
   - these changes are inherited or repeated by all derived images
+- Updated versions:
+  - Angular **11.2.1**
 
 ### Release 21.02.2
 
