@@ -6,6 +6,18 @@
 
 ***
 
+### Release 21.02.3
+
+- **xubuntu-vnc-node**
+  - build argument **ARG_SAMPLES_DIR** renamed to **ARG_PROJECTS_DIR**
+  - environment variable **SAMPLES_DIR** renamed to **PROJECTS_DIR**
+  - default directory for projects is now `${PROJECTS_DIR}`
+    - default value is `/srv/projects`
+    - can be changed through build argument `ARG_SAMPLES_DIR`
+  - samples moved to `${PROJECTS_DIR}/samples`
+  - readme file for `node` and `node-test-app` added
+  - these changes are inherited or repeated by all derived images
+
 ### Release 21.02.2
 
 - some optimizations in all Dockerfiles
@@ -21,7 +33,7 @@
   - environment variable **SAMPLES_DIR** has been added
   - samples home moved from `/usr/src` to `${SAMPLES_DIR}` (default `/usr/local/src/samples`)
   - `EXPOSE ${NODE_PORT}` added to Dockerfile
-  - this changes are inherited by all derived images
+  - these changes are inherited by all derived images
 - **xubuntu-vnc-typescript**
   - build argument **ARG_SAMPLES_DIR** has been added
   - environment variable **SAMPLES_DIR** has been added

@@ -18,22 +18,22 @@ ARG BASETAG=latest
 
 FROM accetto/xubuntu-vnc-typescript:${BASETAG} as stage-angular
 
-ARG ARG_SAMPLES_DIR
+ARG ARG_PROJECTS_DIR
 
 USER 0
 
 ENV \
     NG_CLI_ANALYTICS=false \
-    SAMPLES_DIR=${ARG_SAMPLES_DIR:-/usr/local/src/samples}
+    PROJECTS_DIR=${ARG_PROJECTS_DIR:-/srv/projects}
 
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
-WORKDIR "${SAMPLES_DIR}"
+WORKDIR "${PROJECTS_DIR}"
 
 ### Fix permissions
 ### Don't break building, setting permissions takes quite a while.
 RUN \
-    chmod -R g+w "${SAMPLES_DIR}" \
+    chmod -R g+w "${PROJECTS_DIR}" \
     && chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 

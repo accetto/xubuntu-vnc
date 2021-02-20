@@ -25,9 +25,9 @@ RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | bash \
 
 FROM stage-heroku as stage-postgresql
 
-ARG ARG_SAMPLES_DIR
+ARG ARG_PROJECTS_DIR
 
-ENV SAMPLES_DIR=${ARG_SAMPLES_DIR:-/usr/local/src/samples}
+ENV PROJECTS_DIR=${ARG_PROJECTS_DIR:-/srv/projects}
 
 ### 'apt-get clean' runs automatically
 RUN apt-get update \
@@ -48,11 +48,11 @@ RUN apt-get update \
 
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
-WORKDIR "${SAMPLES_DIR}"
+WORKDIR "${PROJECTS_DIR}"
 
 ### Fix permissions
 RUN \
-    chmod -R g+w "${SAMPLES_DIR}" \
+    chmod -R g+w "${PROJECTS_DIR}" \
     && chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 

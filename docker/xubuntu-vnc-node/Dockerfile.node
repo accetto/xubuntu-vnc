@@ -61,25 +61,27 @@ FROM stage-node as stage-final
 
 ARG ARG_REFRESHED_AT
 ARG ARG_NODE_PORT
-ARG ARG_SAMPLES_DIR
+ARG ARG_PROJECTS_DIR
 ARG ARG_VERSION_STICKER
 ARG ARG_VCS_REF
 
 ENV \
     NODE_PORT=${ARG_NODE_PORT:-3000} \
-    SAMPLES_DIR=${ARG_SAMPLES_DIR:-/usr/local/src/samples}
+    PROJECTS_DIR=${ARG_PROJECTS_DIR:-/srv/projects}
 
-WORKDIR "${SAMPLES_DIR}"
+COPY [ "./src/home/readme-node.md", "${HOME}/" ]
+
+WORKDIR "${PROJECTS_DIR}"
 
 ### add a simple app for testing node
 ### start it by 'node app.js' and connect to the container's port ${NODE_PORT}
 ### dont'f forget to create the container as for example 'docker run -p 3000 ...'
-COPY [ "./src/node-test-app", "${SAMPLES_DIR}/node-test-app/" ]
+COPY [ "./src/node-test-app", "${PROJECTS_DIR}/samples/node-test-app/" ]
 
-RUN chmod -R g+w "${SAMPLES_DIR}"
-
-### optionally expose the node port
-EXPOSE ${NODE_PORT}
+RUN \
+    chmod -R g+w "${PROJECTS_DIR}" \
+    && ln -s "${HOME}/readme-node.md" "${HOME}"/Desktop/'Readme Node' \
+    && chmod a+w "${HOME}"/Desktop/'Readme Node'
 
 LABEL \
     org.label-schema.vcs-ref="${ARG_VCS_REF}" \
@@ -90,3 +92,5 @@ ENV \
     VERSION_STICKER=${ARG_VERSION_STICKER}
 
 USER 1001
+
+EXPOSE ${NODE_PORT}
