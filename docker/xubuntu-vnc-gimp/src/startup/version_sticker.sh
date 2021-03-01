@@ -3,14 +3,12 @@
 
 ubuntu=$("${STARTUPDIR}/version_of.sh" ubuntu)
 gimp=$("${STARTUPDIR}/version_of.sh" gimp)
-firefox=$("${STARTUPDIR}/version_of.sh" firefox)
 
 case "$1" in
     -v)
         echo "Ubuntu $ubuntu"
         echo "Inkscape $inkscape"
         echo "Gimp $gimp"
-        [[ -n "$firefox" ]] && echo "Firefox $firefox"
         ;;
     -V)
         mousepad=$("${STARTUPDIR}/version_of.sh" mousepad)
@@ -35,15 +33,10 @@ case "$1" in
         echo "Git $git"
         echo "jq $jq"
         echo "Gimp $gimp"
-        [[ -n "$firefox" ]] && echo "Firefox $firefox"
         ;;
     *)
         ### example: ubuntu18.04.3-gimp2.8.22
         sticker="ubuntu$ubuntu"-"gimp$gimp"
-        if [[ -n "$firefox" ]] ; then
-            ### example: ubuntu18.04.3-gimp2.8.22-firefox69.0
-            sticker="$sticker"-"firefox$firefox"
-        fi
         echo "$sticker"
         ;;
 esac
