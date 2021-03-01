@@ -6,6 +6,17 @@
 
 ***
 
+### Release 21.03
+
+- Updated versions:
+  - Firefox **86.0**
+  - Node.js **14.16.0** (includes npm **6.14.11**)
+    - Node.js `current` tag **15.10.0** (includes npm **7.5.3**)
+  - TypeScript **4.1.5**
+  - Heroku **7.49.1** (with PostgreSQL **10.16**)
+  - Angular **11.2.2**
+  - drawio-desktop **14.4.3**
+
 ### Release 21.02.3
 
 - **xubuntu-vnc-node**
