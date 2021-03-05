@@ -6,6 +6,16 @@
 
 ***
 
+### Release 21.03.1
+
+- base **ubuntu:18.04** has been updated by Docker
+- Updated versions:
+  - Node.js `current` tag **15.11.0** (includes npm **7.6.0**)
+  - VSCode **1.54.1**
+  - TypeScript **4.2.3**
+  - Heroku **7.50.0** (with PostgreSQL **10.16**)
+  - Angular **11.2.3**
+
 ### Release 21.03
 
 - Updated versions:
