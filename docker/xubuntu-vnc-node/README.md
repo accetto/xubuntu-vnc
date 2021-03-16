@@ -252,7 +252,7 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-chromium87.0.4280.66/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-chromium89.0.4389.82/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-node:chromium.svg
 

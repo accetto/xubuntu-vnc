@@ -6,6 +6,13 @@
 
 ***
 
+### Release 21.03.2
+
+- Updated versions:
+  - Chromium **89.0.4389.82**
+  - VSCode **1.54.3**
+  - Angular **11.2.4**
+
 ### Release 21.03.1
 
 - base **ubuntu:18.04** has been updated by Docker
