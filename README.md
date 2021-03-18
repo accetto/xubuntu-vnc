@@ -6,6 +6,10 @@
 
 ***
 
+**Attention:** Phasing out! This repository will be archived soon. Newer **third generation** (G3) repositories are coming instead.
+
+***
+
 ![badge-github-release][badge-github-release]
 ![badge-github-release-date][badge-github-release-date]
 ![badge-github-stars][badge-github-stars]
