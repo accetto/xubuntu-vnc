@@ -6,6 +6,10 @@
 
 ***
 
+**Attention!** This repository is **retired** and **archived**. It will not be developed any further and the related images on Docker Hub will not be rebuilt any more. They will phase out and they will be deleted after becoming too old. Please use the newer **third generation** (G3) repositories [accetto/headless-coding-g3][accetto-github-headless-coding-g3] and [accetto/headless-drawing-g3][accetto-github-headless-drawing-g3] and the related images on Docker Hub instead. If you still need images based on `Ubuntu 18.04 LTS`, then use the **second generation** (G2) repository [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc], which will be still maintained.
+
+***
+
 ![badge-docker-pulls][badge-docker-pulls]
 ![badge-docker-stars][badge-docker-stars]
 ![badge-github-release][badge-github-release]
@@ -205,6 +209,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
 
+[accetto-github-xubuntu-vnc-novnc]: https://github.com/accetto/xubuntu-vnc-novnc/
+
+[accetto-github-headless-coding-g3]: https://github.com/accetto/headless-coding-g3
+[accetto-github-headless-drawing-g3]: https://github.com/accetto/headless-drawing-g3
+
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
 [fakeroot]: http://manpages.ubuntu.com/manpages/bionic/man1/fakeroot-tcp.1.html
@@ -240,18 +249,18 @@ Credit goes to all the countless people and companies, who contribute to open so
 
 <!-- latest tag badges -->
 
-[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-code1.54.3-tsc4.2.3-angular11.2.4/blue
+[badge-VERSION_STICKER_LATEST]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-code1.54.3-tsc4.2.3-angular11.2.5/blue
 
 [badge-github-commit-latest]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular.svg
 
 <!-- chromium tag badges -->
 
-[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-code1.54.3-tsc4.2.3-angular11.2.4-chromium89.0.4389.82/blue
+[badge-VERSION_STICKER_CHROMIUM]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-code1.54.3-tsc4.2.3-angular11.2.5-chromium89.0.4389.82/blue
 
 [badge-github-commit-chromium]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular:chromium.svg
 
 <!-- firefox tag badges -->
 
-[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-code1.54.3-tsc4.2.3-angular11.2.4-firefox86.0/blue
+[badge-VERSION_STICKER_FIREFOX]: https://badgen.net/badge/version%20sticker/ubuntu18.04.5-node14.16.0-npm6.14.11-code1.54.3-tsc4.2.3-angular11.2.5-firefox86.0/blue
 
 [badge-github-commit-firefox]: https://images.microbadger.com/badges/commit/accetto/xubuntu-vnc-angular:firefox.svg

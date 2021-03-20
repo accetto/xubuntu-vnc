@@ -6,6 +6,19 @@
 
 ***
 
+### Final release 21.03.3
+
+The repository is **retired** and **archived**. It will not be developed any further and the related images on Docker Hub will not be rebuilt any more. They will phase out and they will be deleted after becoming too old.
+
+Please use the newer **third generation** (G3) repositories [accetto/headless-coding-g3][accetto-github-headless-coding-g3] and [accetto/headless-drawing-g3][accetto-github-headless-drawing-g3] and the related images on Docker Hub instead.
+
+If you still need images based on `Ubuntu 18.04 LTS`, then use the **second generation** (G2) repository [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc], which will be still maintained.
+
+- Updated versions:
+  - Node.js `current` tag **15.12.0** (includes npm **7.6.3**)
+  - Heroku **7.51.0** (with PostgreSQL **10.16**)
+  - Angular **11.2.5**
+
 ### Release 21.03.2
 
 - Updated versions:
@@ -1013,3 +1026,8 @@ Initial version is derived from the version **19.06** of [accetto/ubuntu-vnc-xfc
 
 [accetto-ubuntu-vnc-xfce]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce/
 [accetto-ubuntu-vnc-xfce-firefox-plus]: https://hub.docker.com/r/accetto/ubuntu-vnc-xfce-firefox-plus/
+
+[accetto-github-xubuntu-vnc-novnc]: https://github.com/accetto/xubuntu-vnc-novnc/
+
+[accetto-github-headless-coding-g3]: https://github.com/accetto/headless-coding-g3
+[accetto-github-headless-drawing-g3]: https://github.com/accetto/headless-drawing-g3

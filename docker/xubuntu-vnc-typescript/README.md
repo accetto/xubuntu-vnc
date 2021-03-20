@@ -6,6 +6,10 @@
 
 ***
 
+**Attention!** This repository is **retired** and **archived**. It will not be developed any further and the related images on Docker Hub will not be rebuilt any more. They will phase out and they will be deleted after becoming too old. Please use the newer **third generation** (G3) repositories [accetto/headless-coding-g3][accetto-github-headless-coding-g3] and [accetto/headless-drawing-g3][accetto-github-headless-drawing-g3] and the related images on Docker Hub instead. If you still need images based on `Ubuntu 18.04 LTS`, then use the **second generation** (G2) repository [accetto/xubuntu-vnc-novnc][accetto-github-xubuntu-vnc-novnc], which will be still maintained.
+
+***
+
 ![badge-docker-pulls][badge-docker-pulls]
 ![badge-docker-stars][badge-docker-stars]
 ![badge-github-release][badge-github-release]
@@ -161,6 +165,11 @@ Credit goes to all the countless people and companies, who contribute to open so
 [docker-doc-managing-data]: https://docs.docker.com/storage/
 
 [docker-ubuntu]: https://hub.docker.com/_/ubuntu/
+
+[accetto-github-xubuntu-vnc-novnc]: https://github.com/accetto/xubuntu-vnc-novnc/
+
+[accetto-github-headless-coding-g3]: https://github.com/accetto/headless-coding-g3
+[accetto-github-headless-drawing-g3]: https://github.com/accetto/headless-drawing-g3
 
 [chromium]: https://www.chromium.org/Home
 [curl]: http://manpages.ubuntu.com/manpages/bionic/man1/curl.1.html
